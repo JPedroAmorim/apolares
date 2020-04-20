@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Play" id="pma-74-0EM">
+                            <connections>
+                                <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="qVc-1h-N0R">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Schedule" id="gHR-iU-v4B"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="246"/>
+        </scene>
+        <!--Wash-->
+        <scene sceneID="ECi-1d-rwY">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Wash" id="QZF-Gx-pjw"/>
+            </objects>
+            <point key="canvasLocation" x="469" y="345"/>
+        </scene>
+        <!--Configuration-->
+        <scene sceneID="jeQ-xP-SGB">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Configuration" id="nep-NL-tcV"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="444"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Wash-->
+        <scene sceneID="wh2-eT-4Cm">
+            <objects>
+                <controller identifier="Wash" id="WFd-QR-EvZ">
+                    <items>
+                        <label alignment="left" text="Lave as maos bro" id="DTP-CG-cOw"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="102" y="22"/>
+        </scene>
+        <!--AfterWash-->
+        <scene sceneID="qy9-B9-X1h">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="AfterWash" id="Wwp-bh-mfO"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="9"/>
+        </scene>
+    </scenes>
+</document>

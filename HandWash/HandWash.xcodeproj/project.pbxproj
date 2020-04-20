@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
 		4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F433243E060400D4D5FB /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F431243E060100D4D5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
+				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,

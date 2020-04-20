@@ -9,7 +9,7 @@
         <!--Wash-->
         <scene sceneID="wh2-eT-4Cm">
             <objects>
-                <controller identifier="Wash" id="WFd-QR-EvZ">
+                <controller identifier="Wash" id="WFd-QR-EvZ" customClass="WashInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="center" id="nTq-Lf-Q48">
                             <items>
@@ -29,6 +29,11 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="imageProgress" destination="DtC-LT-XG4" id="Kgn-sI-29z"/>
+                        <outlet property="inlineMovie" destination="KO8-zo-usW" id="Bhc-ws-3uG"/>
+                        <outlet property="labelDescription" destination="6cf-ev-uBA" id="KNn-xE-5vr"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="102" y="22"/>

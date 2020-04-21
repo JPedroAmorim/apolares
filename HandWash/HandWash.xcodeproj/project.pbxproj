@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
+		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
+		4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F433243E060400D4D5FB /* Assets.xcassets */; };
+		4F56F43B243E060400D4D5FB /* HandWash WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F56F43A243E060400D4D5FB /* HandWash WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56F43F243E060400D4D5FB /* InterfaceController.swift */; };
+		4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */; };
+		4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56F443243E060400D4D5FB /* NotificationController.swift */; };
+		4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F445243E060400D4D5FB /* Assets.xcassets */; };
+		4F56F45F243E078400D4D5FB /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F45E243E078400D4D5FB /* Schedule.storyboard */; };
+		4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F460243E079300D4D5FB /* Wash.storyboard */; };
+		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
+		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F56F42D243E060100D4D5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F56F421243E060100D4D5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F56F42A243E060100D4D5FB;
+			remoteInfo = "HandWash WatchKit App";
+		};
+		4F56F43C243E060400D4D5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F56F421243E060100D4D5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F56F439243E060400D4D5FB;
+			remoteInfo = "HandWash WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4F56F44E243E060400D4D5FB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4F56F43B243E060400D4D5FB /* HandWash WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F56F452243E060400D4D5FB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
+		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F56F431243E060100D4D5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F56F433243E060400D4D5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F56F435243E060400D4D5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F56F43A243E060400D4D5FB /* HandWash WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HandWash WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F56F43F243E060400D4D5FB /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		4F56F443243E060400D4D5FB /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		4F56F445243E060400D4D5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F56F447243E060400D4D5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4F56F45E243E078400D4D5FB /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		4F56F460243E079300D4D5FB /* Wash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wash.storyboard; sourceTree = "<group>"; };
+		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
+		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F56F437243E060400D4D5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F56F420243E060100D4D5FB = {
+			isa = PBXGroup;
+			children = (
+				4F56F433243E060400D4D5FB /* Assets.xcassets */,
+				4F56F435243E060400D4D5FB /* Info.plist */,
+				D5148242244DD5690032B3AF /* Model */,
+				D5148240244DD4B10032B3AF /* View */,
+				D5148241244DD54B0032B3AF /* Controller */,
+				4F56F428243E060100D4D5FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F56F428243E060100D4D5FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F427243E060100D4D5FB /* HandWash.app */,
+				4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */,
+				4F56F43A243E060400D4D5FB /* HandWash WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F56F42F243E060100D4D5FB /* HandWash WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F430243E060100D4D5FB /* Main.storyboard */,
+				4F56F45E243E078400D4D5FB /* Schedule.storyboard */,
+				4F56F460243E079300D4D5FB /* Wash.storyboard */,
+				4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */,
+				4F56F464243E07C100D4D5FB /* Configuration.storyboard */,
+			);
+			path = "HandWash WatchKit App";
+			sourceTree = "<group>";
+		};
+		4F56F43E243E060400D4D5FB /* HandWash WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F43F243E060400D4D5FB /* InterfaceController.swift */,
+				4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */,
+				4F56F443243E060400D4D5FB /* NotificationController.swift */,
+				4F56F445243E060400D4D5FB /* Assets.xcassets */,
+				4F56F447243E060400D4D5FB /* Info.plist */,
+				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
+				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
+			);
+			path = "HandWash WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D5148240244DD4B10032B3AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F42F243E060100D4D5FB /* HandWash WatchKit App */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5148241244DD54B0032B3AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F43E243E060400D4D5FB /* HandWash WatchKit Extension */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5148242244DD5690032B3AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F56F426243E060100D4D5FB /* HandWash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F56F453243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash" */;
+			buildPhases = (
+				4F56F425243E060100D4D5FB /* Resources */,
+				4F56F452243E060400D4D5FB /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F56F42E243E060100D4D5FB /* PBXTargetDependency */,
+			);
+			name = HandWash;
+			productName = HandWash;
+			productReference = 4F56F427243E060100D4D5FB /* HandWash.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		4F56F42A243E060100D4D5FB /* HandWash WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F56F44F243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash WatchKit App" */;
+			buildPhases = (
+				4F56F429243E060100D4D5FB /* Resources */,
+				4F56F44E243E060400D4D5FB /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F56F43D243E060400D4D5FB /* PBXTargetDependency */,
+			);
+			name = "HandWash WatchKit App";
+			productName = "HandWash WatchKit App";
+			productReference = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		4F56F439243E060400D4D5FB /* HandWash WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F56F44B243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash WatchKit Extension" */;
+			buildPhases = (
+				4F56F436243E060400D4D5FB /* Sources */,
+				4F56F437243E060400D4D5FB /* Frameworks */,
+				4F56F438243E060400D4D5FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HandWash WatchKit Extension";
+			productName = "HandWash WatchKit Extension";
+			productReference = 4F56F43A243E060400D4D5FB /* HandWash WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F56F421243E060100D4D5FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = AndrePapoti;
+				TargetAttributes = {
+					4F56F426243E060100D4D5FB = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					4F56F42A243E060100D4D5FB = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					4F56F439243E060400D4D5FB = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 4F56F424243E060100D4D5FB /* Build configuration list for PBXProject "HandWash" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F56F420243E060100D4D5FB;
+			productRefGroup = 4F56F428243E060100D4D5FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F56F426243E060100D4D5FB /* HandWash */,
+				4F56F42A243E060100D4D5FB /* HandWash WatchKit App */,
+				4F56F439243E060400D4D5FB /* HandWash WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F56F425243E060100D4D5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F56F429243E060100D4D5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */,
+				4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */,
+				4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */,
+				4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */,
+				4F56F432243E060100D4D5FB /* Main.storyboard in Resources */,
+				4F56F45F243E078400D4D5FB /* Schedule.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F56F438243E060400D4D5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F56F436243E060400D4D5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
+				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
+				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
+				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F56F42E243E060100D4D5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F56F42A243E060100D4D5FB /* HandWash WatchKit App */;
+			targetProxy = 4F56F42D243E060100D4D5FB /* PBXContainerItemProxy */;
+		};
+		4F56F43D243E060400D4D5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F56F439243E060400D4D5FB /* HandWash WatchKit Extension */;
+			targetProxy = 4F56F43C243E060400D4D5FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F56F430243E060100D4D5FB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F56F431243E060100D4D5FB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F56F449243E060400D4D5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F56F44A243E060400D4D5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F56F44C243E060400D4D5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		4F56F44D243E060400D4D5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		4F56F450243E060400D4D5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				IBSC_MODULE = HandWash_WatchKit_Extension;
+				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		4F56F451243E060400D4D5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				IBSC_MODULE = HandWash_WatchKit_Extension;
+				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		4F56F454243E060400D4D5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4F56F455243E060400D4D5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q3G824S699;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F56F424243E060100D4D5FB /* Build configuration list for PBXProject "HandWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F56F449243E060400D4D5FB /* Debug */,
+				4F56F44A243E060400D4D5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F56F44B243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F56F44C243E060400D4D5FB /* Debug */,
+				4F56F44D243E060400D4D5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F56F44F243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F56F450243E060400D4D5FB /* Debug */,
+				4F56F451243E060400D4D5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F56F453243E060400D4D5FB /* Build configuration list for PBXNativeTarget "HandWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F56F454243E060400D4D5FB /* Debug */,
+				4F56F455243E060400D4D5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F56F421243E060100D4D5FB /* Project object */;
+}

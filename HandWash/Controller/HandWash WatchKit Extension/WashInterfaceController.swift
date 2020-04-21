@@ -8,30 +8,57 @@
 
 import WatchKit
 import Foundation
+import AVFoundation
 
 
 class WashInterfaceController: WKInterfaceController {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var inlineMovie: WKInterfaceInlineMovie!
     @IBOutlet weak var labelDescription: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
+    // MARK: - Constants
+    let synth = AVSpeechSynthesizer()
     
+    // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    // MARK: - Methods
+    
+    /**
+        
+     */
+    
+   private func playVideos() {
+    if let protocolText = Bundle.main.path(forResource: "HandHygieneProtocol", ofType: "txt") {
+        // Each stage is separated by a "\n" in the HandHygieneProtocol text file.
+        let stages = protocolText.components(separatedBy: "\n")
+        
+        for stage in stages {
+            let speechUtterance = AVSpeechUtterance(string: stage)
+            
+            // TODO: Play the corresponding video URL in loop through the inlineMovie outlet
+            
+            synth.speak(speechUtterance)
+        }
+      }
+    }
 }
+
+// MARK: - Extensions
+   extension AVSpeechSynthesizerDelegate {
+       
+   }
+
+

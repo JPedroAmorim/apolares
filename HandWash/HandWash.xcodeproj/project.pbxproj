@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
 		4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F433243E060400D4D5FB /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F431243E060100D4D5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,8 +98,11 @@
 		4F56F420243E060100D4D5FB = {
 			isa = PBXGroup;
 			children = (
-				4F56F42F243E060100D4D5FB /* HandWash WatchKit App */,
-				4F56F43E243E060400D4D5FB /* HandWash WatchKit Extension */,
+				4F56F433243E060400D4D5FB /* Assets.xcassets */,
+				4F56F435243E060400D4D5FB /* Info.plist */,
+				D5148242244DD5690032B3AF /* Model */,
+				D5148240244DD4B10032B3AF /* View */,
+				D5148241244DD54B0032B3AF /* Controller */,
 				4F56F428243E060100D4D5FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				4F56F430243E060100D4D5FB /* Main.storyboard */,
-				4F56F433243E060400D4D5FB /* Assets.xcassets */,
-				4F56F435243E060400D4D5FB /* Info.plist */,
 				4F56F45E243E078400D4D5FB /* Schedule.storyboard */,
 				4F56F460243E079300D4D5FB /* Wash.storyboard */,
 				4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */,
@@ -135,8 +138,32 @@
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
+				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D5148240244DD4B10032B3AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F42F243E060100D4D5FB /* HandWash WatchKit App */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5148241244DD54B0032B3AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F56F43E243E060400D4D5FB /* HandWash WatchKit Extension */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5148242244DD5690032B3AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,

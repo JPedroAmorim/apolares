@@ -37,23 +37,39 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Methods
     
     /**
+                
         
      */
     
-   private func playVideos() {
+   private func handwashProtocol() {
     if let protocolText = Bundle.main.path(forResource: "HandHygieneProtocol", ofType: "txt") {
         // Each stage is separated by a "\n" in the HandHygieneProtocol text file.
         let stages = protocolText.components(separatedBy: "\n")
         
         for stage in stages {
-            let speechUtterance = AVSpeechUtterance(string: stage)
             
+            // TODO: MAKE A PRIVATE METHOD OUT OF THIS!!
+            
+            let speechUtterance = AVSpeechUtterance(string: stage)
             // TODO: Play the corresponding video URL in loop through the inlineMovie outlet
             
+            // Defining each stage time period
+            let stageDuration = 0.5
+            let delay = DispatchTime.now() + stageDuration
+            
             synth.speak(speechUtterance)
-        }
-      }
+            
+            // TODO: Think about the delay time and the fact it's in a for each stage... how should it be handled?
+            DispatchQueue.main.asyncAfter(deadline: delay) { [weak self] in
+               
+                // inlineMovie.stop() - Maybe?
+            }
+          }
+       }
     }
+    
+    // TODO: Write this bitch
+    private playStageAndLoopVideo(){}
 }
 
 // MARK: - Extensions

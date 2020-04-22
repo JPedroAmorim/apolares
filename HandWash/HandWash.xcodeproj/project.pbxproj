@@ -470,8 +470,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
-				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,8 +492,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
-				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
-				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -536,8 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
-				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
-				ONLY_ACTIVE_ARCH = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -553,7 +552,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -567,7 +566,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Wash-->
@@ -18,7 +18,7 @@
                         </group>
                         <group width="1" height="40" alignment="left" id="eJ9-aI-5Cg">
                             <items>
-                                <label width="1" alignment="left" text="Right palm over left dorsum with interlaced fingers and vice versa." textAlignment="left" numberOfLines="0" id="6cf-ev-uBA" userLabel="labelDescription">
+                                <label width="1" alignment="left" textAlignment="left" numberOfLines="0" id="6cf-ev-uBA" userLabel="labelDescription">
                                     <fontDescription key="font" type="system" pointSize="10"/>
                                 </label>
                             </items>

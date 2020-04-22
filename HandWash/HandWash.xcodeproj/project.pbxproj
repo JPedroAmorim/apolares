@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
+		4F3BE409245082B9003CAB7B /* AfterWashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
 		4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F433243E060400D4D5FB /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
+		4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterWashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F431243E060100D4D5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4F56F43F243E060400D4D5FB /* InterfaceController.swift */,
+				4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */,
 				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 				4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */,
 				4F56F443243E060400D4D5FB /* NotificationController.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3BE409245082B9003CAB7B /* AfterWashInterfaceController.swift in Sources */,
 				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
 				544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */,

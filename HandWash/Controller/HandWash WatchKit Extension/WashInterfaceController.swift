@@ -69,7 +69,7 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     // TODO: Write this bitch
-    private playStageAndLoopVideo(){}
+    private func playStageAndLoopVideo(){}
 }
 
 // MARK: - Extensions

@@ -31,6 +31,7 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        handwashProtocol()
     }
 
     override func willActivate() {
@@ -51,7 +52,22 @@ class WashInterfaceController: WKInterfaceController {
    private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
-            try playEachStage(stages: stages)
+            try playEachStage(stageText: stages[0], index: 0)
+            var stageDuration = 5.0
+            var delay = DispatchTime.now() + stageDuration
+            
+            DispatchQueue.main.asyncAfter(deadline: delay) { [weak self] in
+                self?.playEachStage(stageText: stages[1], index: 1)
+            }
+            
+            stageDuration *= 2
+            delay = DispatchTime.now() + stageDuration
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: delay)  { [weak self] in
+                self?.playEachStage(stageText: stages[2], index: 2)
+            }
+            
             
         } catch ProtocolError.invalidTextFilePath(let description) {
            print(description)
@@ -66,38 +82,30 @@ class WashInterfaceController: WKInterfaceController {
     
     // TODO: Write this bitch
     private func splitTextInStages(fileName: String) throws -> [String] {
-        if let protocolText = Bundle.main.path(forResource: fileName, ofType: "txt") {
+        if let protocolPath = Bundle.main.path(forResource: fileName, ofType: "txt") {
+            let protocolText = try String(contentsOfFile: protocolPath, encoding: String.Encoding.utf8)
             return protocolText.components(separatedBy: "\n")
         } else {
-            throw ProtocolError.invalidTextFilePath(description: "Try to see if it is in the copy resources Bundle")
+            throw ProtocolError.invalidTextFilePath(description: "Invalid file path! - Try to see if it is in the copy resources Bundle")
         }
     }
-    
-    private func playEachStage(stages: [String]) throws {
-        var index = 0
-        
-        for stageText in stages {
-            let stageDuration = 0.5
-            let delay = DispatchTime.now() + stageDuration
-            
+     
+    private func playEachStage(stageText: String, index: Int)  {
+
             let speechUtterance = AVSpeechUtterance(string: stageText)
-            synth.speak(speechUtterance)
+            speechUtterance.rate = 0.5
+            
+            self.synth.speak(speechUtterance)
+            
+            self.labelDescription.setText(stageText)
             
             let videoFileName = "stage" + String(index)
-            if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4") {
+            if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
                 self.inlineMovie.setMovieURL(videoUrl)
+                self.inlineMovie.play()
             } else {
-                throw ProtocolError.invalidVideoUrl(description: "Try to see if it is in the copy resources Bundle")
+               // throw ProtocolError.invalidVideoUrl(description: "Invalid video URL! - Try to see if it is in the copy resources Bundle")
             }
-            self.inlineMovie.setLoops(true)
-            self.inlineMovie.play()
-            
-            index += 1
-            
-            DispatchQueue.main.asyncAfter(deadline: delay) { [weak self] in
-                self?.inlineMovie.pause()
-            }
-        }
     }
 }
 

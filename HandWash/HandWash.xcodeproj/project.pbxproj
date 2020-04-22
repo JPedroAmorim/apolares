@@ -20,6 +20,7 @@
 		4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F460243E079300D4D5FB /* Wash.storyboard */; };
 		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
 		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
+		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		4F56F460243E079300D4D5FB /* Wash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wash.storyboard; sourceTree = "<group>"; };
 		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
 		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
+				544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
+				544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
 			);
@@ -461,7 +465,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -483,7 +487,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -502,7 +506,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -521,7 +525,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};

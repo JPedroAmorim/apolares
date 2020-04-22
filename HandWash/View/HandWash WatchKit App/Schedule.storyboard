@@ -11,19 +11,22 @@
             <objects>
                 <controller identifier="Schedule" id="kRd-iz-qk0" customClass="ScheduleInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
-                            <fontDescription key="font" type="system" pointSize="16"/>
-                        </button>
                         <timer alignment="center" textAlignment="left" id="MwS-LF-hdU">
                             <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                             <calendarUnit key="units" hour="YES" minute="YES"/>
                         </timer>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <connections>
+                                <action selector="scheduleAction" destination="kRd-iz-qk0" id="bog-no-Kf4"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
                             <fontDescription key="font" type="system" pointSize="16"/>
                         </button>
                     </items>
                     <connections>
-                        <outlet property="stopwatch" destination="MwS-LF-hdU" id="nYg-nA-fHO"/>
+                        <outlet property="timer" destination="MwS-LF-hdU" id="nYg-nA-fHO"/>
                     </connections>
                 </controller>
             </objects>

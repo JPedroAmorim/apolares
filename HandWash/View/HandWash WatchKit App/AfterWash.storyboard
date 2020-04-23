@@ -11,7 +11,11 @@
             <objects>
                 <controller identifier="AfterWash" title="Remind me after" id="1sR-Ky-JuK" customClass="AfterWashInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ibg-uI-HzQ"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ibg-uI-HzQ">
+                            <connections>
+                                <action selector="setAlarm" destination="1sR-Ky-JuK" id="OYL-0D-a9Q"/>
+                            </connections>
+                        </button>
                         <label alignment="left" text="Remind me again in" id="RR6-Me-dXw">
                             <fontDescription key="font" type="system" pointSize="14"/>
                         </label>
@@ -22,6 +26,8 @@
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="17A-zB-VGJ"/>
                     </items>
                     <connections>
+                        <outlet property="buttonDontRemindMe" destination="17A-zB-VGJ" id="zQb-u2-Yer"/>
+                        <outlet property="buttonSetAlarm" destination="Ibg-uI-HzQ" id="efq-y2-W2b"/>
                         <outlet property="timer" destination="GaW-wf-bna" id="oHf-qq-WM4"/>
                     </connections>
                 </controller>

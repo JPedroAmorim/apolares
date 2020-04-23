@@ -16,22 +16,19 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Errors
     enum ProtocolError: Error {
-        case invalidVideoUrl(description: String)
         case invalidTextFilePath(description: String)
     }
     
     // MARK: - Outlets
     @IBOutlet weak var inlineMovie: WKInterfaceInlineMovie!
     @IBOutlet weak var labelDescription: WKInterfaceLabel!
-    @IBOutlet weak var imageProgress: WKInterfaceImage!
+    @IBOutlet weak var groupProgress: WKInterfaceGroup!
     
     // MARK: - Constants
     let synth = AVSpeechSynthesizer()
-    let stageDuration = 10.0
     
     // MARK: - Variables
     var delay = DispatchTime.now()
-    var videoIndex = 0
     
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
@@ -57,26 +54,26 @@ class WashInterfaceController: WKInterfaceController {
     private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
+            var videoIndex = 0
+            let stageDuration = 6.0
+            let totalNumberOfStages = stages.count - 1
             
-            try playEachStage(stageText: stages[videoIndex])
-            
+            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
             
-            Timer.scheduledTimer(withTimeInterval: 6.0, repeats: true) { (Timer) in
+            Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
                 DispatchQueue.main.async {
-                   self.playEachStage(stageText: stages[self.videoIndex])
-                    self.videoIndex += 1
+                   self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+                    videoIndex += 1
                 }
                 
-                if self.videoIndex >= 15 {
+                if videoIndex >= (totalNumberOfStages - 1) {
                     Timer.invalidate()
+                    self.inlineMovie.pause()
                 }
             }
             
         } catch ProtocolError.invalidTextFilePath(let description) {
-            print(description)
-            
-        } catch ProtocolError.invalidVideoUrl(let description){
             print(description)
             
         } catch {
@@ -93,21 +90,28 @@ class WashInterfaceController: WKInterfaceController {
         }
     }
     
-    private func playEachStage(stageText: String){
+    private func playEachStage(stageText: String, videoIndex: Int, stageDuration: Double){
         let speechUtterance = AVSpeechUtterance(string: stageText)
         speechUtterance.rate = 0.5
         self.synth.speak(speechUtterance)
         
         self.labelDescription.setText(stageText)
         
-        let videoFileName = "stage" + String(self.videoIndex)
+        doAnimation(duration: stageDuration)
+        
+        let videoFileName = "stage" + String(videoIndex)
         if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
             self.inlineMovie.setMovieURL(videoUrl)
             self.inlineMovie.play()
-            self.inlineMovie.setLoops(true)
         } else {
-            // throw ProtocolError.invalidVideoUrl(description: "Invalid video URL! - Try to see if it is in the copy resources Bundle")
+            print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
         }
+    }
+    
+    private func doAnimation(duration: Double) {
+        self.groupProgress.setBackgroundImageNamed("Progress")
+        
+        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: duration, repeatCount: 0)
     }
 }
 

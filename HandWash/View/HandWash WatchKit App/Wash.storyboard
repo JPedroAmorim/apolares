@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="watch38"/>
+    <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
@@ -16,19 +16,20 @@
                                 <inlineMovie width="1" height="100" alignment="center" loops="YES" videoGravity="resizeAspectFill" id="KO8-zo-usW"/>
                             </items>
                         </group>
-                        <group width="168" height="45" alignment="left" id="eJ9-aI-5Cg">
+                        <group width="168" height="48" alignment="left" id="eJ9-aI-5Cg">
                             <items>
-                                <label width="1" alignment="left" textAlignment="left" numberOfLines="0" id="6cf-ev-uBA" userLabel="labelDescription">
+                                <label alignment="left" verticalAlignment="center" textAlignment="left" numberOfLines="0" id="6cf-ev-uBA" userLabel="labelDescription">
                                     <fontDescription key="font" type="system" pointSize="10"/>
                                 </label>
                             </items>
                         </group>
-                        <group width="168" height="16" alignment="left" verticalAlignment="bottom" id="KPp-CC-6zW"/>
+                        <group width="168" height="8" alignment="left" verticalAlignment="bottom" id="KPp-CC-6zW"/>
                     </items>
                     <connections>
                         <outlet property="groupProgress" destination="KPp-CC-6zW" id="s1X-ic-qhK"/>
                         <outlet property="inlineMovie" destination="KO8-zo-usW" id="Bhc-ws-3uG"/>
                         <outlet property="labelDescription" destination="6cf-ev-uBA" id="KNn-xE-5vr"/>
+                        <segue destination="Wwp-bh-mfO" kind="relationship" relationship="nextPage" id="OsZ-LX-arm"/>
                     </connections>
                 </controller>
             </objects>

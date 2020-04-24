@@ -62,14 +62,17 @@ class WashInterfaceController: WKInterfaceController {
             videoIndex += 1
             
             Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
-                DispatchQueue.main.async {
-                   self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
-                    videoIndex += 1
-                }
+                WKInterfaceDevice.current().play(.success)
+                self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
                 
-                if videoIndex >= (totalNumberOfStages - 1) {
-                    Timer.invalidate()
+                videoIndex += 1
+                
+                if videoIndex > (totalNumberOfStages) {
                     self.inlineMovie.pause()
+                    Timer.invalidate()
+                    DispatchQueue.main.async {
+                       self.pushController(withName: "AfterWash", context: nil)
+                    }
                 }
             }
             

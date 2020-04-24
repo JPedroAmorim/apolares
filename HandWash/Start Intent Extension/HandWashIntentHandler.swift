@@ -10,8 +10,17 @@ import Foundation
 
 class HandWashIntentHandler: NSObject, HandWashIntentHandling{
     func handle(intent: HandWashIntent, completion: @escaping (HandWashIntentResponse) -> Void) {
+        let activity = NSUserActivity(activityType: "HandWashIntent")
+        let title = "Hand Wash"
+        activity.title = title
+//        activity.userInfo = ["id": board.identifier]
+        activity.suggestedInvocationPhrase = title
+        activity.isEligibleForPrediction = true
+        activity.persistentIdentifier = "Hand Wash"
+        
         let response = HandWashIntentResponse(code: .continueInApp,
-                                              userActivity: nil)
+                                              userActivity: activity)
+        
         completion(response)
     }
 }

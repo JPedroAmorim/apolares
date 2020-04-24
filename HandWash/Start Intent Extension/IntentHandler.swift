@@ -19,7 +19,7 @@ class IntentHandler: INExtension {
              fatalError("Unhandled intent type: \(intent)")
         }
         
-        return self
+        return HandWashIntentHandler()
     }
 }
 

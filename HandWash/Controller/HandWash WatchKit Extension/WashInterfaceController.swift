@@ -27,12 +27,12 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Constants
     let synth = AVSpeechSynthesizer()
     
-    // MARK: - Variables
-    var delay = DispatchTime.now()
-    
+    var timer: Timer?
+         
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        self.groupProgress.setBackgroundImageNamed("Progress")
         handwashProtocol()
     }
     
@@ -42,6 +42,12 @@ class WashInterfaceController: WKInterfaceController {
     
     override func didDeactivate() {
         super.didDeactivate()
+    }
+    
+    override func willDisappear() {
+        super.willDisappear()
+        self.synth.stopSpeaking(at: .immediate)
+        self.timer?.invalidate()
     }
     
     // MARK: - Methods
@@ -58,20 +64,24 @@ class WashInterfaceController: WKInterfaceController {
             let stageDuration = 6.0
             let totalNumberOfStages = stages.count - 1
             
-            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+           playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
             
-            Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
-                WKInterfaceDevice.current().play(.success)
-                self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+            self.timer = Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
+                WKInterfaceDevice.current().play(.success) // Raptic feedback
                 
+               self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
                 videoIndex += 1
                 
-                if videoIndex > (totalNumberOfStages) {
+                if videoIndex > totalNumberOfStages {
                     self.inlineMovie.pause()
+                    self.groupProgress.setBackgroundImageNamed("Progress101")
+                    self.labelDescription.setText("Done!")
+                    
                     Timer.invalidate()
+                    
                     DispatchQueue.main.async {
-                       self.pushController(withName: "AfterWash", context: nil)
+                        self.pushController(withName: "AfterWash", context: nil)
                     }
                 }
             }
@@ -100,8 +110,6 @@ class WashInterfaceController: WKInterfaceController {
         
         self.labelDescription.setText(stageText)
         
-        doAnimation(duration: stageDuration)
-        
         let videoFileName = "stage" + String(videoIndex)
         if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
             self.inlineMovie.setMovieURL(videoUrl)
@@ -109,12 +117,12 @@ class WashInterfaceController: WKInterfaceController {
         } else {
             print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
         }
+        
+        doAnimation(duration: stageDuration)
     }
     
     private func doAnimation(duration: Double) {
-        self.groupProgress.setBackgroundImageNamed("Progress")
-        
-        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: duration, repeatCount: 0)
+        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: duration, repeatCount: 1)
     }
 }
 

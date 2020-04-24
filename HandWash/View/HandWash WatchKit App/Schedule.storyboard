@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Schedule-->
@@ -11,6 +11,9 @@
             <objects>
                 <controller identifier="Schedule" id="kRd-iz-qk0" customClass="ScheduleInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
+                        <label alignment="left" text="Remind me again in" id="4h0-KB-2ws">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
                         <timer alignment="center" textAlignment="left" id="MwS-LF-hdU">
                             <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                             <calendarUnit key="units" hour="YES" minute="YES"/>

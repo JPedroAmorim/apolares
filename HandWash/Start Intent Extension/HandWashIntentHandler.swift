@@ -16,7 +16,7 @@ class HandWashIntentHandler: NSObject, HandWashIntentHandling{
 //        activity.userInfo = ["id": board.identifier]
         activity.suggestedInvocationPhrase = title
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = "Hand Wash"
+        activity.persistentIdentifier = title
         
         let response = HandWashIntentResponse(code: .continueInApp,
                                               userActivity: activity)

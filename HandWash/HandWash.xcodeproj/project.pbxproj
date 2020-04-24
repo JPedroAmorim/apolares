@@ -12,6 +12,7 @@
 		2F58F4502451EBD900AE05DD /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
 		2F58F451245317D900AE05DD /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
 		2F58F452245317DA00AE05DD /* Intents.intentdefinition in Resources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
+		2F58F4582453387700AE05DD /* HandWashIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58F4572453387700AE05DD /* HandWashIntentHandler.swift */; };
 		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		2F58F4452451D1E600AE05DD /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		2F58F4472451D1E600AE05DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		2F58F4572453387700AE05DD /* HandWashIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandWashIntentHandler.swift; sourceTree = "<group>"; };
 		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				2F58F4452451D1E600AE05DD /* IntentHandler.swift */,
 				2F58F4472451D1E600AE05DD /* Info.plist */,
 				2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */,
+				2F58F4572453387700AE05DD /* HandWashIntentHandler.swift */,
 			);
 			path = "Start Intent Extension";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			files = (
 				2F58F4502451EBD900AE05DD /* Intents.intentdefinition in Sources */,
 				2F58F4462451D1E600AE05DD /* IntentHandler.swift in Sources */,
+				2F58F4582453387700AE05DD /* HandWashIntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

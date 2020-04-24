@@ -141,13 +141,13 @@
 			children = (
 				4F56F43F243E060400D4D5FB /* InterfaceController.swift */,
 				4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */,
+				544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */,
 				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 				4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */,
 				4F56F443243E060400D4D5FB /* NotificationController.swift */,
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
-				544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";

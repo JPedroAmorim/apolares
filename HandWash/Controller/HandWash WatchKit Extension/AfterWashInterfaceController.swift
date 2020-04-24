@@ -22,7 +22,6 @@ class AfterWashInterfaceController: WKInterfaceController {
     var numberOfTimeIntervals: Int = 0 // Each interval is equivalent to 15 minutes
     
     @IBAction func setAlarm() {
-        print(NSDate.now)
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings(completionHandler: { settings in
             //print(settings)
@@ -63,14 +62,25 @@ class AfterWashInterfaceController: WKInterfaceController {
     
     func createNotification(NCenter: UNUserNotificationCenter) {
         var components = DateComponents()
+        let date = Date()
         let timerHours: Int = self.numberOfTimeIntervals / 4
         let timerMinutes: Int = (self.numberOfTimeIntervals % 4) * 15
-        components.calendar = Calendar.current
-        components.hour = timerHours // + current hour
-        components.minute = timerMinutes // + current minute
+        let calendar = Calendar.current
+        components.calendar = calendar
+        components.hour = timerHours + calendar.component(.hour, from: date)
+        components.minute = timerMinutes + calendar.component(.minute, from: date)
+        // Have to fix these ! later ..
+        if components.minute! > 60 {
+            components.minute! -= 60
+            components.hour! += 1
+        }
+        if let hour = components.hour, let minutes = components.minute {
+            print("Alarm scheduled to \(hour):\(minutes)")
+        }
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
                                                     repeats: false)
-        let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        // let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let content = UNMutableNotificationContent()
         content.categoryIdentifier = "myNotification"
         content.title = "HandWash"
@@ -78,7 +88,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         content.sound = UNNotificationSound.default
         let request = UNNotificationRequest(identifier: "Test notification",
                                             content: content,
-                                            trigger: testTrigger)
+                                            trigger: trigger)
         NCenter.add(request, withCompletionHandler: { (error) in
             if error != nil {
                 print(error ?? "nao sei")

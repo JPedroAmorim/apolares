@@ -46,6 +46,7 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willDisappear() {
         super.willDisappear()
+        self.groupProgress.stopAnimating()
         self.synth.stopSpeaking(at: .immediate)
         self.timer?.invalidate()
     }
@@ -118,17 +119,9 @@ class WashInterfaceController: WKInterfaceController {
             print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
         }
         
-        doAnimation(duration: stageDuration)
+         self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
     }
-    
-    private func doAnimation(duration: Double) {
-        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: duration, repeatCount: 1)
-    }
-}
 
-// MARK: - Extensions
-extension AVSpeechSynthesizerDelegate {
-    
 }
 
 

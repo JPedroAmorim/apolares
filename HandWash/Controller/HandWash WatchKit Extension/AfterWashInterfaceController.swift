@@ -25,7 +25,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         print(NSDate.now)
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings(completionHandler: { settings in
-            print(settings)
+            //print(settings)
             if settings.authorizationStatus == .notDetermined {
                 // Ask for user permissions
                 // ### nao tenho certeza sobre as autorizacoes necessarias ainda
@@ -70,16 +70,22 @@ class AfterWashInterfaceController: WKInterfaceController {
         components.minute = timerMinutes // + current minute
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
                                                     repeats: false)
-        let content = UNNotificationContent()
+        let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let content = UNMutableNotificationContent()
+        content.categoryIdentifier = "myNotification"
+        content.title = "HandWash"
+        content.body = "Wash hands plz"
+        content.sound = UNNotificationSound.default
         let request = UNNotificationRequest(identifier: "Test notification",
                                             content: content,
-                                            trigger: trigger)
+                                            trigger: testTrigger)
         NCenter.add(request, withCompletionHandler: { (error) in
             if error != nil {
-                print(error ?? "nao sie")
+                print(error ?? "nao sei")
             }
             else {
                 print("notification scheduled")
+                
             }
 
         })

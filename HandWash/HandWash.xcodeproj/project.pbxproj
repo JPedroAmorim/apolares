@@ -21,6 +21,7 @@
 		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
 		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
 		5409E76D2453274000D60D45 /* GeolocationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409E76C2453274000D60D45 /* GeolocationInterfaceController.swift */; };
+		54FFE6E124566AF700BE7751 /* Geolocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54FFE6E024566AF700BE7751 /* Geolocation.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
 		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
 		5409E76C2453274000D60D45 /* GeolocationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationInterfaceController.swift; sourceTree = "<group>"; };
+		54FFE6E024566AF700BE7751 /* Geolocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Geolocation.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				4F56F460243E079300D4D5FB /* Wash.storyboard */,
 				4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */,
 				4F56F464243E07C100D4D5FB /* Configuration.storyboard */,
+				54FFE6E024566AF700BE7751 /* Geolocation.storyboard */,
 			);
 			path = "HandWash WatchKit App";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */,
+				54FFE6E124566AF700BE7751 /* Geolocation.storyboard in Resources */,
 				4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */,
 				4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */,
 				4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */,

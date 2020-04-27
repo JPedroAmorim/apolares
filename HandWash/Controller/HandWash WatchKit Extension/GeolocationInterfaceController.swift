@@ -14,66 +14,71 @@ import CoreLocation
 class GeolocationInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: WKInterfaceMap!
-    var locationManager: CLLocationManager = CLLocationManager()
-    var mapLocation: CLLocationCoordinate2D?
-
+    
+    var locationManager = CLLocationManager()
+//    var mapLocation: CLLocationCoordinate2D?
+    let regionInMeters: Double = 100
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        locationManager.requestAlwaysAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.requestLocation()
-        
-        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-//        self.mapView.setShowsUserLocation(true)
-//
-//        self.mapLocation = CLLocationCoordinate2D(latitude: 48.8584, longitude: 2.2945)
-//
-//        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-//        let region = MKCoordinateRegion(center: self.mapLocation!, span: span)
-//        self.mapView.setRegion(region)
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        let currentLocation = locations[0]
-//        let lat = currentLocation.coordinate.latitude
-//        let long = currentLocation.coordinate.longitude
-//
-//        self.mapLocation = CLLocationCoordinate2DMake(lat, long)
-//
-//        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-//        let region = MKCoordinateRegion(center: self.mapLocation!, span: span)
-//
-//        self.mapView.setRegion(region)
-//        self.mapView.addAnnotation(self.mapLocation!, with: .red)
+        
     }
-//
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        if status == .authorizedWhenInUse {
-//            locationManager.requestLocation()
-//        }
-//    }
-//
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch CLLocationManager.authorizationStatus() {
+            case .authorizedWhenInUse:
+                self.mapView.setShowsUserLocation(true)
+                centerViewOnUserLocation()
+                self.locationManager.startUpdatingLocation()
+                break
+            case .denied:
+                break
+            case .notDetermined:
+                self.locationManager.requestWhenInUseAuthorization()
+            case .restricted:
+                break
+            case .authorizedAlways:
+                break
+        }
+    }
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 
         print(error.localizedDescription)
     }
     
+    func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location,
+                                                 latitudinalMeters: self.regionInMeters,
+                                                 longitudinalMeters: self.regionInMeters)
+            
+//            self.mapLocation = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+            self.mapView.setRegion(region)
+        }
+        else {
+            
+        }
+    }
+    
     @IBAction func saveCurrentLocation() {
-        print(self.mapLocation?.latitude as Any)
-        print(self.mapLocation?.longitude as Any)
+        print(self.locationManager.location?.coordinate.latitude)
+        print(self.locationManager.location?.coordinate.longitude)
     }
 }

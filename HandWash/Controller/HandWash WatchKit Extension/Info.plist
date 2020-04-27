@@ -4,6 +4,16 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Need</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDisplayName</key>
 	<string>HandWash WatchKit Extension</string>
 	<key>CFBundleExecutable</key>

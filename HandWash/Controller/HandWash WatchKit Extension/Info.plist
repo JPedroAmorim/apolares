@@ -36,5 +36,7 @@
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
 	<true/>
+	<key>WKWatchKitApp</key>
+	<true/>
 </dict>
 </plist>

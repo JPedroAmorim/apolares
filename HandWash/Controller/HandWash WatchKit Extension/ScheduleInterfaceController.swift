@@ -13,6 +13,8 @@ import UserNotifications
 class ScheduleInterfaceController: WKInterfaceController {
     // MARK: - Outlets
     @IBOutlet weak var timer: WKInterfaceTimer!
+    @IBOutlet weak var UpperButton: WKInterfaceButton!
+    @IBOutlet weak var BottomButton: WKInterfaceButton!
     
     @IBAction func scheduleAction() {
         let center = UNUserNotificationCenter.current()
@@ -51,24 +53,38 @@ class ScheduleInterfaceController: WKInterfaceController {
             }
         })
     }
+    @IBAction func bottomButtonAction() {
+        let center = UNUserNotificationCenter.current()
+        Schedule.shared.removeNotification(NCenter: center)
+    }
     
     // MARK: - Variables
     var crownAcumulator: Double = 0
     var numberOfTimeIntervals: Int = 0 // Each interval is equivalent to 15 minutes
     
     // MARK: - Lifecycle
-   override func willActivate() {
-       // This method is called when watch view controller is about to be visible to user
-       super.willActivate()
-       setTitle("Set alarm")
-       // Crown setup
-       crownSequencer.delegate = self
-       crownSequencer.focus()
-       // Timer setup
-       let date = Date(timeIntervalSinceNow: 2 * 60 * 60 + 1) // 2 hours and 1 sec
-       numberOfTimeIntervals = 8 // Sync this variable with the time suggested
-       timer.setDate(date) // Timer suggestion
-   }
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        setTitle("Set alarm")
+        // Crown setup
+        crownSequencer.delegate = self
+        crownSequencer.focus()
+        // Timer setup
+        let date = Date(timeIntervalSinceNow: 2 * 60 * 60 + 1) // 2 hours and 1 sec
+        numberOfTimeIntervals = 8 // Sync this variable with the time suggested
+        timer.setDate(date) // Timer suggestion
+        // Label and button setup
+        if let _ = Schedule.shared.nextNotification {
+            UpperButton.setTitle("Reeschedule")
+            BottomButton.setTitle("Turn off alarm")
+        }
+        else {
+            UpperButton.setTitle("Set alarm")
+            BottomButton.setTitle("Don't remind me")
+
+        }
+    }
 
     // MARK: - Methods
     func createNotification(NCenter: UNUserNotificationCenter) {
@@ -106,9 +122,9 @@ class ScheduleInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
-                
+                Schedule.shared.setNotification(notification: request,
+                                                NCenter: NCenter)
             }
-
         })
     }
 }

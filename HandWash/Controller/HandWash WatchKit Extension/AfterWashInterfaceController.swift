@@ -59,6 +59,10 @@ class AfterWashInterfaceController: WKInterfaceController {
             }
         })
     }
+    @IBAction func dontRemindMeAction() {
+        let center = UNUserNotificationCenter.current()
+        Schedule.shared.removeNotification(NCenter: center)
+    }
     
     func createNotification(NCenter: UNUserNotificationCenter) {
         var components = DateComponents()
@@ -95,7 +99,8 @@ class AfterWashInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
-                
+                Schedule.shared.setNotification(notification: request,
+                                                NCenter: NCenter)
             }
 
         })

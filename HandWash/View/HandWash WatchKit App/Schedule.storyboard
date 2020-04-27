@@ -26,9 +26,14 @@
                         </button>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
                             <fontDescription key="font" type="system" pointSize="16"/>
+                            <connections>
+                                <action selector="bottomButtonAction" destination="kRd-iz-qk0" id="mKq-j5-we7"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
+                        <outlet property="BottomButton" destination="EoP-jm-TLX" id="KBU-le-I5d"/>
+                        <outlet property="UpperButton" destination="yla-V2-sLM" id="DEB-yb-YcX"/>
                         <outlet property="timer" destination="MwS-LF-hdU" id="nYg-nA-fHO"/>
                     </connections>
                 </controller>

@@ -22,6 +22,7 @@
 		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
 		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
 		4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB57524531B39002AE002 /* Notification.storyboard */; };
+		4F74E704245717E300045FDF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74E703245717E300045FDF /* Schedule.swift */; };
 		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
 		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
 		4F5DB57524531B39002AE002 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		4F74E703245717E300045FDF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = "View/HandWash WatchKit App/Schedule.swift"; sourceTree = SOURCE_ROOT; };
 		544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 		D5148242244DD5690032B3AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F74E703245717E300045FDF /* Schedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
 				544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
+				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

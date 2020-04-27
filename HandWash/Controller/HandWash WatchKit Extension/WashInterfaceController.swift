@@ -27,6 +27,7 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Constants
     let synth = AVSpeechSynthesizer()
     
+    // MARK: - Variables
     var timer: Timer?
          
     // MARK: - Lifecycle methods
@@ -62,7 +63,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 6.0
+            let stageDuration = 5.0
             let totalNumberOfStages = stages.count - 1
             
            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="watch38"/>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7S4-8L-4l2">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Configuration-->
@@ -11,7 +11,34 @@
             <objects>
                 <controller identifier="Configuration" id="VTH-Mc-MKV"/>
             </objects>
-            <point key="canvasLocation" x="102" y="22"/>
+            <point key="canvasLocation" x="-221" y="54"/>
+        </scene>
+        <!--Geolocation-->
+        <scene sceneID="Yqb-eo-Bil">
+            <objects>
+                <controller identifier="Geolocation" id="7S4-8L-4l2" customClass="GeolocationInterfaceController" customModule="HandWash_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" id="siY-gd-8rx">
+                            <items>
+                                <map height="100" alignment="center" enabled="NO" id="OWI-Fs-lCv"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="4Rf-cJ-yxq">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Button" id="tjF-FR-S1W">
+                                    <connections>
+                                        <action selector="saveCurrentLocation" destination="7S4-8L-4l2" id="QaN-b4-i0g"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="mapView" destination="OWI-Fs-lCv" id="U81-Xw-rhz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="144" y="54"/>
         </scene>
     </scenes>
 </document>

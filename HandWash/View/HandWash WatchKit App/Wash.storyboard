@@ -16,14 +16,14 @@
                                 <inlineMovie width="1" height="100" alignment="center" loops="YES" videoGravity="resizeAspectFill" id="KO8-zo-usW"/>
                             </items>
                         </group>
-                        <group width="168" height="48" alignment="left" id="eJ9-aI-5Cg">
+                        <group width="168" height="53" alignment="left" id="eJ9-aI-5Cg">
                             <items>
                                 <label alignment="left" verticalAlignment="center" textAlignment="left" numberOfLines="0" id="6cf-ev-uBA" userLabel="labelDescription">
                                     <fontDescription key="font" type="system" pointSize="10"/>
                                 </label>
                             </items>
                         </group>
-                        <group width="168" height="8" alignment="left" verticalAlignment="bottom" id="KPp-CC-6zW"/>
+                        <group width="168" height="6" alignment="left" verticalAlignment="bottom" id="KPp-CC-6zW"/>
                     </items>
                     <connections>
                         <outlet property="groupProgress" destination="KPp-CC-6zW" id="s1X-ic-qhK"/>

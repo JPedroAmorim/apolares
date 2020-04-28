@@ -10,6 +10,10 @@ import WatchKit
 import Foundation
 import UserNotifications
 
+protocol AfterWashDelegate {
+    func willPop()
+}
+
 class AfterWashInterfaceController: WKInterfaceController {
 
     // MARK: - Outlets
@@ -20,6 +24,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     // MARK: - Variables
     var crownAcumulator: Double = 0
     var numberOfTimeIntervals: Int = 0 // Each interval is equivalent to 15 minutes
+    var delegate: AfterWashDelegate? = nil
     
     @IBAction func setAlarm() {
         let center = UNUserNotificationCenter.current()
@@ -101,6 +106,9 @@ class AfterWashInterfaceController: WKInterfaceController {
                 print("notification scheduled")
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
+                
+                self.pop()
+                self.delegate?.willPop()
             }
 
         })
@@ -108,6 +116,9 @@ class AfterWashInterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        if let wash: WashInterfaceController = context as? WashInterfaceController {
+            self.delegate = wash
+        }
     }
 
     override func willActivate() {

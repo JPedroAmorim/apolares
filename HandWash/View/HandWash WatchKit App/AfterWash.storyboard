@@ -13,7 +13,7 @@
                     <items>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ibg-uI-HzQ">
                             <connections>
-                                <action selector="dontRemindMeAction" destination="1sR-Ky-JuK" id="xnV-Oh-Rml"/>
+                                <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
                             </connections>
                         </button>
                         <label alignment="left" text="Remind me again in" id="RR6-Me-dXw">

@@ -11,18 +11,18 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class GeolocationInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
+class GeolocationInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var mapView: WKInterfaceMap!
     
     var locationManager = CLLocationManager()
-//    var mapLocation: CLLocationCoordinate2D?
     let regionInMeters: Double = 100
     
-    
+    // MARK: Life Cycle
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        // Setup locationManager.
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -36,49 +36,55 @@ class GeolocationInterfaceController: WKInterfaceController, CLLocationManagerDe
         super.didDeactivate()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-    }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch CLLocationManager.authorizationStatus() {
-            case .authorizedWhenInUse:
-                self.mapView.setShowsUserLocation(true)
-                centerViewOnUserLocation()
-                self.locationManager.startUpdatingLocation()
-                break
-            case .denied:
-                break
-            case .notDetermined:
-                self.locationManager.requestWhenInUseAuthorization()
-            case .restricted:
-                break
-            case .authorizedAlways:
-                break
-        }
-    }
-
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-
-        print(error.localizedDescription)
-    }
-    
+    // Get and show the user`s current location in map.
     func centerViewOnUserLocation() {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location,
                                                  latitudinalMeters: self.regionInMeters,
                                                  longitudinalMeters: self.regionInMeters)
             
-//            self.mapLocation = CLLocationCoordinate2DMake(location.latitude, location.longitude)
             self.mapView.setRegion(region)
-        }
-        else {
-            
         }
     }
     
+    // Save home location
     @IBAction func saveCurrentLocation() {
-        print(self.locationManager.location?.coordinate.latitude)
-        print(self.locationManager.location?.coordinate.longitude)
+        print(self.locationManager.location?.coordinate.latitude as Any)
+        print(self.locationManager.location?.coordinate.longitude as Any)
+    }
+}
+
+extension GeolocationInterfaceController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .authorizedWhenInUse:
+                    self.mapView.setShowsUserLocation(true)
+                    centerViewOnUserLocation()
+                    self.locationManager.startUpdatingLocation()
+                    break
+                case .denied:
+                    // Negado, desabilitado globalmente ou device em modo aviao. O que fazer?
+                    break
+                case .notDetermined:
+                    self.locationManager.requestWhenInUseAuthorization()
+                case .restricted:
+                    break
+                case .authorizedAlways:
+                    break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }

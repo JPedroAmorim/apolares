@@ -54,11 +54,7 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Methods
     
-    /**
-     
-     
-     */
-    
+
     private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
@@ -129,9 +125,3 @@ class WashInterfaceController: WKInterfaceController {
 //    }
 }
 
-extension WashInterfaceController: AfterWashDelegate {
-    func willPop() {
-        print("kkkk")
-        self.pop()
-    }
-}

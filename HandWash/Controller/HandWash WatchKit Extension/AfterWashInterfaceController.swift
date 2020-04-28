@@ -101,6 +101,8 @@ class AfterWashInterfaceController: WKInterfaceController {
                 print("notification scheduled")
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
+                
+                self.popToRootController()
             }
 
         })
@@ -108,6 +110,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
     }
 
     override func willActivate() {

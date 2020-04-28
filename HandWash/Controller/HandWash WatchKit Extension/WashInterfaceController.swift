@@ -54,16 +54,12 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Methods
     
-    /**
-     
-     
-     */
-    
+
     private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 5.0
+            let stageDuration = 0.1
             let totalNumberOfStages = stages.count - 1
             
            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
@@ -83,7 +79,8 @@ class WashInterfaceController: WKInterfaceController {
                     Timer.invalidate()
                     
                     DispatchQueue.main.async {
-                        self.pushController(withName: "AfterWash", context: nil)
+                        
+                        self.pushController(withName: "AfterWash", context: self)
                     }
                 }
             }
@@ -123,6 +120,8 @@ class WashInterfaceController: WKInterfaceController {
          self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
     }
 
+//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+//
+//    }
 }
-
 

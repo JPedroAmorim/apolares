@@ -124,6 +124,7 @@ class ScheduleInterfaceController: WKInterfaceController {
                 print("notification scheduled")
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
+                self.pop()
             }
         })
     }

@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import MapKit
 import CoreLocation
+import UserNotifications
 
 class GeolocationInterfaceController: WKInterfaceController {
 
@@ -52,6 +53,36 @@ class GeolocationInterfaceController: WKInterfaceController {
     @IBAction func saveCurrentLocation() {
         print(self.locationManager.location?.coordinate.latitude as Any)
         print(self.locationManager.location?.coordinate.longitude as Any)
+    }
+    
+    func createNotification(NCenter: UNUserNotificationCenter) {
+        let center = CLLocationCoordinate2D(latitude: 37.335400, longitude: -122.009201)
+        let region = CLCircularRegion(center: center, radius: 2000.0, identifier: "Headquarters")
+        region.notifyOnEntry = true
+        region.notifyOnExit = false
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
+        // let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let content = UNMutableNotificationContent()
+        content.categoryIdentifier = "myNotification"
+        content.title = "HandWash"
+        content.body = "Wash hands plz"
+        content.sound = UNNotificationSound.default
+        let request = UNNotificationRequest(identifier: "Test notification",
+                                            content: content,
+                                            trigger: trigger)
+        NCenter.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                print(error ?? "nao sei")
+            }
+            else {
+                print("notification scheduled")
+                Schedule.shared.setNotification(notification: request,
+                                                NCenter: NCenter)
+                
+                self.popToRootController()
+            }
+
+        })
     }
 }
 

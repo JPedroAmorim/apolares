@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import MapKit
 import CoreLocation
+import UIKit
 
 class GeolocationInterfaceController: WKInterfaceController {
 
@@ -29,6 +30,7 @@ class GeolocationInterfaceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
+    
         
     }
 
@@ -39,12 +41,14 @@ class GeolocationInterfaceController: WKInterfaceController {
     
     // Get and show the user`s current location in map.
     func centerViewOnUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location,
+        if let userLocation = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: userLocation,
                                                  latitudinalMeters: self.regionInMeters,
                                                  longitudinalMeters: self.regionInMeters)
             
             self.mapView.setRegion(region)
+            
+            
         }
     }
     
@@ -52,6 +56,12 @@ class GeolocationInterfaceController: WKInterfaceController {
     @IBAction func saveCurrentLocation() {
         print(self.locationManager.location?.coordinate.latitude as Any)
         print(self.locationManager.location?.coordinate.longitude as Any)
+        
+        self.mapView.setShowsUserLocation(false)
+        
+        if let location = locationManager.location?.coordinate {
+            self.mapView.addAnnotation(location, withImageNamed: UIApplication, centerOffset: CGPoint())
+        }
     }
 }
 
@@ -78,6 +88,8 @@ extension GeolocationInterfaceController: CLLocationManagerDelegate {
                     break
                 case .authorizedAlways:
                     break
+            @unknown default:
+                fatalError()
             }
         } else {
             print("Location services are not enabled")

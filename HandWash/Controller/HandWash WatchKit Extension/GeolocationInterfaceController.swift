@@ -60,7 +60,7 @@ class GeolocationInterfaceController: WKInterfaceController {
         self.mapView.setShowsUserLocation(false)
         
         if let location = locationManager.location?.coordinate {
-            self.mapView.addAnnotation(location, withImageNamed: UIApplication, centerOffset: CGPoint())
+            self.mapView.addAnnotation(location, withImageNamed: "home01", centerOffset: CGPoint())
         }
     }
 }

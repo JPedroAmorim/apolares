@@ -14,7 +14,7 @@ class HandWashIntentHandler: NSObject, HandWashIntentHandling{
         let title = "Hand Wash"
         activity.title = title
 //        activity.userInfo = ["id": board.identifier]
-        activity.suggestedInvocationPhrase = title
+        activity.suggestedInvocationPhrase = "Washing hands"
         activity.isEligibleForPrediction = true
         activity.persistentIdentifier = title
         

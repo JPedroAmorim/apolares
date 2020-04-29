@@ -61,7 +61,7 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      intentQueryString = "Open HandWash"
+      intentQueryString = "Washing hands"
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
@@ -85,7 +85,7 @@
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
-      intentQueryString = "Open HandWash"
+      intentQueryString = "Washing hands"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"

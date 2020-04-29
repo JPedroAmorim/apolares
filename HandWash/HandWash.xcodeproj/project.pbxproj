@@ -13,6 +13,7 @@
 		2F58F451245317D900AE05DD /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
 		2F58F452245317DA00AE05DD /* Intents.intentdefinition in Resources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
 		2F58F4582453387700AE05DD /* HandWashIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58F4572453387700AE05DD /* HandWashIntentHandler.swift */; };
+		2F58F4932459B8F300AE05DD /* Intents.intentdefinition in Resources */ = {isa = PBXBuildFile; fileRef = 2F58F44F2451EBD900AE05DD /* Intents.intentdefinition */; };
 		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
@@ -30,6 +31,20 @@
 
 /* Begin PBXContainerItemProxy section */
 		2F58F4482451D1E600AE05DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F56F421243E060100D4D5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F58F4422451D1E600AE05DD;
+			remoteInfo = "Start Intent Extension";
+		};
+		2F58F4912459B69200AE05DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F56F421243E060100D4D5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F58F4422451D1E600AE05DD;
+			remoteInfo = "Start Intent Extension";
+		};
+		2F58F4942459B9F100AE05DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F56F421243E060100D4D5FB /* Project object */;
 			proxyType = 1;
@@ -247,6 +262,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2F58F4952459B9F100AE05DD /* PBXTargetDependency */,
 				4F56F42E243E060100D4D5FB /* PBXTargetDependency */,
 			);
 			name = HandWash;
@@ -264,6 +280,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2F58F4922459B69200AE05DD /* PBXTargetDependency */,
 				4F56F43D243E060400D4D5FB /* PBXTargetDependency */,
 			);
 			name = "HandWash WatchKit App";
@@ -347,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F58F4932459B8F300AE05DD /* Intents.intentdefinition in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +422,16 @@
 			isa = PBXTargetDependency;
 			target = 2F58F4422451D1E600AE05DD /* Start Intent Extension */;
 			targetProxy = 2F58F4482451D1E600AE05DD /* PBXContainerItemProxy */;
+		};
+		2F58F4922459B69200AE05DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F58F4422451D1E600AE05DD /* Start Intent Extension */;
+			targetProxy = 2F58F4912459B69200AE05DD /* PBXContainerItemProxy */;
+		};
+		2F58F4952459B9F100AE05DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F58F4422451D1E600AE05DD /* Start Intent Extension */;
+			targetProxy = 2F58F4942459B9F100AE05DD /* PBXContainerItemProxy */;
 		};
 		4F56F42E243E060100D4D5FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

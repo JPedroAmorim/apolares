@@ -31,6 +31,10 @@
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Starting the process of hand wash immediately</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>LfqBkf</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
 					<true/>
 				</dict>
@@ -45,6 +49,10 @@
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Starting the process of hand wash immediately</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>CtnHJT</string>
 				</dict>
 			</dict>
 			<key>INIntentResponse</key>

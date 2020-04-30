@@ -27,5 +27,9 @@
 	</array>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>HandWashIntent</string>
+	</array>
 </dict>
 </plist>

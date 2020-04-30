@@ -17,11 +17,24 @@ class WashInterfaceController: WKInterfaceController {
     @IBOutlet weak var labelDescription: WKInterfaceLabel!
     @IBOutlet weak var imageProgress: WKInterfaceImage!
     
+    var userActivity: NSUserActivity?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        userActivity = NSUserActivity(activityType: "HandWashIntent")
+        let title = "Hand Wash"
+        userActivity?.title = title
+//        activity.userInfo = ["id": board.identifier]
+        userActivity?.isEligibleForPrediction = true
+        userActivity?.isEligibleForSearch = true
+        userActivity?.suggestedInvocationPhrase = "Washing hands"
+        userActivity?.isEligibleForPrediction = true
+        userActivity?.persistentIdentifier = title
+        userActivity?.becomeCurrent()
+        update(userActivity!)
+        
     }
 
     override func willActivate() {

@@ -9,10 +9,9 @@
 import WatchKit
 import Foundation
 import AVFoundation
-
+import Intents
 
 class WashInterfaceController: WKInterfaceController {
-    
     
     // MARK: - Errors
     enum ProtocolError: Error {
@@ -51,6 +50,7 @@ class WashInterfaceController: WKInterfaceController {
         self.synth.stopSpeaking(at: .immediate)
         self.timer?.invalidate()
     }
+    
     
     // MARK: - Methods
     
@@ -121,8 +121,13 @@ class WashInterfaceController: WKInterfaceController {
         }
         
          self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
+        
     }
 
 }
+
+
+
+
 
 

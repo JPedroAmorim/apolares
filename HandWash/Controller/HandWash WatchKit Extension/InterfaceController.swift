@@ -8,14 +8,34 @@
 
 import WatchKit
 import Foundation
+import Intents
 
 
 class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        setActivity()
         
         // Configure interface objects here.
+    }
+    
+    func setActivity() {
+        let userActivity = NSUserActivity(activityType: "Start_Wash")
+        
+        userActivity.title = "Start Wash"
+        userActivity.suggestedInvocationPhrase = "Start Wash"
+        userActivity.isEligibleForPrediction = true
+        
+        let shortcut = INShortcut(userActivity: userActivity)
+        let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
+
+        INRelevantShortcutStore.default.setRelevantShortcuts([relevantShortcut], completionHandler: { error in
+            INRelevantShortcut.description()
+            if let error = error {
+                print("AAAAAAAAA \(error)")
+            }
+        })
     }
     
     override func willActivate() {

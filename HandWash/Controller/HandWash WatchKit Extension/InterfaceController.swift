@@ -10,9 +10,8 @@ import WatchKit
 import Foundation
 import Intents
 
-
 class InterfaceController: WKInterfaceController {
-
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         setActivity()
@@ -24,18 +23,34 @@ class InterfaceController: WKInterfaceController {
         let userActivity = NSUserActivity(activityType: "Start_Wash")
         
         userActivity.title = "Start Wash"
-        userActivity.suggestedInvocationPhrase = "Start Wash"
+        userActivity.suggestedInvocationPhrase = "Yellow"
         userActivity.isEligibleForPrediction = true
+        userActivity.becomeCurrent()
         
         let shortcut = INShortcut(userActivity: userActivity)
         let relevantShortcut = INRelevantShortcut(shortcut: shortcut)
 
+        INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+        
         INRelevantShortcutStore.default.setRelevantShortcuts([relevantShortcut], completionHandler: { error in
-            INRelevantShortcut.description()
             if let error = error {
                 print("AAAAAAAAA \(error)")
             }
         })
+        
+        updateVoiceShortcuts()
+    }
+    
+    public func updateVoiceShortcuts() {
+        INVoiceShortcutCenter.shared.getAllVoiceShortcuts { (voiceShortcutsFromCenter, error) in
+            if let voiceShortcutsFromCenter = voiceShortcutsFromCenter {
+                print(voiceShortcutsFromCenter)
+            } else {
+                if let error = error as NSError? {
+                   print(error)
+                }
+            }
+        }
     }
     
     override func willActivate() {

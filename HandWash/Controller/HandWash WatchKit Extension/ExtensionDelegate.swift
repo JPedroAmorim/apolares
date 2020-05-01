@@ -17,7 +17,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func handle(_ userActivity: NSUserActivity) {
         if userActivity.activityType == "Start_Wash" {
             WKExtension.shared().rootInterfaceController?.popToRootController()
-            WKExtension.shared().rootInterfaceController?.pushController(withName: "Wash", context: nil)
+            WKExtension.shared().rootInterfaceController?.pushController(withName: "WashInterfaceController", context: nil)
         }
     }
     

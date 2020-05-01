@@ -478,7 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22U723CBKY;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,7 +510,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -520,7 +520,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
@@ -529,7 +529,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -551,7 +551,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 22U723CBKY;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
 				PRODUCT_NAME = "$(TARGET_NAME)";

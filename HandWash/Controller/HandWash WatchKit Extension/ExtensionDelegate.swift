@@ -9,6 +9,14 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    
+    
+    func handle(_ userActivity: NSUserActivity) {
+        if userActivity.title == "Wash your hands" {
+            WKExtension.shared().rootInterfaceController?.pop()
+            WKExtension.shared().rootInterfaceController?.pushController(withName: "WashWashInterfaceController", context: nil)
+        }
+    }
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.

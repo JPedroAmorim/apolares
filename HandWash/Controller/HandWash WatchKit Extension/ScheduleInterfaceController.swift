@@ -56,6 +56,7 @@ class ScheduleInterfaceController: WKInterfaceController {
     @IBAction func bottomButtonAction() {
         let center = UNUserNotificationCenter.current()
         Schedule.shared.removeNotification(NCenter: center)
+        self.pop()
     }
     
     // MARK: - Variables

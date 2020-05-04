@@ -16,6 +16,11 @@
                                 <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Schedule" id="aCJ-qd-gHZ">
+                            <connections>
+                                <segue destination="gHR-iU-v4B" kind="push" id="2x2-vQ-m8J"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -26,14 +31,14 @@
             <objects>
                 <controllerPlaceholder referencedIdentifier="Schedule" id="gHR-iU-v4B"/>
             </objects>
-            <point key="canvasLocation" x="481" y="246"/>
+            <point key="canvasLocation" x="467" y="370"/>
         </scene>
         <!--Wash-->
         <scene sceneID="ECi-1d-rwY">
             <objects>
                 <controllerPlaceholder referencedIdentifier="Wash" id="QZF-Gx-pjw"/>
             </objects>
-            <point key="canvasLocation" x="469" y="345"/>
+            <point key="canvasLocation" x="455" y="319"/>
         </scene>
         <!--Configuration-->
         <scene sceneID="jeQ-xP-SGB">

@@ -11,8 +11,8 @@
             <objects>
                 <controller identifier="Schedule" id="kRd-iz-qk0" customClass="ScheduleInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Remind me again in" id="4h0-KB-2ws">
-                            <fontDescription key="font" type="system" pointSize="14"/>
+                        <label alignment="left" text="Remind me again after" id="4h0-KB-2ws">
+                            <fontDescription key="font" type="system" pointSize="12"/>
                         </label>
                         <group width="1" alignment="left" id="e6D-us-bVY">
                             <items>

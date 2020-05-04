@@ -19,12 +19,14 @@
                             <calendarUnit key="units" hour="YES" minute="YES"/>
                         </timer>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="16"/>
                             <connections>
                                 <action selector="scheduleAction" destination="kRd-iz-qk0" id="bog-no-Kf4"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="16"/>
                             <connections>
                                 <action selector="bottomButtonAction" destination="kRd-iz-qk0" id="mKq-j5-we7"/>

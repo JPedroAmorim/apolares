@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Remind me after-->
@@ -16,13 +16,20 @@
                                 <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Remind me again in" id="RR6-Me-dXw">
-                            <fontDescription key="font" type="system" pointSize="14"/>
+                        <label alignment="left" text="Remind me again after" numberOfLines="0" id="RR6-Me-dXw">
+                            <fontDescription key="font" type="system" pointSize="12"/>
                         </label>
-                        <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
-                            <calendarUnit key="units" hour="YES" minute="YES"/>
-                        </timer>
+                        <group width="1" alignment="left" id="bqm-8H-087">
+                            <items>
+                                <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                </timer>
+                            </items>
+                        </group>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="17A-zB-VGJ"/>
                     </items>
                     <connections>

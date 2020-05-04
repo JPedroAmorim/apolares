@@ -21,7 +21,6 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Outlets
     @IBOutlet weak var inlineMovie: WKInterfaceInlineMovie!
-    @IBOutlet weak var labelDescription: WKInterfaceLabel!
     @IBOutlet weak var groupProgress: WKInterfaceGroup!
     
     // MARK: - Constants
@@ -59,7 +58,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 0.1
+            let stageDuration = 5.0
             let totalNumberOfStages = stages.count - 1
             
            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
@@ -74,7 +73,7 @@ class WashInterfaceController: WKInterfaceController {
                 if videoIndex > totalNumberOfStages {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
-                    self.labelDescription.setText("Done!")
+                    
                     
                     Timer.invalidate()
                     
@@ -107,7 +106,6 @@ class WashInterfaceController: WKInterfaceController {
         speechUtterance.rate = 0.5
         self.synth.speak(speechUtterance)
         
-        self.labelDescription.setText(stageText)
         
         let videoFileName = "stage" + String(videoIndex)
         if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){

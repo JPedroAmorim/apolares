@@ -21,14 +21,14 @@
 		4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F460243E079300D4D5FB /* Wash.storyboard */; };
 		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
 		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
+		4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB57524531B39002AE002 /* Notification.storyboard */; };
+		4F74E704245717E300045FDF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74E703245717E300045FDF /* Schedule.swift */; };
+		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
 		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5F6EC9A24507C8F00CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5F6EC9B24507CD500CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
-		4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB57524531B39002AE002 /* Notification.storyboard */; };
-		4F74E704245717E300045FDF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74E703245717E300045FDF /* Schedule.swift */; };
-		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,11 +92,11 @@
 		4F56F460243E079300D4D5FB /* Wash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wash.storyboard; sourceTree = "<group>"; };
 		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
 		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
-		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
-		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 		4F5DB57524531B39002AE002 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		4F74E703245717E300045FDF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = "View/HandWash WatchKit App/Schedule.swift"; sourceTree = SOURCE_ROOT; };
 		544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
+		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
+		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,7 +533,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = Q3G824S699;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
@@ -552,7 +552,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = Q3G824S699;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
@@ -570,7 +570,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 29CGD3CF6U;
+				DEVELOPMENT_TEAM = Q3G824S699;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
 				PRODUCT_NAME = HandWash;

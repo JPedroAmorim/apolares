@@ -33,6 +33,9 @@
                         </group>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="17A-zB-VGJ">
                             <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dontRemindMeAction" destination="1sR-Ky-JuK" id="xfn-Tq-Eff"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>

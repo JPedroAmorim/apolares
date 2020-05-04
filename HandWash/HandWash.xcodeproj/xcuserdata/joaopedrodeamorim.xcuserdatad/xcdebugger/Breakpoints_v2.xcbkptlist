@@ -48,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "playEachStage(stageText:videoIndex:stageDuration:)"
-            landmarkType = "7">
+            landmarkName = "WashInterfaceController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

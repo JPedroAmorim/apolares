@@ -62,6 +62,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     @IBAction func dontRemindMeAction() {
         let center = UNUserNotificationCenter.current()
         Schedule.shared.removeNotification(NCenter: center)
+        self.popToRootController()
     }
     
     func createNotification(NCenter: UNUserNotificationCenter) {

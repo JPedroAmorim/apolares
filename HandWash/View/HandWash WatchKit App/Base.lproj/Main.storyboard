@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -11,7 +11,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <group width="1" alignment="left" id="M4d-VU-YWg">
+                            <items>
+                                <label alignment="left" text="Wash your hands after touching the door handle from outside" numberOfLines="0" id="F1Q-Sl-43I">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
                         <button width="1" alignment="left" title="Play" id="pma-74-0EM">
+                            <color key="backgroundColor" red="0.039" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
                             </connections>

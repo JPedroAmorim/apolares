@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
+		4F3BE409245082B9003CAB7B /* AfterWashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
 		4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F433243E060400D4D5FB /* Assets.xcassets */; };
@@ -20,6 +21,14 @@
 		4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F460243E079300D4D5FB /* Wash.storyboard */; };
 		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
 		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
+		4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB57524531B39002AE002 /* Notification.storyboard */; };
+		4F74E704245717E300045FDF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74E703245717E300045FDF /* Schedule.swift */; };
+		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
+		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
+		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
+		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
+		D5F6EC9A24507C8F00CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
+		D5F6EC9B24507CD500CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
+		4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterWashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F431243E060100D4D5FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +92,11 @@
 		4F56F460243E079300D4D5FB /* Wash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wash.storyboard; sourceTree = "<group>"; };
 		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
 		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		4F5DB57524531B39002AE002 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		4F74E703245717E300045FDF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = "View/HandWash WatchKit App/Schedule.swift"; sourceTree = SOURCE_ROOT; };
+		544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
+		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
+		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +115,7 @@
 			children = (
 				4F56F433243E060400D4D5FB /* Assets.xcassets */,
 				4F56F435243E060400D4D5FB /* Info.plist */,
+				D574F27A244F40BD005244DA /* Resources */,
 				D5148242244DD5690032B3AF /* Model */,
 				D5148240244DD4B10032B3AF /* View */,
 				D5148241244DD54B0032B3AF /* Controller */,
@@ -125,6 +141,7 @@
 				4F56F460243E079300D4D5FB /* Wash.storyboard */,
 				4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */,
 				4F56F464243E07C100D4D5FB /* Configuration.storyboard */,
+				4F5DB57524531B39002AE002 /* Notification.storyboard */,
 			);
 			path = "HandWash WatchKit App";
 			sourceTree = "<group>";
@@ -133,12 +150,14 @@
 			isa = PBXGroup;
 			children = (
 				4F56F43F243E060400D4D5FB /* InterfaceController.swift */,
+				4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */,
+				544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */,
+				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 				4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */,
 				4F56F443243E060400D4D5FB /* NotificationController.swift */,
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
-				2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -162,8 +181,18 @@
 		D5148242244DD5690032B3AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F74E703245717E300045FDF /* Schedule.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D574F27A244F40BD005244DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D5F6EC9524507A5F00CF0825 /* videos */,
+				D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */,
+				D5F6EC9A24507C8F00CF0825 /* videos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +309,9 @@
 				4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */,
 				4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */,
 				4F56F432243E060100D4D5FB /* Main.storyboard in Resources */,
+				D5A3699124508F6200D89F20 /* videos in Resources */,
 				4F56F45F243E078400D4D5FB /* Schedule.storyboard in Resources */,
+				4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +319,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F6EC9B24507CD500CF0825 /* videos in Resources */,
 				4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */,
+				D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3BE409245082B9003CAB7B /* AfterWashInterfaceController.swift in Sources */,
 				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
+				544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
+				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,6 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -449,7 +489,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3G824S699;
-				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +501,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -471,7 +511,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3G824S699;
-				INFOPLIST_FILE = "HandWash WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,7 +523,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -495,14 +535,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3G824S699;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
-				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -514,14 +554,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3G824S699;
 				IBSC_MODULE = HandWash_WatchKit_Extension;
-				INFOPLIST_FILE = "HandWash WatchKit App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -533,8 +573,9 @@
 				DEVELOPMENT_TEAM = Q3G824S699;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HandWash;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -543,11 +584,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AndrePapoti.HandWash;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HandWash;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

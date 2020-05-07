@@ -15,21 +15,31 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Outlets
     @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
     @IBOutlet weak var labelFraction: WKInterfaceLabel!
-    
+   
+    // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
+        self.groupRingProgress.setBackgroundImageNamed("ring")
+        self.startAnimationRing(completionLenght: 60)
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
+    // MARK: - Methods
+    
+    private func startAnimationRing(completionLenght: Int){
+        let duration = 2.0
+        
+        self.groupRingProgress.setBackgroundImageNamed("ring")
+        self.groupRingProgress.startAnimatingWithImages(in: NSRange(location: 0, length: completionLenght),
+                                                        duration: duration,
+                                                        repeatCount: 1)
+
+    }
 }

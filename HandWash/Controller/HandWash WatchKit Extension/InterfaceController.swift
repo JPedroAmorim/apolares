@@ -19,7 +19,6 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        self.groupRingProgress.setBackgroundImageNamed("ring")
         self.startAnimationRing(completionLenght: 60)
     }
     

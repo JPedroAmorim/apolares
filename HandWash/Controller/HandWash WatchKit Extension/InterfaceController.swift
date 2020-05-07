@@ -12,6 +12,10 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
+    @IBOutlet weak var labelFraction: WKInterfaceLabel!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

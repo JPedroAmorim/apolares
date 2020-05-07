@@ -35,6 +35,10 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="groupRingProgress" destination="M4d-VU-YWg" id="mKW-Gu-ZtP"/>
+                        <outlet property="labelFraction" destination="IC2-Bk-Mee" id="4QC-qP-QCM"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

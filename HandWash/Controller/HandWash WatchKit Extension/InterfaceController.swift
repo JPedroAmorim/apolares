@@ -19,11 +19,11 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        self.startAnimationRing(completionLenght: 60)
     }
     
     override func willActivate() {
         super.willActivate()
+        self.startAnimationRing(completionLenght: 60)
     }
     
     override func didDeactivate() {

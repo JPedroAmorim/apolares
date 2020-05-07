@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ring19.png",
+      "filename" : "ring19@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ring19@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ring19@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

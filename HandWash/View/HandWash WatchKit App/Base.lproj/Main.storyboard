@@ -11,25 +11,29 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="100" height="100" alignment="center" backgroundImage="ring75" id="M4d-VU-YWg">
+                        <group width="100" height="100" alignment="center" backgroundImage="ring51" id="M4d-VU-YWg">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="3/5" id="IC2-Bk-Mee">
                                     <fontDescription key="font" type="system" pointSize="40"/>
                                 </label>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Start" id="pma-74-0EM">
-                            <color key="backgroundColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Schedule" id="aCJ-qd-gHZ">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="gHR-iU-v4B" kind="push" id="2x2-vQ-m8J"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="center" layout="vertical" id="nns-Dj-hgc">
+                            <items>
+                                <button width="1" alignment="left" title="Start" id="pma-74-0EM">
+                                    <color key="backgroundColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Schedule" id="aCJ-qd-gHZ">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="gHR-iU-v4B" kind="push" id="2x2-vQ-m8J"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                 </controller>
             </objects>
@@ -58,6 +62,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ring75" width="90" height="90"/>
+        <image name="ring51" width="90" height="90"/>
     </resources>
 </document>

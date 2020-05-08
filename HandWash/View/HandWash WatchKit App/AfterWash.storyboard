@@ -11,32 +11,50 @@
             <objects>
                 <controller identifier="AfterWash" title="Remind me after" id="1sR-Ky-JuK" customClass="AfterWashInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ibg-uI-HzQ">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
-                            </connections>
-                        </button>
-                        <label alignment="left" text="Remind me again after" numberOfLines="0" id="RR6-Me-dXw">
-                            <fontDescription key="font" type="system" pointSize="12"/>
-                        </label>
-                        <group width="1" alignment="left" id="bqm-8H-087">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="overlap" id="5q1-JZ-DBI">
                             <items>
-                                <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
-                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="j8D-rN-qp4" userLabel="Label Instruction Dont Remind Me">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
-                                <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
-                                    <calendarUnit key="units" hour="YES" minute="YES"/>
-                                </timer>
+                                <group width="1" alignment="left" layout="vertical" id="IM4-vt-VOa">
+                                    <items>
+                                        <label alignment="left" text="Remind me again after" numberOfLines="0" id="RR6-Me-dXw">
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ibg-uI-HzQ">
+                                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
+                                            </connections>
+                                        </button>
+                                        <group width="1" alignment="left" id="bqm-8H-087">
+                                            <items>
+                                                <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                                <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                                </timer>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
                         </group>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="17A-zB-VGJ">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="dontRemindMeAction" destination="1sR-Ky-JuK" id="xfn-Tq-Eff"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" verticalAlignment="bottom" layout="overlap" id="xd1-xI-frl">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="17A-zB-VGJ">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="dontRemindMeAction" destination="1sR-Ky-JuK" id="xfn-Tq-Eff"/>
+                                    </connections>
+                                </button>
+                                <label alignment="left" hidden="YES" text="Label" textAlignment="left" numberOfLines="0" id="x12-dy-1gU" userLabel="Label Instruction Set Alarm">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="buttonDontRemindMe" destination="17A-zB-VGJ" id="zQb-u2-Yer"/>

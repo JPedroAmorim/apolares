@@ -13,7 +13,7 @@
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="overlap" id="5q1-JZ-DBI">
                             <items>
-                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="j8D-rN-qp4" userLabel="Label Instruction Dont Remind Me">
+                                <label alignment="left" verticalAlignment="bottom" hidden="YES" text="Label" numberOfLines="0" id="j8D-rN-qp4" userLabel="Label Instruction Dont Remind Me">
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                                 <group width="1" alignment="left" layout="vertical" id="IM4-vt-VOa">
@@ -59,6 +59,11 @@
                     <connections>
                         <outlet property="buttonDontRemindMe" destination="17A-zB-VGJ" id="zQb-u2-Yer"/>
                         <outlet property="buttonSetAlarm" destination="Ibg-uI-HzQ" id="efq-y2-W2b"/>
+                        <outlet property="groupDontRemindMe" destination="xd1-xI-frl" id="FVj-1P-upT"/>
+                        <outlet property="groupSetAlarm" destination="IM4-vt-VOa" id="7Yt-uv-a2y"/>
+                        <outlet property="groupSetAlarmTimer" destination="bqm-8H-087" id="K9w-IK-EI3"/>
+                        <outlet property="labelInstructionDontRemindMe" destination="j8D-rN-qp4" id="Dv0-oP-fUs"/>
+                        <outlet property="labelInstructionSetAlarm" destination="x12-dy-1gU" id="uV1-1o-r37"/>
                         <outlet property="timer" destination="GaW-wf-bna" id="oHf-qq-WM4"/>
                     </connections>
                 </controller>

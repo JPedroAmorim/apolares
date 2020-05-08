@@ -9,10 +9,11 @@
 import WatchKit
 import Foundation
 import AVFoundation
+import CloudKit
+import CoreData
 
 
 class WashInterfaceController: WKInterfaceController {
-    
     
     // MARK: - Errors
     enum ProtocolError: Error {
@@ -49,6 +50,22 @@ class WashInterfaceController: WKInterfaceController {
         self.groupProgress.stopAnimating()
         self.synth.stopSpeaking(at: .immediate)
         self.timer?.invalidate()
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "WashEntity", in: context)
+        
+        let newWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newWashEntry.setValue("today", forKey: "date")
+        newWashEntry.setValue(Double(100), forKey: "completion")
+    
+        do {
+            try context.save()
+            print("Context saved!")
+        } catch {
+            print("Failed saving")
+        }
     }
     
     // MARK: - Methods
@@ -73,7 +90,6 @@ class WashInterfaceController: WKInterfaceController {
                 if videoIndex > totalNumberOfStages {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
-                    
                     
                     Timer.invalidate()
                     
@@ -104,7 +120,7 @@ class WashInterfaceController: WKInterfaceController {
     private func playEachStage(stageText: String, videoIndex: Int, stageDuration: Double){
         let speechUtterance = AVSpeechUtterance(string: stageText)
         speechUtterance.rate = 0.5
-        self.synth.speak(speechUtterance)
+        //self.synth.speak(speechUtterance)
         
         
         let videoFileName = "stage" + String(videoIndex)

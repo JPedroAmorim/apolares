@@ -26,9 +26,9 @@
 		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
 		D507AD4E24643B4F0083CBD2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507AD4D24643B4F0083CBD2 /* CloudKit.framework */; };
 		D507AD5024643C440083CBD2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507AD4F24643C440083CBD2 /* CoreData.framework */; };
-		D507AD542464443F0083CBD2 /* WashDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD532464443F0083CBD2 /* WashDAO.swift */; };
 		D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5724645EF30083CBD2 /* CoreDataManager.swift */; };
 		D507AD59246462DA0083CBD2 /* WashModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5124643FDE0083CBD2 /* WashModel.xcdatamodeld */; };
+		D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5C246589650083CBD2 /* WashDAO.swift */; };
 		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
@@ -104,8 +104,8 @@
 		D507AD4D24643B4F0083CBD2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		D507AD4F24643C440083CBD2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		D507AD5224643FDE0083CBD2 /* WashModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WashModel.xcdatamodel; sourceTree = "<group>"; };
-		D507AD532464443F0083CBD2 /* WashDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDAO.swift; sourceTree = "<group>"; };
 		D507AD5724645EF30083CBD2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D507AD5C246589650083CBD2 /* WashDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDAO.swift; sourceTree = "<group>"; };
 		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
 		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +130,6 @@
 				D507AD4B24643AB90083CBD2 /* HandWash WatchKit Extension.entitlements */,
 				4F56F433243E060400D4D5FB /* Assets.xcassets */,
 				4F56F435243E060400D4D5FB /* Info.plist */,
-				D507AD532464443F0083CBD2 /* WashDAO.swift */,
 				D574F27A244F40BD005244DA /* Resources */,
 				D507AD5624645EB40083CBD2 /* Persistence */,
 				D5148242244DD5690032B3AF /* Model */,
@@ -192,9 +191,18 @@
 		D507AD5624645EB40083CBD2 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				D507AD5B246589470083CBD2 /* DAO */,
 				D507AD5724645EF30083CBD2 /* CoreDataManager.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		D507AD5B246589470083CBD2 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				D507AD5C246589650083CBD2 /* WashDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		D5148240244DD4B10032B3AF /* View */ = {
@@ -375,8 +383,8 @@
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
 				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
 				D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */,
+				D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
-				D507AD542464443F0083CBD2 /* WashDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,9 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Variables
     var timer: Timer?
+    
+    // MARK: - Control variables
+    var completion = false
          
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
@@ -39,6 +42,7 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        self.completion = false
     }
     
     override func didDeactivate() {
@@ -51,20 +55,8 @@ class WashInterfaceController: WKInterfaceController {
         self.synth.stopSpeaking(at: .immediate)
         self.timer?.invalidate()
         
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "WashEntity", in: context)
-        
-        let newWashEntry = NSManagedObject(entity: entity!, insertInto: context)
-        
-        newWashEntry.setValue("today", forKey: "date")
-        newWashEntry.setValue(Double(100), forKey: "completion")
-    
-        do {
-            try context.save()
-            print("Context saved!")
-        } catch {
-            print("Failed saving")
+        if (completion) {
+            WashDAO.createWashEntry()
         }
     }
     
@@ -75,7 +67,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 5.0
+            let stageDuration = 0.5
             let totalNumberOfStages = stages.count - 1
             
            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
@@ -92,6 +84,8 @@ class WashInterfaceController: WKInterfaceController {
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
                     Timer.invalidate()
+                    
+                    self.completion = true
                     
                     DispatchQueue.main.async {
                         
@@ -120,8 +114,7 @@ class WashInterfaceController: WKInterfaceController {
     private func playEachStage(stageText: String, videoIndex: Int, stageDuration: Double){
         let speechUtterance = AVSpeechUtterance(string: stageText)
         speechUtterance.rate = 0.5
-        //self.synth.speak(speechUtterance)
-        
+        self.synth.speak(speechUtterance)
         
         let videoFileName = "stage" + String(videoIndex)
         if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){

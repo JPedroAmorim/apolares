@@ -31,7 +31,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     
     // Variables to tutorial
     var animationTimer: Timer?
-    var tutorialMode: Bool = true // mudar pra userdefauls para identificar a primeira vez que entra no app
+    var firstLaunch: FirstLaunch?
     var stageAnimation = 1
     
     // MARK: - IBAction
@@ -227,7 +227,9 @@ class AfterWashInterfaceController: WKInterfaceController {
         numberOfTimeIntervals = 8 // Sync this variable with the time suggested
         timer.setDate(date) // Timer suggestion
         
-        if tutorialMode {
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "AfterWash")
+        
+        if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
         }
     }

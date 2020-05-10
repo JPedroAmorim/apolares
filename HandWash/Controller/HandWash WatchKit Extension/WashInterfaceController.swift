@@ -32,8 +32,8 @@ class WashInterfaceController: WKInterfaceController {
     var timer: Timer?
     
     var animationTimer: Timer?
-    var first: Bool = true // mudar pra userdefauls para identificar a primeira vez que entra no app
-    var animate = 1
+    var firstLaunch: FirstLaunch?
+    var stageAnimation = 1
     
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
@@ -44,6 +44,8 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "Wash")
     }
     
     override func didDeactivate() {
@@ -65,46 +67,40 @@ class WashInterfaceController: WKInterfaceController {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
             let stageDuration = 5.0
-            var isRepeat = false
             let totalNumberOfStages = stages.count - 1
             
             playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
             
-            if !self.first { // mudar pra userdefauls para identificar a primeira vez que entra no app
-                isRepeat = true
-            }
-            
-            self.timer = Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: isRepeat) { (Timer) in
+            self.timer = Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
                 
                 WKInterfaceDevice.current().play(.success) // Raptic feedback
                 
-                if !self.first {
-                    
-                    WKInterfaceDevice.current().play(.success) // Raptic feedback
-                    self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
-                    videoIndex += 1
+                if (videoIndex > totalNumberOfStages)  {
+                                
+                    self.inlineMovie.pause()
+                    self.groupProgress.setBackgroundImageNamed("Progress101")
+                        
+                    Timer.invalidate()
+            
+                    DispatchQueue.main.async {
+                        self.pushController(withName: "AfterWash", context: self)
+                    }
                 }
-                else if !isRepeat {
-                    
+                else if self.firstLaunch!.isFirstLaunch {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
                     // realizar a animacao para explicar como o app funcina
-                    self.rapticFeedbackAnimate()
-                    self.animateSequence()
-                }
-                else if (videoIndex > totalNumberOfStages)  {
-                    
-                    self.inlineMovie.pause()
-                    self.groupProgress.setBackgroundImageNamed("Progress101")
-                    
                     Timer.invalidate()
-    
-                    DispatchQueue.main.async {
-
-                        self.pushController(withName: "AfterWash", context: self)
-                    }
+                    self.animateSequence()
+                    
+                }
+                else {
+                    
+                    WKInterfaceDevice.current().play(.success) // Raptic feedback
+                    self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+                    videoIndex += 1
                 }
             }
             
@@ -171,15 +167,18 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     private func animateSequence() {
+        
+        self.rapticFeedbackAnimate()
+        
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
             
-            switch self.animate {
+            switch self.stageAnimation {
             case 1:
                 self.groupProgressAnimate()
             case 2:
                 self.inlineMovieAnimate()
             case 3:
-                self.animate = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
+                self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
                 
                 Timer.invalidate()
                 
@@ -191,7 +190,7 @@ class WashInterfaceController: WKInterfaceController {
                 print("Invalid animate!")
             }
             
-            self.animate += 1
+            self.stageAnimation += 1
         }
     }
     

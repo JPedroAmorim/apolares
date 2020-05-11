@@ -22,6 +22,8 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Outlets
     @IBOutlet weak var inlineMovie: WKInterfaceInlineMovie!
+    @IBOutlet weak var instructionLabel01: WKInterfaceLabel!
+    @IBOutlet weak var instructionLabel02: WKInterfaceLabel!
     @IBOutlet weak var groupProgress: WKInterfaceGroup!
     
     // MARK: - Constants
@@ -33,6 +35,11 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Control variables
     var completion = false
          
+    
+    var animationTimer: Timer?
+    var firstLaunch: FirstLaunch?
+    var stageAnimation = 1
+    
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -42,6 +49,8 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "Wash")
         self.completion = false
     }
     
@@ -70,16 +79,15 @@ class WashInterfaceController: WKInterfaceController {
             let stageDuration = 0.5
             let totalNumberOfStages = stages.count - 1
             
-           playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
             
             self.timer = Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
+                
                 WKInterfaceDevice.current().play(.success) // Raptic feedback
                 
-               self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
-                videoIndex += 1
-                
-                if videoIndex > totalNumberOfStages {
+                if (videoIndex > totalNumberOfStages)  {
+                                
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
@@ -88,9 +96,23 @@ class WashInterfaceController: WKInterfaceController {
                     self.completion = true
                     
                     DispatchQueue.main.async {
-                        
                         self.pushController(withName: "AfterWash", context: self)
                     }
+                }
+                else if self.firstLaunch!.isFirstLaunch {
+                    self.inlineMovie.pause()
+                    self.groupProgress.setBackgroundImageNamed("Progress101")
+                    
+                    // realizar a animacao para explicar como o app funcina
+                    Timer.invalidate()
+                    self.animateSequence()
+                    
+                }
+                else {
+                    
+                    WKInterfaceDevice.current().play(.success) // Raptic feedback
+                    self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
+                    videoIndex += 1
                 }
             }
             
@@ -124,9 +146,66 @@ class WashInterfaceController: WKInterfaceController {
             print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
         }
         
-         self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
+        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
     }
 
+    private func inlineMovieAnimate() {
+        self.instructionLabel01.setHidden(true)
+        self.instructionLabel02.setHidden(false)
+        self.instructionLabel02.setText("The video teaches the protocol.")
+        
+        self.animate(withDuration: 1, animations: {
+            self.inlineMovie.setAlpha(1)
+            self.groupProgress.setAlpha(0.2)
+        })
+    }
+    
+    private func groupProgressAnimate() {
+        self.instructionLabel01.setText("This bar indicates the time for this stage to end.")
+        
+        self.animate(withDuration: 1, animations: {
+            self.groupProgress.setAlpha(1)
+        })
+    }
+    
+    private func rapticFeedbackAnimate() {
+        self.instructionLabel01.setText("This sound indicates that the stage has ended.")
+        
+        self.animate(withDuration: 1, animations: {
+            self.inlineMovie.setAlpha(0.2)
+            self.groupProgress.setAlpha(0.2)
+            self.instructionLabel01.setHidden(false)
+        })
+    }
+    
+    private func animateSequence() {
+        
+        self.rapticFeedbackAnimate()
+        
+        self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
+            
+            switch self.stageAnimation {
+            case 1:
+                self.groupProgressAnimate()
+            case 2:
+                self.inlineMovieAnimate()
+            case 3:
+                self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
+                
+                Timer.invalidate()
+                
+                DispatchQueue.main.async {
+                    self.pushController(withName: "AfterWash", context: self)
+                }
+            default:
+                Timer.invalidate()
+                print("Invalid animate!")
+            }
+            
+            self.stageAnimation += 1
+        }
+    }
+    
 //    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
 //
 //    }

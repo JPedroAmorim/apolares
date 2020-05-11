@@ -29,6 +29,7 @@
 		D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5724645EF30083CBD2 /* CoreDataManager.swift */; };
 		D507AD59246462DA0083CBD2 /* WashModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5124643FDE0083CBD2 /* WashModel.xcdatamodeld */; };
 		D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5C246589650083CBD2 /* WashDAO.swift */; };
+		54B9176D2467B31D006E1760 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9176C2467B31D006E1760 /* FirstLaunch.swift */; };
 		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
@@ -106,6 +107,7 @@
 		D507AD5224643FDE0083CBD2 /* WashModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WashModel.xcdatamodel; sourceTree = "<group>"; };
 		D507AD5724645EF30083CBD2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D507AD5C246589650083CBD2 /* WashDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDAO.swift; sourceTree = "<group>"; };
+		54B9176C2467B31D006E1760 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
 		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				4F56F445243E060400D4D5FB /* Assets.xcassets */,
 				4F56F447243E060400D4D5FB /* Info.plist */,
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
+				54B9176C2467B31D006E1760 /* FirstLaunch.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */,
 				D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
+				54B9176D2467B31D006E1760 /* FirstLaunch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

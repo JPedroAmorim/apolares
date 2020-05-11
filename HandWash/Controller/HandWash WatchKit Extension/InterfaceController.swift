@@ -8,24 +8,47 @@
 
 import WatchKit
 import Foundation
+import CoreData
+import CloudKit
 
 
 class InterfaceController: WKInterfaceController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
+    @IBOutlet weak var labelFraction: WKInterfaceLabel!
+    
+    // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
     }
     
+    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let numberOfWashesToday = WashDAO.numberOfWashesToday()
+        
+        self.labelFraction.setText("\(numberOfWashesToday)/5")
+        
+        self.startAnimationRing(numberOfWashesToday: numberOfWashesToday)
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
+    // MARK: - Methods
+    
+    private func startAnimationRing(numberOfWashesToday: Int){
+        let completionLenght = numberOfWashesToday > 5 ? 100 : numberOfWashesToday * 20
+        
+        let duration = 1.0
+        
+        self.groupRingProgress.setBackgroundImageNamed("ring")
+        self.groupRingProgress.startAnimatingWithImages(in: NSRange(location: 0, length: completionLenght),
+                                                        duration: duration,
+                                                        repeatCount: 1)
+
+    }
 }

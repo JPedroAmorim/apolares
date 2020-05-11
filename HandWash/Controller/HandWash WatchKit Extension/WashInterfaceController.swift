@@ -9,10 +9,11 @@
 import WatchKit
 import Foundation
 import AVFoundation
+import CloudKit
+import CoreData
 
 
 class WashInterfaceController: WKInterfaceController {
-    
     
     // MARK: - Errors
     enum ProtocolError: Error {
@@ -28,6 +29,9 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Variables
     var timer: Timer?
+    
+    // MARK: - Control variables
+    var completion = false
          
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
@@ -38,6 +42,7 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        self.completion = false
     }
     
     override func didDeactivate() {
@@ -49,6 +54,10 @@ class WashInterfaceController: WKInterfaceController {
         self.groupProgress.stopAnimating()
         self.synth.stopSpeaking(at: .immediate)
         self.timer?.invalidate()
+        
+        if (completion) {
+            WashDAO.createWashEntry()
+        }
     }
     
     // MARK: - Methods
@@ -58,7 +67,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 5.0
+            let stageDuration = 0.5
             let totalNumberOfStages = stages.count - 1
             
            playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
@@ -74,8 +83,9 @@ class WashInterfaceController: WKInterfaceController {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
-                    
                     Timer.invalidate()
+                    
+                    self.completion = true
                     
                     DispatchQueue.main.async {
                         
@@ -105,7 +115,6 @@ class WashInterfaceController: WKInterfaceController {
         let speechUtterance = AVSpeechUtterance(string: stageText)
         speechUtterance.rate = 0.5
         self.synth.speak(speechUtterance)
-        
         
         let videoFileName = "stage" + String(videoIndex)
         if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){

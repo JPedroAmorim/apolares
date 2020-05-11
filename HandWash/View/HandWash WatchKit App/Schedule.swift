@@ -29,9 +29,4 @@ class Schedule {
         }
         nextNotification = nil
     }
-//    func getTime() -> Double? {
-//        guard let next = nextNotification else {return nil}
-//
-//        return 2
-//    }
 }

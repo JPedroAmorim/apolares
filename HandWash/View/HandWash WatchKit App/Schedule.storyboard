@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Schedule-->
@@ -11,38 +11,61 @@
             <objects>
                 <controller identifier="Schedule" id="kRd-iz-qk0" customClass="ScheduleInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Remind me again after" id="4h0-KB-2ws">
-                            <fontDescription key="font" type="system" pointSize="12"/>
-                        </label>
-                        <group width="1" alignment="left" id="e6D-us-bVY">
+                        <group width="1" alignment="left" layout="overlap" id="jcG-yp-V3N">
                             <items>
-                                <timer alignment="center" textAlignment="left" id="MwS-LF-hdU">
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
-                                    <calendarUnit key="units" hour="YES" minute="YES"/>
-                                </timer>
-                                <label alignment="right" verticalAlignment="bottom" text="h" id="t3Y-Kq-Sqb">
+                                <label alignment="left" verticalAlignment="bottom" hidden="YES" text="Label" numberOfLines="0" id="2Hq-v0-BL2" userLabel="Label Instruction Turn Of Alarm">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <group width="1" alignment="left" layout="vertical" id="Fsr-bO-eBc">
+                                    <items>
+                                        <label alignment="left" text="Remind me again after" id="4h0-KB-2ws">
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <group width="1" alignment="left" id="e6D-us-bVY">
+                                            <items>
+                                                <timer alignment="center" textAlignment="left" id="MwS-LF-hdU">
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                                </timer>
+                                                <label alignment="right" verticalAlignment="bottom" text="h" id="t3Y-Kq-Sqb">
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
+                                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                            <connections>
+                                                <action selector="scheduleAction" destination="kRd-iz-qk0" id="bog-no-Kf4"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="overlap" id="zAf-sN-4mQ">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="bottomButtonAction" destination="kRd-iz-qk0" id="mKq-j5-we7"/>
+                                    </connections>
+                                </button>
+                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="2tj-4O-enq" userLabel="Label Instruction Schedule">
                                     <fontDescription key="font" type="system" pointSize="16"/>
                                 </label>
                             </items>
                         </group>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="16"/>
-                            <connections>
-                                <action selector="scheduleAction" destination="kRd-iz-qk0" id="bog-no-Kf4"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="16"/>
-                            <connections>
-                                <action selector="bottomButtonAction" destination="kRd-iz-qk0" id="mKq-j5-we7"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="BottomButton" destination="EoP-jm-TLX" id="KBU-le-I5d"/>
                         <outlet property="UpperButton" destination="yla-V2-sLM" id="DEB-yb-YcX"/>
+                        <outlet property="groupSchedule" destination="jcG-yp-V3N" id="JL8-ZD-1dg"/>
+                        <outlet property="groupScheduleTimer" destination="e6D-us-bVY" id="UrW-FC-9Vf"/>
+                        <outlet property="groupTurnOffAlarm" destination="zAf-sN-4mQ" id="ngF-LP-FLI"/>
+                        <outlet property="labelInstructionSchedule" destination="2tj-4O-enq" id="F0c-Ja-WaY"/>
+                        <outlet property="labelInstructionTurnOfAlarm" destination="2Hq-v0-BL2" id="GWm-bl-JFA"/>
                         <outlet property="timer" destination="MwS-LF-hdU" id="nYg-nA-fHO"/>
                     </connections>
                 </controller>

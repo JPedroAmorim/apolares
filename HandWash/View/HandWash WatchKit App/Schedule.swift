@@ -29,5 +29,4 @@ class Schedule {
         }
         nextNotification = nil
     }
-
 }

@@ -41,12 +41,16 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Methods
     
     private func startAnimationRing(numberOfWashesToday: Int){
-        let completionLenght = numberOfWashesToday > 5 ? 100 : numberOfWashesToday * 20
+        var completionLength = numberOfWashesToday > 5 ? 100 : numberOfWashesToday * 20
+        
+        if numberOfWashesToday == 0 {
+            completionLength = 1
+        }
         
         let duration = 1.0
         
         self.groupRingProgress.setBackgroundImageNamed("ring")
-        self.groupRingProgress.startAnimatingWithImages(in: NSRange(location: 0, length: completionLenght),
+        self.groupRingProgress.startAnimatingWithImages(in: NSRange(location: 0, length: completionLength),
                                                         duration: duration,
                                                         repeatCount: 1)
 

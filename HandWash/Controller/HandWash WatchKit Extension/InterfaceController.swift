@@ -30,7 +30,6 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
     }
     
     override func willActivate() {
@@ -38,13 +37,14 @@ class InterfaceController: WKInterfaceController {
         
         let numberOfWashesToday = WashDAO.numberOfWashesToday()
         
-        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
-        
         self.labelFraction.setText("\(numberOfWashesToday)/5")
         
         self.startAnimationRing(numberOfWashesToday: numberOfWashesToday)
         
-        self.animateSequence()
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
+        if self.firstLaunch!.isFirstLaunch {
+            self.animateSequence()
+        }
     }
     
     override func didDeactivate() {
@@ -64,22 +64,16 @@ class InterfaceController: WKInterfaceController {
                                                         repeatCount: 1)
     }
     
-//    private func ringAnimate() {
-//        var i: Int = 0
-//
-//        while i <= 5 {
-//
-//            self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
-//                self.startAnimationRing(numberOfWashesToday: i)
-//
-//
-//            }
-//
-//            i += 1
-//        }
-//
-//        Timer.invalidate()
-//    }
+    private func ringAnimate() {
+        
+        self.groupRingProgress.setBackgroundImageNamed("ring")
+        self.animationTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (Timer) in
+ 
+            self.startAnimationRing(numberOfWashesToday: 5)
+
+            Timer.invalidate()
+        }
+    }
     
     private func ringInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
@@ -123,6 +117,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func animateSequence() {
+        self.ringAnimate()
         self.ringInstructionAnimate()
         
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
@@ -133,6 +128,7 @@ class InterfaceController: WKInterfaceController {
             case 2:
                 self.scheduleButtonInstructionAnimate()
             case 3:
+                self.groupRingProgress.setBackgroundImageNamed("ring")
                 self.finishInstructionAnimate()
             case 4:
                 self.stageAnimation = 0

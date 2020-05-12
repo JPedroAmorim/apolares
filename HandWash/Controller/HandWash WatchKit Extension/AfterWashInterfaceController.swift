@@ -125,18 +125,18 @@ class AfterWashInterfaceController: WKInterfaceController {
     }
     
     private func animateSequence() {
+        self.setAlarmInstructionAnimate()
+        
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
             
             switch self.stageAnimation {
             case 1:
-                self.setAlarmInstructionAnimate()
-            case 2:
                 self.setAlarmInstructionAnimateCrown()
-            case 3:
+            case 2:
                 self.setAlarmInstructionAnimateButton()
-            case 4:
+            case 3:
                 self.dontRemindMeInstructionAnimate()
-            case 5:
+            case 4:
                 self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
                 
                 Timer.invalidate()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Configuration-->
@@ -14,7 +14,7 @@
                         <group width="1" alignment="left" id="UCd-wR-5ZW">
                             <items>
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Sounds" id="4h4-SM-NOe">
-                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="soundChanged:" destination="VTH-Mc-MKV" id="crZ-nz-FA5"/>
@@ -25,7 +25,7 @@
                         <group width="1" alignment="left" id="kwh-Mo-9hl">
                             <items>
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Vibrations" id="AxT-UV-atO">
-                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="vibrationChanged:" destination="VTH-Mc-MKV" id="NFA-Ix-LhE"/>
@@ -36,7 +36,7 @@
                         <group width="1" alignment="left" id="Jgw-hf-xja">
                             <items>
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Animations" id="Mlz-sh-7WA">
-                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="animationChanged:" destination="VTH-Mc-MKV" id="Dg7-8s-Nn3"/>

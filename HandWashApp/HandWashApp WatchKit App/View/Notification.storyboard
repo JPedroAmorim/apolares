@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="gOy-ew-RUD">
+            <objects>
+                <notificationController id="TmV-jg-spV">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="f7B-g1-5Xg"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myNotification" id="9xv-BI-gqc"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="f7B-g1-5Xg" id="Nid-HD-eAZ"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-62" y="116"/>
+        </scene>
+    </scenes>
+</document>

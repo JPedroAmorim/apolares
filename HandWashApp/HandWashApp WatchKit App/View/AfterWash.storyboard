@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Remind me after-->
+        <scene sceneID="hTm-9L-puN">
+            <objects>
+                <controller identifier="AfterWash" title="Remind me after" id="3sT-JM-Gom" customClass="AfterWashInterfaceController" customModule="HandWash_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" id="Ggg-sh-MM5">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="setAlarm" destination="3sT-JM-Gom" id="cnx-U2-BTb"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Remind me again after" numberOfLines="0" id="uuN-uT-ISA">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <group width="1" alignment="left" id="bGF-BB-wbF">
+                            <items>
+                                <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Omt-NS-2UG">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <timer alignment="center" previewedSeconds="120" id="N6n-Ud-aJN">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" id="bxb-nB-ywh">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dontRemindMeAction" destination="3sT-JM-Gom" id="Eft-3l-kVB"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="buttonDontRemindMe" destination="bxb-nB-ywh" id="L5s-Cj-bnh"/>
+                        <outlet property="buttonSetAlarm" destination="Ggg-sh-MM5" id="qcr-Jv-tir"/>
+                        <outlet property="timer" destination="N6n-Ud-aJN" id="GwK-7x-hQM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="102" y="22"/>
+        </scene>
+    </scenes>
+</document>

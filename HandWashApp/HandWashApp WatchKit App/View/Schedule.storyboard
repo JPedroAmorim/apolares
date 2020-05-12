@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule-->
+        <scene sceneID="dKG-FI-Xxy">
+            <objects>
+                <controller identifier="Schedule" id="d7I-UN-317" customClass="ScheduleInterfaceController" customModule="HandWashApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Remind me again in" id="2uF-uc-5lf">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <group width="1" alignment="left" id="TLQ-rB-jk7">
+                            <items>
+                                <timer alignment="center" textAlignment="left" id="dqY-I2-RJZ">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                </timer>
+                                <label alignment="right" verticalAlignment="bottom" text="h" id="eY5-zR-MWI">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="69a-1y-BMe">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <connections>
+                                <action selector="scheduleAction" destination="d7I-UN-317" id="spg-8S-hKI"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="bTv-Qd-c8r">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <connections>
+                                <action selector="bottomButtonAction" destination="d7I-UN-317" id="zjf-Gi-4Wj"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="BottomButton" destination="bTv-Qd-c8r" id="RfR-pD-ERZ"/>
+                        <outlet property="UpperButton" destination="69a-1y-BMe" id="QUk-fh-FJg"/>
+                        <outlet property="timer" destination="dqY-I2-RJZ" id="E1U-Zb-jog"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="163" y="-48"/>
+        </scene>
+    </scenes>
+</document>

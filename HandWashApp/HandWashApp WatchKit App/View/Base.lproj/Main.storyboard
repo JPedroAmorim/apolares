@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QuF-Jm-gJ5">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="5dc-LW-0xn">
+            <objects>
+                <controller id="QuF-Jm-gJ5" customClass="InterfaceController" customModule="HandWashApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="mty-6a-i9U">
+                            <items>
+                                <label alignment="left" text="Wash your hands after touching the door handle from outside" numberOfLines="0" id="p4P-FG-MzG">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Play" id="3Qs-m6-zyM">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="hvk-0b-Beh" kind="push" id="QVb-3t-gLM"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Schedule" id="BhR-Dn-aqu">
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="XuG-x5-ppf" kind="push" id="Cvs-8u-nlV"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Wash-->
+        <scene sceneID="5LF-Ja-NQf">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Wash" id="hvk-0b-Beh"/>
+            </objects>
+            <point key="canvasLocation" x="493" y="321"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="ePM-TY-AcZ">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Schedule" id="XuG-x5-ppf"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="370"/>
+        </scene>
+        <!--Configuration-->
+        <scene sceneID="unY-rn-HhV">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Configuration" id="rAS-o9-miT"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="438"/>
+        </scene>
+    </scenes>
+</document>

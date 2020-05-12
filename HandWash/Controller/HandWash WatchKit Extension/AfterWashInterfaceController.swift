@@ -131,12 +131,14 @@ class AfterWashInterfaceController: WKInterfaceController {
             
             switch self.stageAnimation {
             case 1:
-                self.setAlarmInstructionAnimateCrown()
+                self.setAlarmInstructionAnimate()
             case 2:
-                self.setAlarmInstructionAnimateButton()
+                self.setAlarmInstructionAnimateCrown()
             case 3:
-                self.dontRemindMeInstructionAnimate()
+                self.setAlarmInstructionAnimateButton()
             case 4:
+                self.dontRemindMeInstructionAnimate()
+            case 5:
                 self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
                 
                 Timer.invalidate()

@@ -9,13 +9,16 @@
         <!--Configuration-->
         <scene sceneID="bM0-4I-U1o">
             <objects>
-                <controller identifier="Configuration" id="VTH-Mc-MKV" customClass="ConfigurationInterfaceController" customModule="HandWash_WatchKit_Extension">
+                <controller identifier="Configuration" id="VTH-Mc-MKV" customClass="ConfigutationInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="UCd-wR-5ZW">
                             <items>
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Sounds" id="4h4-SM-NOe">
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="soundChanged:" destination="VTH-Mc-MKV" id="crZ-nz-FA5"/>
+                                    </connections>
                                 </switch>
                             </items>
                         </group>
@@ -24,6 +27,9 @@
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Vibrations" id="AxT-UV-atO">
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="vibrationChanged:" destination="VTH-Mc-MKV" id="NFA-Ix-LhE"/>
+                                    </connections>
                                 </switch>
                             </items>
                         </group>
@@ -32,6 +38,9 @@
                                 <switch width="1" alignment="left" verticalAlignment="center" value="YES" title="Animations" id="Mlz-sh-7WA">
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="animationChanged:" destination="VTH-Mc-MKV" id="Dg7-8s-Nn3"/>
+                                    </connections>
                                 </switch>
                             </items>
                         </group>
@@ -41,10 +50,19 @@
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="notificationChanged:" destination="VTH-Mc-MKV" id="occ-TP-FTW"/>
+                                    </connections>
                                 </switch>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="animationSwitch" destination="Mlz-sh-7WA" id="LHx-cC-9DI"/>
+                        <outlet property="notificationSwitch" destination="px6-GD-KUZ" id="D1F-U8-xod"/>
+                        <outlet property="soundSwitch" destination="4h4-SM-NOe" id="l0B-4a-SRY"/>
+                        <outlet property="vibrationSwitch" destination="AxT-UV-atO" id="4Lg-dK-HVb"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="102" y="22"/>

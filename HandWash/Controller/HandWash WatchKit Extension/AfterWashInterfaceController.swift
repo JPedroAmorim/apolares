@@ -125,6 +125,8 @@ class AfterWashInterfaceController: WKInterfaceController {
     }
     
     private func animateSequence() {
+        self.setAlarmInstructionAnimate()
+        
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
             
             switch self.stageAnimation {

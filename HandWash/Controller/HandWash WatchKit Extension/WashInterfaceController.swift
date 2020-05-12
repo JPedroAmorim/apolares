@@ -28,30 +28,38 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Constants
     let synth = AVSpeechSynthesizer()
+    let defaults = UserDefaults.standard
     
     // MARK: - Variables
     var timer: Timer?
-    
-    // MARK: - Control variables
-    var completion = false
-         
-    
     var animationTimer: Timer?
     var firstLaunch: FirstLaunch?
     var stageAnimation = 1
     
+    // MARK: - Control variables
+    var completion = false
+    var shouldAnimate = false
+    var shouldPlaySound = false
+    var shouldVibrate = false
+
+  
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "Wash")
+        self.completion = false
+        
+        shouldAnimate = defaults.bool(forKey: "AnimationActive")
+        shouldVibrate = defaults.bool(forKey: "VibrationActive")
+        shouldPlaySound = defaults.bool(forKey: "SoundActive")
+        
         self.groupProgress.setBackgroundImageNamed("Progress")
         handwashProtocol()
     }
     
     override func willActivate() {
         super.willActivate()
-        
-        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "Wash")
-        self.completion = false
     }
     
     override func didDeactivate() {
@@ -70,21 +78,21 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     // MARK: - Methods
-    
-
     private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 0.5
-            let totalNumberOfStages = stages.count - 1
+            let stageDuration = 5.0
+            let totalNumberOfStages = stages.count - 2
             
             playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
             
             self.timer = Timer.scheduledTimer(withTimeInterval: stageDuration, repeats: true) { (Timer) in
-                
-                WKInterfaceDevice.current().play(.success) // Raptic feedback
+               
+                if self.shouldPlaySound && self.shouldVibrate {
+                    WKInterfaceDevice.current().play(.success) // Raptic feedback
+                }
                 
                 if (videoIndex > totalNumberOfStages)  {
                                 
@@ -134,19 +142,23 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     private func playEachStage(stageText: String, videoIndex: Int, stageDuration: Double){
-        let speechUtterance = AVSpeechUtterance(string: stageText)
-        speechUtterance.rate = 0.5
-        self.synth.speak(speechUtterance)
-        
-        let videoFileName = "stage" + String(videoIndex)
-        if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
-            self.inlineMovie.setMovieURL(videoUrl)
-            self.inlineMovie.play()
-        } else {
-            print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
+        if shouldPlaySound {
+            let speechUtterance = AVSpeechUtterance(string: stageText)
+            speechUtterance.rate = 0.5
+            self.synth.speak(speechUtterance)
         }
-        
-        self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
+       
+        if shouldAnimate {
+            let videoFileName = "stage" + String(videoIndex)
+            if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
+                self.inlineMovie.setMovieURL(videoUrl)
+                self.inlineMovie.play()
+            } else {
+                print("Invalid video URL! - Try to see if it is in the copy resources Bundle")
+            }
+            
+            self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
+        }
     }
 
     private func inlineMovieAnimate() {
@@ -205,9 +217,5 @@ class WashInterfaceController: WKInterfaceController {
             self.stageAnimation += 1
         }
     }
-    
-//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-//
-//    }
 }
 

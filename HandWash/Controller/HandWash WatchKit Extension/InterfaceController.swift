@@ -129,9 +129,8 @@ class InterfaceController: WKInterfaceController {
             
             self.setAlphaButtons(start: 1.0, schedule: 0.2, setting: 0.2, button: 0.2)
             
-            self.buttonTutorial(enableButton: self.buttonStart,
-                                instructionLabel: self.labelButtonInstructionTop,
-                                textLabel: "Start button starts the hand was process.")
+            self.labelButtonInstructionTop.setText("Start button starts the hand was process.")
+            self.scroll(to: self.buttonStart, at: .bottom, animated: true)
             
             self.groupRingProgress.setAlpha(0.2)
         
@@ -143,9 +142,8 @@ class InterfaceController: WKInterfaceController {
             
             self.setAlphaButtons(start: 0.2, schedule: 1.0, setting: 0.2, button: 0.2)
             
-            self.buttonTutorial(enableButton: self.buttonSchedule,
-                                instructionLabel: self.labelButtonInstructionTop,
-                                textLabel: "Schedule button edit alarm.")
+            self.labelButtonInstructionTop.setText("Schedule button edit alarm.")
+            self.scroll(to: self.buttonSchedule, at: .bottom, animated: true)
         })
     }
     
@@ -153,14 +151,13 @@ class InterfaceController: WKInterfaceController {
         self.animate(withDuration: 1, animations: {
             
             self.labelButtonInstructionBottom.setHidden(false)
+            self.labelButtonInstructionBottom.setText("Settings button allows you to change the configuration of the app.")
             
             self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 1.0, button: 0.2)
             
-            self.buttonTutorial(enableButton: self.buttonSettings,
-                                instructionLabel: self.labelButtonInstructionBottom,
-                                textLabel: "Start button starts the hand was process.")
-            
             self.labelButtonInstructionTop.setHidden(true)
+            
+            self.scroll(to: self.button, at: .bottom, animated: true)
         })
     }
     
@@ -169,9 +166,8 @@ class InterfaceController: WKInterfaceController {
             
             self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
             
-            self.buttonTutorial(enableButton: self.button,
-                                instructionLabel: self.labelButtonInstructionBottom,
-                                textLabel: "Start button starts the hand was process.")
+            self.labelButtonInstructionBottom.setText("Button não sei o que faz.")
+            self.scroll(to: self.button, at: .bottom, animated: true)
         })
     }
     

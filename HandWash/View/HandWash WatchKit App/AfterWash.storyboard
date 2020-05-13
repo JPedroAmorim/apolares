@@ -27,13 +27,13 @@
                                                 <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
                                             </connections>
                                         </button>
-                                        <group width="134" height="43" alignment="left" id="bqm-8H-087">
+                                        <group width="1" height="43" alignment="left" id="bqm-8H-087">
                                             <items>
                                                 <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
                                                     <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                                                     <calendarUnit key="units" hour="YES" minute="YES"/>
                                                 </timer>
-                                                <group width="33" height="54" alignment="right" verticalAlignment="bottom" layout="vertical" id="RFZ-x2-2g9">
+                                                <group width="10" height="54" alignment="right" verticalAlignment="bottom" layout="vertical" id="RFZ-x2-2g9">
                                                     <items>
                                                         <label height="13" alignment="right" verticalAlignment="bottom" text="h" id="rvE-fh-vhe">
                                                             <fontDescription key="font" type="system" pointSize="16"/>

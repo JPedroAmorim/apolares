@@ -31,8 +31,8 @@ class AfterWashInterfaceController: WKInterfaceController {
     
     // Variables to tutorial
     var animationTimer: Timer?
-    var firstLaunch: FirstLaunch?
-    var stageAnimation = 1
+    var firstLaunch: FirstLaunch? // Detect first launch
+    var stageAnimation = 1 // Manages the sequence of tutorial animations
     
     // MARK: - IBAction
     @IBAction func setAlarm() {
@@ -139,7 +139,6 @@ class AfterWashInterfaceController: WKInterfaceController {
             case 4:
                 self.dontRemindMeInstructionAnimate()
             case 5:
-                self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
                 
                 Timer.invalidate()
                 

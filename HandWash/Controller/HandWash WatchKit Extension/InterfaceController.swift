@@ -30,9 +30,11 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var button: WKInterfaceButton!
     
     // MARK: - Variables
+    
+    // Variables to tutorial
     var animationTimer: Timer?
-    var stageAnimation = 1
-    var firstLaunch: FirstLaunch?
+    var stageAnimation = 1 // Manages the sequence of tutorial animations
+    var firstLaunch: FirstLaunch? // Detect first launch
     
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
@@ -50,15 +52,18 @@ class InterfaceController: WKInterfaceController {
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
         
+        // Check if first launch
         if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
+        } else {
+            self.setEnableButtons(isEnable: true)
         }
     }
     
     override func didDeactivate() {
         super.didDeactivate()
     }
-
+    
     // MARK: - Methods
     
     private func startAnimationRing(numberOfWashesToday: Int){
@@ -77,16 +82,24 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func buttonTutorial(enableButton: WKInterfaceButton, instructionLabel: WKInterfaceLabel, textLabel: String) {
-        enableButton.setEnabled(true)
         instructionLabel.setText(textLabel)
         self.scroll(to: enableButton, at: .bottom, animated: true)
     }
     
-    private func setEnableButtons(_ enable: Bool) {
-        self.buttonStart.setEnabled(enable)
-        self.buttonSchedule.setEnabled(enable)
-        self.buttonSettings.setEnabled(enable)
-        self.button.setEnabled(enable)
+    // Set alpha buttons.
+    private func setAlphaButtons(start: CGFloat, schedule: CGFloat, setting: CGFloat, button: CGFloat) {
+        self.buttonStart.setAlpha(start)
+        self.buttonSchedule.setAlpha(schedule)
+        self.buttonSettings.setAlpha(setting)
+        self.button.setAlpha(button)
+    }
+    
+    // Set enable buttons.
+    private func setEnableButtons(isEnable: Bool) {
+        self.buttonStart.setEnabled(isEnable)
+        self.buttonSchedule.setEnabled(isEnable)
+        self.buttonSettings.setEnabled(isEnable)
+        self.button.setEnabled(isEnable)
     }
     
     private func ringAnimate() {
@@ -102,8 +115,8 @@ class InterfaceController: WKInterfaceController {
     
     private func ringInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.setEnableButtons(false)
             
+            self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 0.2)
             self.labelRingInstruction.setHidden(false)
             self.labelRingInstruction.setText("This indicates the progress of the daily goal.")
         })
@@ -113,6 +126,8 @@ class InterfaceController: WKInterfaceController {
         self.animate(withDuration: 1, animations: {
             self.labelRingInstruction.setHidden(true)
             self.labelButtonInstructionTop.setHidden(false)
+            
+            self.setAlphaButtons(start: 1.0, schedule: 0.2, setting: 0.2, button: 0.2)
             
             self.buttonTutorial(enableButton: self.buttonStart,
                                 instructionLabel: self.labelButtonInstructionTop,
@@ -125,19 +140,21 @@ class InterfaceController: WKInterfaceController {
     
     private func scheduleButtonInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonStart.setEnabled(false)
+            
+            self.setAlphaButtons(start: 0.2, schedule: 1.0, setting: 0.2, button: 0.2)
             
             self.buttonTutorial(enableButton: self.buttonSchedule,
                                 instructionLabel: self.labelButtonInstructionTop,
                                 textLabel: "Schedule button edit alarm.")
-            
-            self.labelButtonInstructionBottom.setHidden(false)
         })
     }
     
     private func settingButtonInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonSchedule.setEnabled(false)
+            
+            self.labelButtonInstructionBottom.setHidden(false)
+            
+            self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 1.0, button: 0.2)
             
             self.buttonTutorial(enableButton: self.buttonSettings,
                                 instructionLabel: self.labelButtonInstructionBottom,
@@ -149,7 +166,8 @@ class InterfaceController: WKInterfaceController {
     
     private func buttonInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonSettings.setEnabled(false)
+            
+            self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
             
             self.buttonTutorial(enableButton: self.button,
                                 instructionLabel: self.labelButtonInstructionBottom,
@@ -159,10 +177,14 @@ class InterfaceController: WKInterfaceController {
     
     private func finishInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.labelButtonInstructionBottom.setText("")
+            self.groupRingProgress.setBackgroundImageNamed("ring0")
             self.groupRingProgress.setAlpha(1)
-            self.setEnableButtons(true)
+            
+            self.setAlphaButtons(start: 1.0, schedule: 1.0, setting: 1.0, button: 1.0)
+            self.setEnableButtons(isEnable: true)
+            
             self.labelButtonInstructionBottom.setHidden(true)
+            
             self.scroll(to: self.groupRingProgress, at: .top, animated: true)
         })
     }

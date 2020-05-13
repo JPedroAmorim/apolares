@@ -22,27 +22,26 @@
                         <group width="1" alignment="center" layout="vertical" id="nns-Dj-hgc" userLabel="GroupButton">
                             <items>
                                 <label alignment="left" numberOfLines="0" id="PbA-wQ-wxU" userLabel="Label Button Instruction"/>
-                                <button width="1" alignment="left" title="Start" id="pma-74-0EM">
+                                <button width="1" alignment="left" title="Start" enabled="NO" id="pma-74-0EM">
                                     <color key="backgroundColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="buttonStart" destination="AgC-eL-Hgc" id="mdU-cy-t0y"/>
                                         <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Schedule" id="aCJ-qd-gHZ">
+                                <button width="1" alignment="left" title="Schedule" enabled="NO" id="aCJ-qd-gHZ">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="gHR-iU-v4B" kind="push" id="2x2-vQ-m8J"/>
                                     </connections>
                                 </button>
                                 <label alignment="left" hidden="YES" numberOfLines="0" id="qPH-WP-2Q9" userLabel="Label Button Instruction"/>
-                                <button width="1" alignment="left" title="Settings" id="UzE-gV-JkG">
+                                <button width="1" alignment="left" title="Settings" enabled="NO" id="UzE-gV-JkG">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="nep-NL-tcV" kind="push" id="eOC-I4-9gH"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Button" id="k21-wR-Jau"/>
+                                <button width="1" alignment="left" title="Button" enabled="NO" id="k21-wR-Jau"/>
                             </items>
                         </group>
                     </items>

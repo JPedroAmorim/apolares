@@ -138,7 +138,8 @@ class AfterWashInterfaceController: WKInterfaceController {
             case 3:
                 self.dontRemindMeInstructionAnimate()
             case 4:
-
+                self.stageAnimation = 1 // To be able to test
+                
                 self.buttonSetAlarm.setEnabled(true)
                 self.buttonDontRemindMe.setEnabled(true)
                 

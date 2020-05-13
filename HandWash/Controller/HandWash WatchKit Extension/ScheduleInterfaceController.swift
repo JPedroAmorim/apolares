@@ -13,8 +13,8 @@ import UserNotifications
 class ScheduleInterfaceController: WKInterfaceController {
     // MARK: - Outlets
     @IBOutlet weak var timer: WKInterfaceTimer!
-    @IBOutlet weak var UpperButton: WKInterfaceButton!
-    @IBOutlet weak var BottomButton: WKInterfaceButton!
+    @IBOutlet weak var upperButton: WKInterfaceButton!
+    @IBOutlet weak var bottomButton: WKInterfaceButton!
     
     // Outlets to tutorial
     @IBOutlet weak var groupSchedule: WKInterfaceGroup!
@@ -23,6 +23,7 @@ class ScheduleInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var groupTurnOffAlarm: WKInterfaceGroup!
     @IBOutlet weak var labelInstructionSchedule: WKInterfaceLabel!
+    @IBOutlet weak var labelHeader: WKInterfaceLabel!
     
     // MARK: - Variables
     var crownAcumulator: Double = 0
@@ -92,12 +93,12 @@ class ScheduleInterfaceController: WKInterfaceController {
         timer.setDate(date) // Timer suggestion
         // Label and button setup
         if let _ = Schedule.shared.nextNotification {
-            UpperButton.setTitle("Reeschedule")
-            BottomButton.setTitle("Turn off alarm")
+            upperButton.setTitle("Reeschedule")
+            bottomButton.setTitle("Turn off alarm")
         }
         else {
-            UpperButton.setTitle("Set alarm")
-            BottomButton.setTitle("Don't remind me")
+            upperButton.setTitle("Set alarm")
+            bottomButton.setTitle("Don't remind me")
 
         }
         
@@ -105,6 +106,9 @@ class ScheduleInterfaceController: WKInterfaceController {
 
         if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
+        } else {
+            self.upperButton.setEnabled(true)
+            self.bottomButton.setEnabled(true)
         }
     }
 
@@ -152,19 +156,23 @@ class ScheduleInterfaceController: WKInterfaceController {
     }
     
     private func animateSequence() {
+        self.scheduleInstructionAnimate()
+        
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
             
             switch self.stageAnimation {
             case 1:
-                self.scheduleInstructionAnimate()
-            case 2:
                 self.scheduleAnimateInstructionCrown()
-            case 3:
+            case 2:
                 self.scheduleAnimateInstructionButton()
-            case 4:
+            case 3:
                 self.turnOffAlarmInstructionAnimate()
-            case 5:
-                self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
+            case 4:
+                self.stageAnimation = 1 // To be able to test
+                
+                self.upperButton.setEnabled(true)
+                self.bottomButton.setEnabled(true)
+
                 
                 Timer.invalidate()
                 
@@ -188,7 +196,7 @@ class ScheduleInterfaceController: WKInterfaceController {
         
         self.animate(withDuration: 1, animations: {
             self.groupSchedule.setAlpha(1)
-            self.BottomButton.setAlpha(0.2)
+            self.bottomButton.setAlpha(0.2)
         })
     }
     
@@ -199,8 +207,8 @@ class ScheduleInterfaceController: WKInterfaceController {
         
         self.animate(withDuration: 2, animations: {
             self.groupSchedule.setAlpha(1)
-            self.UpperButton.setAlpha(0.2)
-            self.BottomButton.setAlpha(0.2)
+            self.upperButton.setAlpha(0.2)
+            self.bottomButton.setAlpha(0.2)
             
             self.groupScheduleTimer.setBackgroundColor(UIColor.white)
         })
@@ -217,9 +225,10 @@ class ScheduleInterfaceController: WKInterfaceController {
         
         self.animate(withDuration: 1, animations: {
             self.groupSchedule.setAlpha(1)
-            self.BottomButton.setAlpha(0.2)
-            self.UpperButton.setAlpha(1)
+            self.bottomButton.setAlpha(0.2)
+            self.upperButton.setAlpha(1)
             self.groupScheduleTimer.setAlpha(0.2)
+            self.labelHeader.setAlpha(0.2)
         })
     }
     
@@ -229,9 +238,9 @@ class ScheduleInterfaceController: WKInterfaceController {
         self.labelInstructionTurnOfAlarm.setText("Or you can choose to be not reminded to wash your hands.")
         
         self.animate(withDuration: 1, animations: {
-            self.BottomButton.setAlpha(1)
+            self.bottomButton.setAlpha(1)
             self.groupTurnOffAlarm.setAlpha(1)
-            self.UpperButton.setAlpha(0.2)
+            self.upperButton.setAlpha(0.2)
         })
     }
 }

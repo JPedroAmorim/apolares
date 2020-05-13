@@ -1,0 +1,21 @@
+
+/* Class = "WKInterfaceButton"; title = "Don't remind me"; ObjectID = "17A-zB-VGJ"; */
+"17A-zB-VGJ.title" = "Don't remind me";
+
+/* Class = "WKInterfaceController"; title = "Remind me after"; ObjectID = "1sR-Ky-JuK"; */
+"1sR-Ky-JuK.title" = "Remind me after";
+
+/* Class = "WKInterfaceLabel"; text = "h"; ObjectID = "Fty-dG-Y6C"; */
+"Fty-dG-Y6C.text" = "h";
+
+/* Class = "WKInterfaceButton"; title = "Set alarm"; ObjectID = "Ibg-uI-HzQ"; */
+"Ibg-uI-HzQ.title" = "Set alarm";
+
+/* Class = "WKInterfaceLabel"; text = "Remind me again after"; ObjectID = "RR6-Me-dXw"; */
+"RR6-Me-dXw.text" = "Remind me again after";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "j8D-rN-qp4"; */
+"j8D-rN-qp4.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "x12-dy-1gU"; */
+"x12-dy-1gU.text" = "Label";

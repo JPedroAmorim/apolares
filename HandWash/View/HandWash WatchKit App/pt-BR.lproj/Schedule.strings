@@ -1,0 +1,18 @@
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "2Hq-v0-BL2"; */
+"2Hq-v0-BL2.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "2tj-4O-enq"; */
+"2tj-4O-enq.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Remind me again after"; ObjectID = "4h0-KB-2ws"; */
+"4h0-KB-2ws.text" = "Remind me again after";
+
+/* Class = "WKInterfaceButton"; title = "Turn Of Alarm"; ObjectID = "EoP-jm-TLX"; */
+"EoP-jm-TLX.title" = "Turn Of Alarm";
+
+/* Class = "WKInterfaceLabel"; text = "h"; ObjectID = "t3Y-Kq-Sqb"; */
+"t3Y-Kq-Sqb.text" = "h";
+
+/* Class = "WKInterfaceButton"; title = "Schedule"; ObjectID = "yla-V2-sLM"; */
+"yla-V2-sLM.title" = "Schedule";

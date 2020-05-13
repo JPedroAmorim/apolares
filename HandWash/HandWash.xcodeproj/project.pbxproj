@@ -543,7 +543,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HandWash WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -566,7 +566,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HandWash WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = "$(SRCROOT)/Controller/HandWash WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

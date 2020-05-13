@@ -16,11 +16,18 @@ class InterfaceController: WKInterfaceController {
 
     // MARK: - Outlets
     @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
+    @IBOutlet weak var groupButton: WKInterfaceGroup!
+    
     @IBOutlet weak var labelFraction: WKInterfaceLabel!
     @IBOutlet weak var labelRingInstruction: WKInterfaceLabel!
-    @IBOutlet weak var labelButtonInstruction: WKInterfaceLabel!
+    
+    @IBOutlet weak var labelButtonInstructionTop: WKInterfaceLabel!
+    @IBOutlet weak var labelButtonInstructionBottom: WKInterfaceLabel!
+    
     @IBOutlet weak var buttonStart: WKInterfaceButton!
     @IBOutlet weak var buttonSchedule: WKInterfaceButton!
+    @IBOutlet weak var buttonSettings: WKInterfaceButton!
+    @IBOutlet weak var button: WKInterfaceButton!
     
     // MARK: - Variables
     var animationTimer: Timer?
@@ -42,6 +49,7 @@ class InterfaceController: WKInterfaceController {
         self.startAnimationRing(numberOfWashesToday: numberOfWashesToday)
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
+        
         if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
         }
@@ -68,6 +76,19 @@ class InterfaceController: WKInterfaceController {
                                                         repeatCount: 1)
     }
     
+    private func buttonTutorial(enableButton: WKInterfaceButton, instructionLabel: WKInterfaceLabel, textLabel: String) {
+        enableButton.setEnabled(true)
+        instructionLabel.setText(textLabel)
+        self.scroll(to: enableButton, at: .bottom, animated: true)
+    }
+    
+    private func setEnableButtons(_ enable: Bool) {
+        self.buttonStart.setEnabled(enable)
+        self.buttonSchedule.setEnabled(enable)
+        self.buttonSettings.setEnabled(enable)
+        self.button.setEnabled(enable)
+    }
+    
     private func ringAnimate() {
         
         self.groupRingProgress.setBackgroundImageNamed("ring")
@@ -81,8 +102,8 @@ class InterfaceController: WKInterfaceController {
     
     private func ringInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonStart.setAlpha(0.2)
-            self.buttonSchedule.setAlpha(0.2)
+            self.setEnableButtons(false)
+            
             self.labelRingInstruction.setHidden(false)
             self.labelRingInstruction.setText("This indicates the progress of the daily goal.")
         })
@@ -90,60 +111,88 @@ class InterfaceController: WKInterfaceController {
     
     private func startButtonInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.groupRingProgress.setHidden(true)
             self.labelRingInstruction.setHidden(true)
+            self.labelButtonInstructionTop.setHidden(false)
             
-            self.buttonSchedule.setAlpha(0.2)
-            self.buttonStart.setAlpha(1)
+            self.buttonTutorial(enableButton: self.buttonStart,
+                                instructionLabel: self.labelButtonInstructionTop,
+                                textLabel: "Start button starts the hand was process.")
             
-            self.labelButtonInstruction.setHidden(false)
-            self.labelButtonInstruction.setText("Start button starts the hand wash process.")
+            self.groupRingProgress.setAlpha(0.2)
+        
         })
     }
     
     private func scheduleButtonInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonStart.setAlpha(0.2)
-            self.buttonSchedule.setAlpha(1)
+            self.buttonStart.setEnabled(false)
             
-            self.labelButtonInstruction.setText("Schedule button edit alarm.")
+            self.buttonTutorial(enableButton: self.buttonSchedule,
+                                instructionLabel: self.labelButtonInstructionTop,
+                                textLabel: "Schedule button edit alarm.")
+            
+            self.labelButtonInstructionBottom.setHidden(false)
+        })
+    }
+    
+    private func settingButtonInstructionAnimate() {
+        self.animate(withDuration: 1, animations: {
+            self.buttonSchedule.setEnabled(false)
+            
+            self.buttonTutorial(enableButton: self.buttonSettings,
+                                instructionLabel: self.labelButtonInstructionBottom,
+                                textLabel: "Start button starts the hand was process.")
+            
+            self.labelButtonInstructionTop.setHidden(true)
+        })
+    }
+    
+    private func buttonInstructionAnimate() {
+        self.animate(withDuration: 1, animations: {
+            self.buttonSettings.setEnabled(false)
+            
+            self.buttonTutorial(enableButton: self.button,
+                                instructionLabel: self.labelButtonInstructionBottom,
+                                textLabel: "Start button starts the hand was process.")
         })
     }
     
     private func finishInstructionAnimate() {
         self.animate(withDuration: 1, animations: {
-            self.buttonStart.setAlpha(1)
-            
-            self.groupRingProgress.setHidden(false)
-        
-            self.labelButtonInstruction.setHidden(true)
+            self.labelButtonInstructionBottom.setText("")
+            self.groupRingProgress.setAlpha(1)
+            self.setEnableButtons(true)
+            self.labelButtonInstructionBottom.setHidden(true)
+            self.scroll(to: self.groupRingProgress, at: .top, animated: true)
         })
     }
     
+    // Organize tutorial actions.
     private func animateSequence() {
         self.ringAnimate()
         self.ringInstructionAnimate()
         
         self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
-            
-            switch self.stageAnimation {
-            case 1:
-                self.startButtonInstructionAnimate()
-            case 2:
-                self.scheduleButtonInstructionAnimate()
-            case 3:
-                self.groupRingProgress.setBackgroundImageNamed("ring")
-                self.finishInstructionAnimate()
-            case 4:
-                self.stageAnimation = 0
+                    
+        switch self.stageAnimation {
+        case 1:
+            self.startButtonInstructionAnimate()
+        case 2:
+            self.scheduleButtonInstructionAnimate()
+        case 3:
+            self.settingButtonInstructionAnimate()
+        case 4:
+            self.buttonInstructionAnimate()
+        case 5:
+            self.finishInstructionAnimate()
+        case 6:
+            self.stageAnimation = 0
                 
-                Timer.invalidate()
-                
+            Timer.invalidate()
             default:
                 Timer.invalidate()
                 print("Invalid animate!")
             }
-
             self.stageAnimation += 1
         }
     }

@@ -16,11 +16,13 @@ class InterfaceController: WKInterfaceController {
 
     // MARK: - Outlets
     @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
-    @IBOutlet weak var labelFraction: WKInterfaceLabel!
+
     @IBOutlet weak var labelRingInstruction: WKInterfaceLabel!
     @IBOutlet weak var labelButtonInstruction: WKInterfaceLabel!
     @IBOutlet weak var buttonStart: WKInterfaceButton!
     @IBOutlet weak var buttonSchedule: WKInterfaceButton!
+    
+    @IBOutlet weak var groupHandWashAnimation: WKInterfaceGroup!
     
     // MARK: - Variables
     var animationTimer: Timer?
@@ -37,9 +39,10 @@ class InterfaceController: WKInterfaceController {
         
         let numberOfWashesToday = WashDAO.numberOfWashesToday()
         
-        self.labelFraction.setText("\(numberOfWashesToday)/5")
+//        self.labelFraction.setText("\(numberOfWashesToday)/5")
         
         self.startAnimationRing(numberOfWashesToday: numberOfWashesToday)
+        self.startAnimationHandWash(numberOfWashesToday: numberOfWashesToday)
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
         if self.firstLaunch!.isFirstLaunch {
@@ -64,6 +67,21 @@ class InterfaceController: WKInterfaceController {
         
         self.groupRingProgress.setBackgroundImageNamed("ring")
         self.groupRingProgress.startAnimatingWithImages(in: NSRange(location: 0, length: completionLength),
+                                                        duration: duration,
+                                                        repeatCount: 1)
+    }
+    
+    private func startAnimationHandWash(numberOfWashesToday: Int){
+        var completionLength = 21
+        
+        if numberOfWashesToday == 0 {
+            completionLength = 1
+        }
+        
+        let duration = 1.0
+        
+        self.groupHandWashAnimation.setBackgroundImageNamed("HandWash")
+        self.groupHandWashAnimation.startAnimatingWithImages(in: NSRange(location: 0, length: completionLength),
                                                         duration: duration,
                                                         repeatCount: 1)
     }

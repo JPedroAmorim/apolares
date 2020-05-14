@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -14,9 +14,7 @@
                         <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="0wE-kS-mbg"/>
                         <group width="100" height="100" alignment="center" backgroundImage="ring51" layout="vertical" id="M4d-VU-YWg">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="3/5" id="IC2-Bk-Mee">
-                                    <fontDescription key="font" type="system" pointSize="40"/>
-                                </label>
+                                <group width="60" height="60" alignment="center" verticalAlignment="center" backgroundImage="HandWash0" id="nPG-sx-Z1o" userLabel=" Group HandWash Animation"/>
                             </items>
                         </group>
                         <group width="1" alignment="center" layout="vertical" id="nns-Dj-hgc" userLabel="GroupButton">
@@ -46,9 +44,9 @@
                     <connections>
                         <outlet property="buttonSchedule" destination="aCJ-qd-gHZ" id="EPt-xz-F6y"/>
                         <outlet property="buttonStart" destination="pma-74-0EM" id="eov-Is-LEu"/>
+                        <outlet property="groupHandWashAnimation" destination="nPG-sx-Z1o" id="bND-aN-Vs1"/>
                         <outlet property="groupRingProgress" destination="M4d-VU-YWg" id="mKW-Gu-ZtP"/>
                         <outlet property="labelButtonInstruction" destination="PbA-wQ-wxU" id="glq-Hu-rFw"/>
-                        <outlet property="labelFraction" destination="IC2-Bk-Mee" id="4QC-qP-QCM"/>
                         <outlet property="labelRingInstruction" destination="0wE-kS-mbg" id="wjO-JF-UZI"/>
                     </connections>
                 </controller>
@@ -78,6 +76,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HandWash0" width="61" height="52"/>
         <image name="ring51" width="90" height="90"/>
     </resources>
 </document>

@@ -84,7 +84,7 @@ class InterfaceController: WKInterfaceController {
             self.buttonStart.setAlpha(0.2)
             self.buttonSchedule.setAlpha(0.2)
             self.labelRingInstruction.setHidden(false)
-            self.labelRingInstruction.setText("This indicates the progress of the daily goal.")
+            self.labelRingInstruction.setText(String("This ring indicates the progress of your daily hand washing goal.").localized)
         })
     }
     

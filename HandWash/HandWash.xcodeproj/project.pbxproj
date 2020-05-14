@@ -35,6 +35,7 @@
 		D588B1E4246C39D100458CE8 /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E6246C39D100458CE8 /* AfterWash.storyboard */; };
 		D588B1EB246C39E400458CE8 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1ED246C39E400458CE8 /* Configuration.storyboard */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
+		D5A5458F246D7229004A0273 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5458E246D7229004A0273 /* Extensions.swift */; };
 		D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5F6EC9A24507C8F00CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
@@ -120,6 +121,7 @@
 		D588B1EA246C39DC00458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/AfterWash.strings"; sourceTree = "<group>"; };
 		D588B1EC246C39E400458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Configuration.storyboard; sourceTree = "<group>"; };
 		D588B1EF246C3A1F00458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Configuration.strings"; sourceTree = "<group>"; };
+		D5A5458E246D7229004A0273 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigutationInterfaceController.swift; sourceTree = "<group>"; };
 		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				D507AD4B24643AB90083CBD2 /* HandWash WatchKit Extension.entitlements */,
 				4F56F433243E060400D4D5FB /* Assets.xcassets */,
 				4F56F435243E060400D4D5FB /* Info.plist */,
+				D5A5458D246D71F2004A0273 /* Util */,
 				D574F27A244F40BD005244DA /* Resources */,
 				D507AD5624645EB40083CBD2 /* Persistence */,
 				D5148242244DD5690032B3AF /* Model */,
@@ -253,6 +256,14 @@
 				D588B1D8246C399400458CE8 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D5A5458D246D71F2004A0273 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5458E246D7229004A0273 /* Extensions.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +415,7 @@
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
 				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
 				D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */,
+				D5A5458F246D7229004A0273 /* Extensions.swift in Sources */,
 				D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */,
 				D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,

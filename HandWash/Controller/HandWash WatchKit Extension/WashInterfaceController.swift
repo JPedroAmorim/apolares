@@ -164,7 +164,7 @@ class WashInterfaceController: WKInterfaceController {
     private func inlineMovieAnimate() {
         self.instructionLabel01.setHidden(true)
         self.instructionLabel02.setHidden(false)
-        self.instructionLabel02.setText("The video teaches the protocol.")
+        self.instructionLabel02.setText(String("Through this video you'll learn the WHO hand washing protocol.").localized)
         
         self.animate(withDuration: 1, animations: {
             self.inlineMovie.setAlpha(1)
@@ -173,7 +173,7 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     private func groupProgressAnimate() {
-        self.instructionLabel01.setText("This bar indicates the time for this stage to end.")
+        self.instructionLabel01.setText(String("This bar indicates the progress you've made in this stage.").localized)
         
         self.animate(withDuration: 1, animations: {
             self.groupProgress.setAlpha(1)
@@ -181,8 +181,7 @@ class WashInterfaceController: WKInterfaceController {
     }
     
     private func rapticFeedbackAnimate() {
-        self.instructionLabel01.setText("This sound indicates that the stage has ended.")
-        
+        self.instructionLabel01.setText(String("This sound indicates that the stage has ended.").localized)
         self.animate(withDuration: 1, animations: {
             self.inlineMovie.setAlpha(0.2)
             self.groupProgress.setAlpha(0.2)

@@ -129,7 +129,7 @@ class InterfaceController: WKInterfaceController {
             
             self.setAlphaButtons(start: 1.0, schedule: 0.2, setting: 0.2, button: 0.2)
             
-            self.labelButtonInstructionTop.setText("Start button starts the hand was process.")
+            self.labelButtonInstructionTop.setText(String("This button will start the hand washing protocol.").localized)
             self.scroll(to: self.buttonStart, at: .bottom, animated: true)
             
             self.groupRingProgress.setAlpha(0.2)
@@ -142,7 +142,7 @@ class InterfaceController: WKInterfaceController {
             
             self.setAlphaButtons(start: 0.2, schedule: 1.0, setting: 0.2, button: 0.2)
             
-            self.labelButtonInstructionTop.setText("Schedule button edit alarm.")
+            self.labelButtonInstructionTop.setText(String("Through the schedule button you'll be able to alter the existing notification alarm or disable it, as well as add an alarm if there isn't a current one.").localized)
             self.scroll(to: self.buttonSchedule, at: .bottom, animated: true)
         })
     }

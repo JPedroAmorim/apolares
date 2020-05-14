@@ -161,7 +161,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     private func setAlarmInstructionAnimate() {
         self.labelInstructionDontRemindMe.setHidden(true)
         self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText("You can be notified to wash your hands.")
+        self.labelInstructionSetAlarm.setText(String("You can be notified to be remembered to wash your hands.").localized)
         
         self.animate(withDuration: 1, animations: {
             self.groupSetAlarm.setAlpha(1)
@@ -172,7 +172,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     private func setAlarmInstructionAnimateCrown() {
         self.labelInstructionDontRemindMe.setHidden(true)
         self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText("You can change the timer by the crown...")
+        self.labelInstructionSetAlarm.setText(String("You are able to set the timer through the crown...").localized)
         
         self.animate(withDuration: 2, animations: {
             self.groupSetAlarm.setAlpha(1)
@@ -190,8 +190,7 @@ class AfterWashInterfaceController: WKInterfaceController {
     private func setAlarmInstructionAnimateButton() {
         self.labelInstructionDontRemindMe.setHidden(true)
         self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText("...and set the alarm to be reminded.")
-        
+        self.labelInstructionSetAlarm.setText(String("...and then, set the alarm to be reminded.").localized)
         self.animate(withDuration: 1, animations: {
             self.groupSetAlarm.setAlpha(1)
             self.buttonDontRemindMe.setAlpha(0.2)
@@ -205,7 +204,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         
         self.labelInstructionSetAlarm.setHidden(true)
         self.labelInstructionDontRemindMe.setHidden(false)
-        self.labelInstructionDontRemindMe.setText("Or you can choose to be not reminded to wash your hands.")
+        self.labelInstructionDontRemindMe.setText(String("Or you can choose to not be notified.").localized)
         
         self.animate(withDuration: 1, animations: {
             self.buttonDontRemindMe.setAlpha(1)

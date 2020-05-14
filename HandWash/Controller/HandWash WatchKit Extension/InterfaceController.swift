@@ -54,11 +54,11 @@ class InterfaceController: WKInterfaceController {
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
         
         // Check if first launch
-//        if self.firstLaunch!.isFirstLaunch {
+        if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
-//        } else {
-//            self.setEnableButtons(isEnable: true)
-//        }
+        } else {
+            self.setEnableButtons(isEnable: true)
+        }
 
     }
     
@@ -172,16 +172,11 @@ class InterfaceController: WKInterfaceController {
     
     private func buttonInstructionAnimate() {
         
-//        self.labelBottomButtonInstruction.setHidden(true)
-//        self.labelButtonInstruction.setHidden(false)
-        
         self.animate(withDuration: 1, animations: {
             
             self.labelBottomButtonInstruction.setText("Button não sei o que faz.")
             
             self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
-    
-//            self.scroll(to: self.labelButtonInstruction, at: .top, animated: true)
         })
     }
     

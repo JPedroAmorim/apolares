@@ -22,8 +22,11 @@ class WashInterfaceController: WKInterfaceController {
     
     // MARK: - Outlets
     @IBOutlet weak var inlineMovie: WKInterfaceInlineMovie!
-    @IBOutlet weak var instructionLabel01: WKInterfaceLabel!
-    @IBOutlet weak var instructionLabel02: WKInterfaceLabel!
+    
+    @IBOutlet weak var instructionLabelRapticFeedback: WKInterfaceLabel!
+    @IBOutlet weak var instructionLabelInLineMovie: WKInterfaceLabel!
+    @IBOutlet weak var instructionLabelProgress: WKInterfaceLabel!
+    
     @IBOutlet weak var groupProgress: WKInterfaceGroup!
     
     // MARK: - Constants
@@ -64,6 +67,11 @@ class WashInterfaceController: WKInterfaceController {
     
     override func didDeactivate() {
         super.didDeactivate()
+        
+        // If it's the first launch and
+        // if returned by the back button of the afterWashStoryboard,
+        // hiding labels and setting alpha 1. ()
+        self.finishInstructionAnimate()
     }
     
     override func willDisappear() {
@@ -107,7 +115,7 @@ class WashInterfaceController: WKInterfaceController {
                         self.pushController(withName: "AfterWash", context: self)
                     }
                 }
-                else if self.firstLaunch!.isFirstLaunch {
+                else if true {//self.firstLaunch!.isFirstLaunch {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
@@ -160,33 +168,44 @@ class WashInterfaceController: WKInterfaceController {
             self.groupProgress.startAnimatingWithImages(in: NSRange(location: 0, length: 102), duration: stageDuration, repeatCount: 0)
         }
     }
-
-    private func inlineMovieAnimate() {
-        self.instructionLabel01.setHidden(true)
-        self.instructionLabel02.setHidden(false)
-        self.instructionLabel02.setText(String("Through this video you'll learn the WHO hand washing protocol.").localized)
-        
+    
+    private func rapticFeedbackAnimate() {
+        self.instructionLabelRapticFeedback.setText(String("This sound indicates that the stage has ended.").localized)
         self.animate(withDuration: 1, animations: {
-            self.inlineMovie.setAlpha(1)
+            self.inlineMovie.setAlpha(0.2)
             self.groupProgress.setAlpha(0.2)
+            self.instructionLabelRapticFeedback.setHidden(false)
         })
     }
     
     private func groupProgressAnimate() {
-        self.instructionLabel01.setText(String("This bar indicates the progress you've made in this stage.").localized)
+        
+        self.instructionLabelRapticFeedback.setHidden(true)
+        self.instructionLabelProgress.setHidden(false)
         
         self.animate(withDuration: 1, animations: {
+            self.instructionLabelProgress.setText(String("This bar indicates the progress you've made in this stage.").localized)
             self.groupProgress.setAlpha(1)
         })
     }
     
-    private func rapticFeedbackAnimate() {
-        self.instructionLabel01.setText(String("This sound indicates that the stage has ended.").localized)
+    private func inlineMovieAnimate() {
+        
+        self.instructionLabelProgress.setHidden(true)
+        self.instructionLabelInLineMovie.setHidden(false)
+        
         self.animate(withDuration: 1, animations: {
-            self.inlineMovie.setAlpha(0.2)
+            self.inlineMovie.setAlpha(1)
             self.groupProgress.setAlpha(0.2)
-            self.instructionLabel01.setHidden(false)
+            
+            self.instructionLabelInLineMovie.setText(String("Through this video you'll learn the WHO hand washing protocol.").localized)
         })
+    }
+    
+    private func finishInstructionAnimate() {
+        
+        self.instructionLabelInLineMovie.setHidden(true)
+        self.groupProgress.setAlpha(1)
     }
     
     private func animateSequence() {

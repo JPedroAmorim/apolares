@@ -32,7 +32,7 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="yla-V2-sLM">
+                                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" enabled="NO" id="yla-V2-sLM">
                                             <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="system" pointSize="16"/>
                                             <connections>
@@ -45,7 +45,7 @@
                         </group>
                         <group width="1" alignment="left" layout="overlap" id="zAf-sN-4mQ">
                             <items>
-                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="EoP-jm-TLX">
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" enabled="NO" id="EoP-jm-TLX">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="16"/>
                                     <connections>
@@ -59,14 +59,15 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="BottomButton" destination="EoP-jm-TLX" id="KBU-le-I5d"/>
-                        <outlet property="UpperButton" destination="yla-V2-sLM" id="DEB-yb-YcX"/>
+                        <outlet property="bottomButton" destination="EoP-jm-TLX" id="KBU-le-I5d"/>
                         <outlet property="groupSchedule" destination="jcG-yp-V3N" id="JL8-ZD-1dg"/>
                         <outlet property="groupScheduleTimer" destination="e6D-us-bVY" id="UrW-FC-9Vf"/>
                         <outlet property="groupTurnOffAlarm" destination="zAf-sN-4mQ" id="ngF-LP-FLI"/>
+                        <outlet property="labelHeader" destination="4h0-KB-2ws" id="TM6-Sc-yzM"/>
                         <outlet property="labelInstructionSchedule" destination="2tj-4O-enq" id="F0c-Ja-WaY"/>
                         <outlet property="labelInstructionTurnOfAlarm" destination="2Hq-v0-BL2" id="GWm-bl-JFA"/>
                         <outlet property="timer" destination="MwS-LF-hdU" id="nYg-nA-fHO"/>
+                        <outlet property="upperButton" destination="yla-V2-sLM" id="DEB-yb-YcX"/>
                     </connections>
                 </controller>
             </objects>

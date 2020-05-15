@@ -219,7 +219,6 @@ class WashInterfaceController: WKInterfaceController {
             case 2:
                 self.inlineMovieAnimate()
             case 3:
-                self.stageAnimation = 0 // Não precisa disso se tiver o userdefauls verificando a primeira vez
                 
                 Timer.invalidate()
                 

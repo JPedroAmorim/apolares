@@ -28,11 +28,3 @@ final class FirstLaunch {
                   setWasLaunchedBefore: { userDefaults.set($0, forKey: key) })
     }
 }
-
-extension FirstLaunch {
-    
-    static func alwaysFirst() -> FirstLaunch {
-        return FirstLaunch(getWasLaunchedBefore: { return false }, setWasLaunchedBefore: { _ in })
-    }
-    
-}

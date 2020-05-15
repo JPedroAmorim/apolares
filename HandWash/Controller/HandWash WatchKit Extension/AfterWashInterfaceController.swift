@@ -20,6 +20,9 @@ class AfterWashInterfaceController: WKInterfaceController {
     // Outlets to tutorial
     @IBOutlet weak var groupSetAlarm: WKInterfaceGroup!
     @IBOutlet weak var labelInstructionDontRemindMe: WKInterfaceLabel!
+    @IBOutlet weak var labelInstruction: WKInterfaceLabel!
+    @IBOutlet weak var labelInstructionCrown: WKInterfaceLabel!
+    
     @IBOutlet weak var groupSetAlarmTimer: WKInterfaceGroup!
     
     @IBOutlet weak var groupDontRemindMe: WKInterfaceGroup!
@@ -138,7 +141,6 @@ class AfterWashInterfaceController: WKInterfaceController {
             case 3:
                 self.dontRemindMeInstructionAnimate()
             case 4:
-                self.stageAnimation = 1 // To be able to test
                 
                 self.buttonSetAlarm.setEnabled(true)
                 self.buttonDontRemindMe.setEnabled(true)
@@ -159,22 +161,24 @@ class AfterWashInterfaceController: WKInterfaceController {
     }
     
     private func setAlarmInstructionAnimate() {
-        self.labelInstructionDontRemindMe.setHidden(true)
-        self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText(String("You can be notified to be remembered to wash your hands.").localized)
+        self.labelInstruction.setHidden(false)
         
         self.animate(withDuration: 1, animations: {
+            self.labelInstruction.setText(String("You can be notified to be remembered to wash your hands.").localized)
+            
             self.groupSetAlarm.setAlpha(1)
             self.buttonDontRemindMe.setAlpha(0.2)
+            self.buttonSetAlarm.setAlpha(0.2)
         })
     }
     
     private func setAlarmInstructionAnimateCrown() {
-        self.labelInstructionDontRemindMe.setHidden(true)
-        self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText(String("You are able to set the timer through the crown...").localized)
+        self.labelInstruction.setHidden(true)
+        self.labelInstructionCrown.setHidden(false)
         
-        self.animate(withDuration: 2, animations: {
+        self.animate(withDuration: 1, animations: {
+            self.labelInstructionCrown.setText(String("You are able to set the timer through the crown...").localized)
+            
             self.groupSetAlarm.setAlpha(1)
             self.buttonDontRemindMe.setAlpha(0.2)
             self.buttonSetAlarm.setAlpha(0.2)
@@ -188,10 +192,12 @@ class AfterWashInterfaceController: WKInterfaceController {
     }
     
     private func setAlarmInstructionAnimateButton() {
-        self.labelInstructionDontRemindMe.setHidden(true)
+        self.labelInstructionCrown.setHidden(true)
         self.labelInstructionSetAlarm.setHidden(false)
-        self.labelInstructionSetAlarm.setText(String("...and then, set the alarm to be reminded.").localized)
+
         self.animate(withDuration: 1, animations: {
+            self.labelInstructionSetAlarm.setText(String("...and then, set the alarm to be reminded.").localized)
+            
             self.groupSetAlarm.setAlpha(1)
             self.buttonDontRemindMe.setAlpha(0.2)
             self.buttonSetAlarm.setAlpha(1)
@@ -204,12 +210,13 @@ class AfterWashInterfaceController: WKInterfaceController {
         
         self.labelInstructionSetAlarm.setHidden(true)
         self.labelInstructionDontRemindMe.setHidden(false)
-        self.labelInstructionDontRemindMe.setText(String("Or you can choose to not be notified.").localized)
         
         self.animate(withDuration: 1, animations: {
+            self.labelInstructionDontRemindMe.setText(String("Or you can choose to not be notified.").localized)
+            
+            self.buttonSetAlarm.setAlpha(0.2)
             self.buttonDontRemindMe.setAlpha(1)
             self.groupDontRemindMe.setAlpha(1)
-            self.groupSetAlarm.setAlpha(0.2)
         })
     }
     

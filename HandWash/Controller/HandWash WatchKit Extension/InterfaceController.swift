@@ -219,7 +219,6 @@ class InterfaceController: WKInterfaceController {
         case 5:
             self.finishInstructionAnimate()
         case 6:
-            self.stageAnimation = 0
                 
             Timer.invalidate()
             default:

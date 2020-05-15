@@ -11,7 +11,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="0wE-kS-mbg"/>
+                        <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="0wE-kS-mbg">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
                         <group width="100" height="100" alignment="center" backgroundImage="ring51" layout="vertical" id="M4d-VU-YWg">
                             <items>
                                 <group width="60" height="60" alignment="center" verticalAlignment="center" backgroundImage="HandWash0" id="nPG-sx-Z1o" userLabel=" Group HandWash Animation"/>
@@ -19,39 +21,64 @@
                         </group>
                         <group width="1" alignment="center" layout="vertical" id="nns-Dj-hgc" userLabel="GroupButton">
                             <items>
-                                <button width="1" alignment="left" title="Start" id="pma-74-0EM">
+                                <label alignment="left" hidden="YES" numberOfLines="0" id="PbA-wQ-wxU" userLabel="Label Button Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Start" enabled="NO" id="pma-74-0EM">
                                     <color key="backgroundColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="QZF-Gx-pjw" kind="push" id="nLe-NV-Emg"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Schedule" id="aCJ-qd-gHZ">
+                                <label alignment="right" hidden="YES" numberOfLines="0" id="R8l-iw-UmR" userLabel="Label Button Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Schedule" enabled="NO" id="aCJ-qd-gHZ">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="gHR-iU-v4B" kind="push" id="2x2-vQ-m8J"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Settings" id="UzE-gV-JkG">
+                                <label alignment="left" hidden="YES" numberOfLines="0" id="qPH-WP-2Q9" userLabel="Label Settings Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Settings" enabled="NO" id="UzE-gV-JkG">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="nep-NL-tcV" kind="push" id="eOC-I4-9gH"/>
                                     </connections>
                                 </button>
-                                <label alignment="left" hidden="YES" numberOfLines="0" id="PbA-wQ-wxU" userLabel="Label Schedule Button Instruction"/>
+                                <button width="1" alignment="left" title="Button" id="k21-wR-Jau">
+                                    <connections>
+                                        <segue destination="TZw-Jy-9x8" kind="push" id="NNV-pP-6Gt"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="button" destination="k21-wR-Jau" id="X3M-CV-994"/>
                         <outlet property="buttonSchedule" destination="aCJ-qd-gHZ" id="EPt-xz-F6y"/>
+                        <outlet property="buttonSettings" destination="UzE-gV-JkG" id="uNG-zd-NHW"/>
                         <outlet property="buttonStart" destination="pma-74-0EM" id="eov-Is-LEu"/>
                         <outlet property="groupHandWashAnimation" destination="nPG-sx-Z1o" id="bND-aN-Vs1"/>
+                        <outlet property="groupButton" destination="nns-Dj-hgc" id="iVO-1I-xth"/>
                         <outlet property="groupRingProgress" destination="M4d-VU-YWg" id="mKW-Gu-ZtP"/>
-                        <outlet property="labelButtonInstruction" destination="PbA-wQ-wxU" id="glq-Hu-rFw"/>
+                        <outlet property="labelBottomButtonInstruction" destination="qPH-WP-2Q9" id="LR0-Y4-0fe"/>
                         <outlet property="labelRingInstruction" destination="0wE-kS-mbg" id="wjO-JF-UZI"/>
+                        <outlet property="labelScheduleInstruction" destination="R8l-iw-UmR" id="Sp5-BP-vcG"/>
+                        <outlet property="labelStartInstruction" destination="PbA-wQ-wxU" id="glq-Hu-rFw"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="Htm-EO-YZW">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="History" id="TZw-Jy-9x8"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="599"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="qVc-1h-N0R">

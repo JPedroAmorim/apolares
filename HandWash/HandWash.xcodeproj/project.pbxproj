@@ -18,10 +18,6 @@
 		4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56F441243E060400D4D5FB /* ExtensionDelegate.swift */; };
 		4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56F443243E060400D4D5FB /* NotificationController.swift */; };
 		4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F445243E060400D4D5FB /* Assets.xcassets */; };
-		4F56F45F243E078400D4D5FB /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F45E243E078400D4D5FB /* Schedule.storyboard */; };
-		4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F460243E079300D4D5FB /* Wash.storyboard */; };
-		4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */; };
-		4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F464243E07C100D4D5FB /* Configuration.storyboard */; };
 		4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB57524531B39002AE002 /* Notification.storyboard */; };
 		4F74E704245717E300045FDF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74E703245717E300045FDF /* Schedule.swift */; };
 		544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */; };
@@ -32,7 +28,19 @@
 		D507AD59246462DA0083CBD2 /* WashModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5124643FDE0083CBD2 /* WashModel.xcdatamodeld */; };
 		D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5C246589650083CBD2 /* WashDAO.swift */; };
 		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
+		D5784CC2246D8DA100B232AA /* WashRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5784CC1246D8DA100B232AA /* WashRowController.swift */; };
+		D57B6C0D246EC4E200A92019 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B6C0C246EC4E200A92019 /* DateUtil.swift */; };
+		D57B6C0F246EC6C800A92019 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B6C0E246EC6C800A92019 /* HistoryInterfaceController.swift */; };
+		D588B1D6246C399400458CE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D588B1D8246C399400458CE8 /* Localizable.strings */; };
+		D588B1DA246C399B00458CE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D588B1D8246C399400458CE8 /* Localizable.strings */; };
+		D588B1DB246C399C00458CE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D588B1D8246C399400458CE8 /* Localizable.strings */; };
+		D588B1DC246C39B500458CE8 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1DE246C39B500458CE8 /* Schedule.storyboard */; };
+		D588B1E1246C39C900458CE8 /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E3246C39C900458CE8 /* Wash.storyboard */; };
+		D588B1E4246C39D100458CE8 /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E6246C39D100458CE8 /* AfterWash.storyboard */; };
+		D588B1EB246C39E400458CE8 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1ED246C39E400458CE8 /* Configuration.storyboard */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
+		D5A5458F246D7229004A0273 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5458E246D7229004A0273 /* Extensions.swift */; };
+		D5B4ED87246ED7EC004C843D /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5784CBF246D847400B232AA /* History.storyboard */; };
 		D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5F6EC9A24507C8F00CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
@@ -97,10 +105,6 @@
 		4F56F445243E060400D4D5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F56F447243E060400D4D5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		4F56F45E243E078400D4D5FB /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
-		4F56F460243E079300D4D5FB /* Wash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wash.storyboard; sourceTree = "<group>"; };
-		4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AfterWash.storyboard; sourceTree = "<group>"; };
-		4F56F464243E07C100D4D5FB /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
 		4F5DB57524531B39002AE002 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		4F74E703245717E300045FDF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = "View/HandWash WatchKit App/Schedule.swift"; sourceTree = SOURCE_ROOT; };
 		544EB6F02450897000AFDAB3 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,22 @@
 		D507AD5724645EF30083CBD2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D507AD5C246589650083CBD2 /* WashDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDAO.swift; sourceTree = "<group>"; };
 		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
+		D5784CBE246D778D00B232AA /* pt-BR */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D5784CBF246D847400B232AA /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		D5784CC1246D8DA100B232AA /* WashRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashRowController.swift; sourceTree = "<group>"; };
+		D57B6C0C246EC4E200A92019 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		D57B6C0E246EC6C800A92019 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		D588B1D3246C397300458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		D588B1D7246C399400458CE8 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D588B1DD246C39B500458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
+		D588B1E0246C39C000458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Schedule.strings"; sourceTree = "<group>"; };
+		D588B1E2246C39C900458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Wash.storyboard; sourceTree = "<group>"; };
+		D588B1E5246C39D100458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AfterWash.storyboard; sourceTree = "<group>"; };
+		D588B1E8246C39D600458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Wash.strings"; sourceTree = "<group>"; };
+		D588B1EA246C39DC00458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/AfterWash.strings"; sourceTree = "<group>"; };
+		D588B1EC246C39E400458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Configuration.storyboard; sourceTree = "<group>"; };
+		D588B1EF246C3A1F00458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Configuration.strings"; sourceTree = "<group>"; };
+		D5A5458E246D7229004A0273 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigutationInterfaceController.swift; sourceTree = "<group>"; };
 		D5F6EC9524507A5F00CF0825 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +156,7 @@
 				D507AD4B24643AB90083CBD2 /* HandWash WatchKit Extension.entitlements */,
 				4F56F433243E060400D4D5FB /* Assets.xcassets */,
 				4F56F435243E060400D4D5FB /* Info.plist */,
+				D5A5458D246D71F2004A0273 /* Util */,
 				D574F27A244F40BD005244DA /* Resources */,
 				D507AD5624645EB40083CBD2 /* Persistence */,
 				D5148242244DD5690032B3AF /* Model */,
@@ -160,11 +181,12 @@
 			isa = PBXGroup;
 			children = (
 				4F56F430243E060100D4D5FB /* Main.storyboard */,
-				4F56F45E243E078400D4D5FB /* Schedule.storyboard */,
-				4F56F460243E079300D4D5FB /* Wash.storyboard */,
-				4F56F462243E07AD00D4D5FB /* AfterWash.storyboard */,
-				4F56F464243E07C100D4D5FB /* Configuration.storyboard */,
+				D588B1DE246C39B500458CE8 /* Schedule.storyboard */,
+				D588B1E3246C39C900458CE8 /* Wash.storyboard */,
+				D588B1E6246C39D100458CE8 /* AfterWash.storyboard */,
+				D588B1ED246C39E400458CE8 /* Configuration.storyboard */,
 				4F5DB57524531B39002AE002 /* Notification.storyboard */,
+				D5784CBF246D847400B232AA /* History.storyboard */,
 			);
 			path = "HandWash WatchKit App";
 			sourceTree = "<group>";
@@ -183,6 +205,8 @@
 				4F56F448243E060400D4D5FB /* PushNotificationPayload.apns */,
 				54B9176C2467B31D006E1760 /* FirstLaunch.swift */,
 				D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */,
+				D5784CC1246D8DA100B232AA /* WashRowController.swift */,
+				D57B6C0E246EC6C800A92019 /* HistoryInterfaceController.swift */,
 			);
 			path = "HandWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -243,8 +267,18 @@
 			children = (
 				D5F6EC9524507A5F00CF0825 /* videos */,
 				D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */,
+				D588B1D8246C399400458CE8 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D5A5458D246D71F2004A0273 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5458E246D7229004A0273 /* Extensions.swift */,
+				D57B6C0C246EC4E200A92019 /* DateUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +363,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 4F56F420243E060100D4D5FB;
 			productRefGroup = 4F56F428243E060100D4D5FB /* Products */;
@@ -348,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */,
+				D588B1D6246C399400458CE8 /* Localizable.strings in Resources */,
 				D5F6EC9A24507C8F00CF0825 /* videos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,13 +392,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F56F463243E07AD00D4D5FB /* AfterWash.storyboard in Resources */,
+				D588B1E4246C39D100458CE8 /* AfterWash.storyboard in Resources */,
 				4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */,
-				4F56F461243E079300D4D5FB /* Wash.storyboard in Resources */,
-				4F56F465243E07C100D4D5FB /* Configuration.storyboard in Resources */,
+				D588B1E1246C39C900458CE8 /* Wash.storyboard in Resources */,
+				D5B4ED87246ED7EC004C843D /* History.storyboard in Resources */,
+				D588B1EB246C39E400458CE8 /* Configuration.storyboard in Resources */,
+				D588B1DB246C399C00458CE8 /* Localizable.strings in Resources */,
 				4F56F432243E060100D4D5FB /* Main.storyboard in Resources */,
 				D5A3699124508F6200D89F20 /* videos in Resources */,
-				4F56F45F243E078400D4D5FB /* Schedule.storyboard in Resources */,
+				D588B1DC246C39B500458CE8 /* Schedule.storyboard in Resources */,
 				4F5DB57624531B39002AE002 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5F6EC9B24507CD500CF0825 /* videos in Resources */,
+				D588B1DA246C399B00458CE8 /* Localizable.strings in Resources */,
 				4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */,
 				D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */,
 			);
@@ -388,10 +427,14 @@
 				2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */,
 				4F56F444243E060400D4D5FB /* NotificationController.swift in Sources */,
 				544EB6F12450897000AFDAB3 /* ScheduleInterfaceController.swift in Sources */,
+				D57B6C0F246EC6C800A92019 /* HistoryInterfaceController.swift in Sources */,
 				D507AD59246462DA0083CBD2 /* WashModel.xcdatamodeld in Sources */,
 				4F56F442243E060400D4D5FB /* ExtensionDelegate.swift in Sources */,
+				D57B6C0D246EC4E200A92019 /* DateUtil.swift in Sources */,
 				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
+				D5784CC2246D8DA100B232AA /* WashRowController.swift in Sources */,
 				D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */,
+				D5A5458F246D7229004A0273 /* Extensions.swift in Sources */,
 				D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */,
 				4F09504C246D91CD0089E775 /* AlarmDAO.swift in Sources */,
 				D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */,
@@ -420,8 +463,54 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F56F431243E060100D4D5FB /* Base */,
+				D588B1D3246C397300458CE8 /* pt-BR */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D588B1D8246C399400458CE8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D588B1D7246C399400458CE8 /* en */,
+				D5784CBE246D778D00B232AA /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D588B1DE246C39B500458CE8 /* Schedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D588B1DD246C39B500458CE8 /* Base */,
+				D588B1E0246C39C000458CE8 /* pt-BR */,
+			);
+			name = Schedule.storyboard;
+			sourceTree = "<group>";
+		};
+		D588B1E3246C39C900458CE8 /* Wash.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D588B1E2246C39C900458CE8 /* Base */,
+				D588B1E8246C39D600458CE8 /* pt-BR */,
+			);
+			name = Wash.storyboard;
+			sourceTree = "<group>";
+		};
+		D588B1E6246C39D100458CE8 /* AfterWash.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D588B1E5246C39D100458CE8 /* Base */,
+				D588B1EA246C39DC00458CE8 /* pt-BR */,
+			);
+			name = AfterWash.storyboard;
+			sourceTree = "<group>";
+		};
+		D588B1ED246C39E400458CE8 /* Configuration.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D588B1EC246C39E400458CE8 /* Base */,
+				D588B1EF246C3A1F00458CE8 /* pt-BR */,
+			);
+			name = Configuration.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -491,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

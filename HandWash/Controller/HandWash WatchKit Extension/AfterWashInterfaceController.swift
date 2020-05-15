@@ -100,7 +100,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
                                                     repeats: false)
-        // let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
         let content = UNMutableNotificationContent()
         content.categoryIdentifier = "myNotification"
         content.title = "HandWash"
@@ -225,8 +225,8 @@ class AfterWashInterfaceController: WKInterfaceController {
         crownSequencer.delegate = self
         crownSequencer.focus()
         // Timer setup
-        let date = Date(timeIntervalSinceNow: 2 * 60 * 60 + 1) // 2 hours and 1 sec
-        numberOfTimeIntervals = 8 // Sync this variable with the time suggested
+        numberOfTimeIntervals = 8
+        let date = Date(timeIntervalSinceNow: 60 * 60 + 1) // Each interval is 15 minutes
         timer.setDate(date) // Timer suggestion
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "AfterWash")

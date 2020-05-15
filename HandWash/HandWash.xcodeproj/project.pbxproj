@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F8B0072244DFCCF00441A77 /* WashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */; };
+		4F09504C246D91CD0089E775 /* SemNome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09504B246D91CD0089E775 /* SemNome.swift */; };
 		4F3BE409245082B9003CAB7B /* AfterWashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */; };
 		4F56F42C243E060100D4D5FB /* HandWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F56F432243E060100D4D5FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		2F8B0071244DFCCF00441A77 /* WashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashInterfaceController.swift; sourceTree = "<group>"; };
+		4F09504B246D91CD0089E775 /* SemNome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemNome.swift; sourceTree = "<group>"; };
 		4F3BE408245082B9003CAB7B /* AfterWashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterWashInterfaceController.swift; sourceTree = "<group>"; };
 		4F56F427243E060100D4D5FB /* HandWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F56F42B243E060100D4D5FB /* HandWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				D507AD5C246589650083CBD2 /* WashDAO.swift */,
+				4F09504B246D91CD0089E775 /* SemNome.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				4F74E704245717E300045FDF /* Schedule.swift in Sources */,
 				D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */,
 				D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */,
+				4F09504C246D91CD0089E775 /* SemNome.swift in Sources */,
 				D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */,
 				4F56F440243E060400D4D5FB /* InterfaceController.swift in Sources */,
 				54B9176D2467B31D006E1760 /* FirstLaunch.swift in Sources */,

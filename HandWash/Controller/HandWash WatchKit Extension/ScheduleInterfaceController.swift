@@ -26,7 +26,7 @@ class ScheduleInterfaceController: WKInterfaceController {
     
     // MARK: - Variables
     var crownAcumulator: Double = 0
-    var numberOfTimeIntervals: Int = 0 // Each interval is equivalent to 15 minutes
+    var numberOfTimeIntervals: Double = 0 // Each interval is equivalent to 15 minutes
     
     // Variables to tutorial
     var animationTimer: Timer?
@@ -87,8 +87,15 @@ class ScheduleInterfaceController: WKInterfaceController {
         crownSequencer.delegate = self
         crownSequencer.focus()
         // Timer setup
-        let date = Date(timeIntervalSinceNow: 2 * 60 * 60 + 1) // 2 hours and 1 sec
-        numberOfTimeIntervals = 8 // Sync this variable with the time suggested
+        if let defaultInterval = SemNome.getDefaultTimer() {
+            numberOfTimeIntervals = Double(defaultInterval)
+        }
+        else {
+            numberOfTimeIntervals = 8
+            print("Failed to retrive default interval at Schedule view controller")
+        }
+        
+        let date = Date(timeIntervalSinceNow: numberOfTimeIntervals * 15 * 60 + 1) // 2 hours and 1 sec
         timer.setDate(date) // Timer suggestion
         // Label and button setup
         if let _ = Schedule.shared.nextNotification {
@@ -112,8 +119,8 @@ class ScheduleInterfaceController: WKInterfaceController {
     func createNotification(NCenter: UNUserNotificationCenter) {
         var components = DateComponents()
         let date = Date()
-        let timerHours: Int = self.numberOfTimeIntervals / 4
-        let timerMinutes: Int = (self.numberOfTimeIntervals % 4) * 15
+        let timerHours: Int = Int(self.numberOfTimeIntervals) / 4
+        let timerMinutes: Int = (Int(self.numberOfTimeIntervals) % 4) * 15
         let calendar = Calendar.current
         components.calendar = calendar
         components.hour = timerHours + calendar.component(.hour, from: date)
@@ -144,6 +151,7 @@ class ScheduleInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
+                SemNome.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
                 self.pop()

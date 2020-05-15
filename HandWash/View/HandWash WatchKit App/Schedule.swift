@@ -8,6 +8,8 @@
 
 import Foundation
 import UserNotifications
+import CoreData
+
 class Schedule {
     var nextNotification: UNNotificationRequest?
     static let shared = Schedule()
@@ -21,6 +23,7 @@ class Schedule {
             NCenter.removePendingNotificationRequests(withIdentifiers: [next.identifier])
         }
         self.nextNotification = notification
+        
     }
     
     func removeNotification(NCenter: UNUserNotificationCenter) {

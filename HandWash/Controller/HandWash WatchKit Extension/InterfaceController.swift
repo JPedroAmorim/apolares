@@ -21,8 +21,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var labelFraction: WKInterfaceLabel!
     @IBOutlet weak var labelRingInstruction: WKInterfaceLabel!
     
-    @IBOutlet weak var labelButtonInstructionTop: WKInterfaceLabel!
-    @IBOutlet weak var labelButtonInstructionBottom: WKInterfaceLabel!
+    @IBOutlet weak var labelStartInstruction: WKInterfaceLabel!
+    @IBOutlet weak var labelScheduleInstruction: WKInterfaceLabel!
+    @IBOutlet weak var labelBottomButtonInstruction: WKInterfaceLabel!
     
     @IBOutlet weak var buttonStart: WKInterfaceButton!
     @IBOutlet weak var buttonSchedule: WKInterfaceButton!
@@ -52,12 +53,19 @@ class InterfaceController: WKInterfaceController {
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
         
+        let dict = WashDAO.allWashesEntries()
+        
+        let sortedKeys = Array(dict.keys).sorted(by: >)
+        
+        print("DIIICT \(sortedKeys)")
+        
         // Check if first launch
         if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()
         } else {
             self.setEnableButtons(isEnable: true)
         }
+
     }
     
     override func didDeactivate() {
@@ -123,14 +131,16 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func startButtonInstructionAnimate() {
+        
+        self.labelRingInstruction.setHidden(true)
+        self.labelStartInstruction.setHidden(false)
+        
         self.animate(withDuration: 1, animations: {
-            self.labelRingInstruction.setHidden(true)
-            self.labelButtonInstructionTop.setHidden(false)
+            
+            self.labelStartInstruction.setText(String("This button will start the hand washing protocol.").localized)
             
             self.setAlphaButtons(start: 1.0, schedule: 0.2, setting: 0.2, button: 0.2)
-            
-            self.labelButtonInstructionTop.setText(String("This button will start the hand washing protocol.").localized)
-            self.scroll(to: self.buttonStart, at: .bottom, animated: true)
+            self.scroll(to: self.labelStartInstruction, at: .top, animated: true)
             
             self.groupRingProgress.setAlpha(0.2)
         
@@ -138,36 +148,41 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func scheduleButtonInstructionAnimate() {
+        
+        self.labelStartInstruction.setHidden(true)
+        self.labelScheduleInstruction.setHidden(false)
+        
+        self.labelScheduleInstruction.setText(String("Through the schedule button you'll be able to alter the existing notification alarm or disable it, as well as add an alarm if there isn't a current one.").localized)
+        
         self.animate(withDuration: 1, animations: {
             
             self.setAlphaButtons(start: 0.2, schedule: 1.0, setting: 0.2, button: 0.2)
-            
-            self.labelButtonInstructionTop.setText(String("Through the schedule button you'll be able to alter the existing notification alarm or disable it, as well as add an alarm if there isn't a current one.").localized)
-            self.scroll(to: self.buttonSchedule, at: .bottom, animated: true)
+            self.scroll(to: self.labelScheduleInstruction, at: .top, animated: true)
         })
     }
     
     private func settingButtonInstructionAnimate() {
+        
+        self.labelScheduleInstruction.setHidden(true)
+        self.labelBottomButtonInstruction.setHidden(false)
+        
+        self.labelBottomButtonInstruction.setText("Settings button allows you to change the configuration of the app.")
+        
         self.animate(withDuration: 1, animations: {
-            
-            self.labelButtonInstructionBottom.setHidden(false)
-            self.labelButtonInstructionBottom.setText("Settings button allows you to change the configuration of the app.")
             
             self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 1.0, button: 0.2)
             
-            self.labelButtonInstructionTop.setHidden(true)
-            
-            self.scroll(to: self.button, at: .bottom, animated: true)
+            self.scroll(to: self.labelBottomButtonInstruction, at: .top, animated: true)
         })
     }
     
     private func buttonInstructionAnimate() {
+        
         self.animate(withDuration: 1, animations: {
             
-            self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
+            self.labelBottomButtonInstruction.setText("Button não sei o que faz.")
             
-            self.labelButtonInstructionBottom.setText("Button não sei o que faz.")
-            self.scroll(to: self.button, at: .bottom, animated: true)
+            self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
         })
     }
     
@@ -179,7 +194,7 @@ class InterfaceController: WKInterfaceController {
             self.setAlphaButtons(start: 1.0, schedule: 1.0, setting: 1.0, button: 1.0)
             self.setEnableButtons(isEnable: true)
             
-            self.labelButtonInstructionBottom.setHidden(true)
+            self.labelBottomButtonInstruction.setHidden(true)
             
             self.scroll(to: self.groupRingProgress, at: .top, animated: true)
         })
@@ -204,7 +219,6 @@ class InterfaceController: WKInterfaceController {
         case 5:
             self.finishInstructionAnimate()
         case 6:
-            self.stageAnimation = 0
                 
             Timer.invalidate()
             default:

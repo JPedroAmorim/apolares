@@ -2,8 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G4032" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="WashEntity" representedClassName="WashEntity" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="washes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="WashEntity" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="WashEntity" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

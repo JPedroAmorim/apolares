@@ -18,12 +18,15 @@ class ScheduleInterfaceController: WKInterfaceController {
     
     // Outlets to tutorial
     @IBOutlet weak var groupSchedule: WKInterfaceGroup!
-    @IBOutlet weak var labelInstructionTurnOfAlarm: WKInterfaceLabel!
+    @IBOutlet weak var labelInstructionTurnOffAlarm: WKInterfaceLabel!
     @IBOutlet weak var groupScheduleTimer: WKInterfaceGroup!
     
     @IBOutlet weak var groupTurnOffAlarm: WKInterfaceGroup!
     @IBOutlet weak var labelInstructionSchedule: WKInterfaceLabel!
     @IBOutlet weak var labelHeader: WKInterfaceLabel!
+    
+    @IBOutlet weak var labelInstruction: WKInterfaceLabel!
+    @IBOutlet weak var labelInstructionCrown: WKInterfaceLabel!
     
     // MARK: - Variables
     var crownAcumulator: Double = 0
@@ -168,7 +171,6 @@ class ScheduleInterfaceController: WKInterfaceController {
             case 3:
                 self.turnOffAlarmInstructionAnimate()
             case 4:
-                self.stageAnimation = 1 // To be able to test
                 
                 self.upperButton.setEnabled(true)
                 self.bottomButton.setEnabled(true)
@@ -190,40 +192,40 @@ class ScheduleInterfaceController: WKInterfaceController {
     }
     
     private func scheduleInstructionAnimate() {
-        self.labelInstructionTurnOfAlarm.setHidden(true)
-        self.labelInstructionSchedule.setHidden(false)
-        self.labelInstructionSchedule.setText(String("You can be notified to be remembered to wash your hands.").localized)
-        
+        self.labelInstructionTurnOffAlarm.setHidden(true)
+        self.labelInstruction.setHidden(false)
+
         self.animate(withDuration: 1, animations: {
+            self.labelInstruction.setText(String("You can be notified to be remembered to wash your hands.").localized)
+            
             self.groupSchedule.setAlpha(1)
+            self.upperButton.setAlpha(0.2)
             self.bottomButton.setAlpha(0.2)
         })
     }
     
     private func scheduleAnimateInstructionCrown() {
-        self.labelInstructionTurnOfAlarm.setHidden(true)
-        self.labelInstructionSchedule.setHidden(false)
-        self.labelInstructionSchedule.setText(String("You are able to set the timer through the crown...").localized)
+        self.labelInstruction.setHidden(true)
+        self.labelInstructionCrown.setHidden(false)
         
-        self.animate(withDuration: 2, animations: {
-            self.groupSchedule.setAlpha(1)
-            self.upperButton.setAlpha(0.2)
-            self.bottomButton.setAlpha(0.2)
+        self.animate(withDuration: 1, animations: {
+            self.labelInstructionCrown.setText(String("You are able to set the timer through the crown...").localized)
             
             self.groupScheduleTimer.setBackgroundColor(UIColor.white)
         })
         
-        self.animate(withDuration: 2, animations: {
+        self.animate(withDuration: 1, animations: {
             self.groupScheduleTimer.setBackgroundColor(UIColor.black)
         })
     }
     
     private func scheduleAnimateInstructionButton() {
-        self.labelInstructionTurnOfAlarm.setHidden(true)
+        self.labelInstructionCrown.setHidden(true)
         self.labelInstructionSchedule.setHidden(false)
-        self.labelInstructionSchedule.setText(String("...and then, set the alarm to be reminded.").localized)
         
         self.animate(withDuration: 1, animations: {
+            self.labelInstructionSchedule.setText(String("...and then, set the alarm to be reminded.").localized)
+            
             self.groupSchedule.setAlpha(1)
             self.bottomButton.setAlpha(0.2)
             self.upperButton.setAlpha(1)
@@ -234,10 +236,11 @@ class ScheduleInterfaceController: WKInterfaceController {
     
     private func turnOffAlarmInstructionAnimate() {
         self.labelInstructionSchedule.setHidden(true)
-        self.labelInstructionTurnOfAlarm.setHidden(false)
-        self.labelInstructionTurnOfAlarm.setText(String("Or you can choose to not be notified.").localized)
+        self.labelInstructionTurnOffAlarm.setHidden(false)
         
         self.animate(withDuration: 1, animations: {
+            self.labelInstructionTurnOffAlarm.setText(String("Or you can choose to not be notified.").localized)
+            
             self.bottomButton.setAlpha(1)
             self.groupTurnOffAlarm.setAlpha(1)
             self.upperButton.setAlpha(0.2)

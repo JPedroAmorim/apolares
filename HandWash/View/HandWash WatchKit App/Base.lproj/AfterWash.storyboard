@@ -13,20 +13,11 @@
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="overlap" id="5q1-JZ-DBI">
                             <items>
-                                <label alignment="left" verticalAlignment="bottom" hidden="YES" text="Label" numberOfLines="0" id="j8D-rN-qp4" userLabel="Label Instruction Dont Remind Me">
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                </label>
                                 <group width="1" alignment="left" layout="vertical" id="IM4-vt-VOa">
                                     <items>
                                         <label alignment="left" text="Remind me again after" numberOfLines="0" id="RR6-Me-dXw">
                                             <fontDescription key="font" type="system" pointSize="12"/>
                                         </label>
-                                        <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" enabled="NO" id="Ibg-uI-HzQ">
-                                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
-                                            </connections>
-                                        </button>
                                         <group width="1" alignment="left" id="bqm-8H-087">
                                             <items>
                                                 <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
@@ -38,21 +29,40 @@
                                                 </timer>
                                             </items>
                                         </group>
+                                        <label alignment="left" numberOfLines="0" id="cow-aE-jXv" userLabel="Label Instruction">
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </label>
+                                        <label alignment="left" numberOfLines="0" id="zf1-Il-5sI" userLabel="Label Instruction">
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </label>
+                                        <group width="1" alignment="left" layout="overlap" id="xSm-kI-viz" userLabel="Group SetAlarm Button">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="bottom" hidden="YES" text="Label" numberOfLines="0" id="j8D-rN-qp4" userLabel="Label Instruction Dont Remind Me">
+                                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                                </label>
+                                                <button width="1" alignment="left" verticalAlignment="bottom" title="Set alarm" enabled="NO" id="Ibg-uI-HzQ">
+                                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="setAlarm" destination="1sR-Ky-JuK" id="ymm-Mq-EPo"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
                         </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" layout="overlap" id="xd1-xI-frl">
                             <items>
+                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="x12-dy-1gU" userLabel="Label Instruction Set Alarm">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Don't remind me" enabled="NO" id="17A-zB-VGJ">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="dontRemindMeAction" destination="1sR-Ky-JuK" id="xfn-Tq-Eff"/>
                                     </connections>
                                 </button>
-                                <label alignment="left" hidden="YES" text="Label" textAlignment="left" numberOfLines="0" id="x12-dy-1gU" userLabel="Label Instruction Set Alarm">
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                </label>
                             </items>
                         </group>
                     </items>
@@ -63,6 +73,8 @@
                         <outlet property="groupSetAlarm" destination="IM4-vt-VOa" id="7Yt-uv-a2y"/>
                         <outlet property="groupSetAlarmTimer" destination="bqm-8H-087" id="K9w-IK-EI3"/>
                         <outlet property="labelHeader" destination="RR6-Me-dXw" id="dUi-ob-bqc"/>
+                        <outlet property="labelInstruction" destination="cow-aE-jXv" id="cbm-u6-VrQ"/>
+                        <outlet property="labelInstructionCrown" destination="zf1-Il-5sI" id="XHN-a3-7MS"/>
                         <outlet property="labelInstructionDontRemindMe" destination="j8D-rN-qp4" id="Dv0-oP-fUs"/>
                         <outlet property="labelInstructionSetAlarm" destination="x12-dy-1gU" id="uV1-1o-r37"/>
                         <outlet property="timer" destination="GaW-wf-bna" id="oHf-qq-WM4"/>

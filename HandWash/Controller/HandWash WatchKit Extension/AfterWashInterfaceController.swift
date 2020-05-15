@@ -275,7 +275,7 @@ extension AfterWashInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator -= 1
+            crownAcumulator = 0
         }
         else if crownAcumulator < -1 {
             if numberOfTimeIntervals > 0 {
@@ -284,7 +284,7 @@ extension AfterWashInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator += 1
+            crownAcumulator = 0
         }
     }
 }

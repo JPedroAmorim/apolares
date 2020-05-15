@@ -268,7 +268,7 @@ extension ScheduleInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator -= 1
+            crownAcumulator = 0
         }
         else if crownAcumulator < -1 {
             if numberOfTimeIntervals > 0 {
@@ -277,7 +277,8 @@ extension ScheduleInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator += 1
+            crownAcumulator = 0
         }
+        print("\(crownAcumulator)")
     }
 }

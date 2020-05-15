@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 import CoreData
 
 // TODO: Descobrir um nome bom pra essa classe
@@ -73,7 +74,7 @@ class SemNome {
         }
     }
     
-    static func saveAlarm(date: Date) {
+    static func saveAlarm(alarmRequest: UNNotificationRequest) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "AlarmEntity", in: context)
         
@@ -92,7 +93,7 @@ class SemNome {
             
             // Save new value
             let newDefaultTimerEntry = NSManagedObject(entity: entity!, insertInto: context)
-            newDefaultTimerEntry.setValue(date, forKey: "date")
+            newDefaultTimerEntry.setValue(alarmRequest, forKey: "request")
             
             do {
                 try context.save()
@@ -108,7 +109,7 @@ class SemNome {
         }
     }
     
-    static func loadAlarm() -> Date? {
+    static func loadAlarm() -> UNNotificationRequest? {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AlarmEntity")
         
@@ -117,12 +118,17 @@ class SemNome {
         
         do {
             let result = try context.fetch(request)
-            let data = result[0] as! NSManagedObject
-            return data.value(forKey: "date") as? Date
+            if result.isEmpty {
+                return nil
+            }
+            else {
+                let data = result[0] as! NSManagedObject
+                return data.value(forKey: "request") as? UNNotificationRequest
+            }
             
         }
         catch {
-            print("Failed to get default timer")
+            print("Failed to get alarm request")
             return nil
         }
     }

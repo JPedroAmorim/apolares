@@ -151,6 +151,7 @@ class ScheduleInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
+                SemNome.saveAlarm(alarmRequest: request)
                 SemNome.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)

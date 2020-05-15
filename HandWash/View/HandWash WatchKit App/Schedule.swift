@@ -23,7 +23,6 @@ class Schedule {
             NCenter.removePendingNotificationRequests(withIdentifiers: [next.identifier])
         }
         self.nextNotification = notification
-        
     }
     
     func removeNotification(NCenter: UNUserNotificationCenter) {

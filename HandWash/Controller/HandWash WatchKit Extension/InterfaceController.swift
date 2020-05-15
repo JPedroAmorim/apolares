@@ -53,6 +53,12 @@ class InterfaceController: WKInterfaceController {
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "InterfaceController")
         
+        let dict = WashDAO.allWashesEntries()
+        
+        let sortedKeys = Array(dict.keys).sorted(by: >)
+        
+        print("DIIICT \(sortedKeys)")
+        
         // Check if first launch
         if self.firstLaunch!.isFirstLaunch {
             self.animateSequence()

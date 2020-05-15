@@ -82,6 +82,7 @@ class WashInterfaceController: WKInterfaceController {
         
         if (completion) {
             WashDAO.createWashEntry()
+            completion = false
         }
     }
     
@@ -115,7 +116,7 @@ class WashInterfaceController: WKInterfaceController {
                         self.pushController(withName: "AfterWash", context: self)
                     }
                 }
-                else if true {//self.firstLaunch!.isFirstLaunch {
+                else if self.firstLaunch!.isFirstLaunch  {
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
                     
@@ -125,8 +126,6 @@ class WashInterfaceController: WKInterfaceController {
                     
                 }
                 else {
-                    
-                    WKInterfaceDevice.current().play(.success) // Raptic feedback
                     self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
                     videoIndex += 1
                 }
@@ -153,7 +152,7 @@ class WashInterfaceController: WKInterfaceController {
         if shouldPlaySound {
             let speechUtterance = AVSpeechUtterance(string: stageText)
             speechUtterance.rate = 0.5
-            self.synth.speak(speechUtterance)
+           // self.synth.speak(speechUtterance)
         }
        
         if shouldAnimate {

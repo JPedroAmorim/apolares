@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--History-->
+        <scene sceneID="X3U-X2-207">
+            <objects>
+                <controller identifier="History" id="dpA-Pj-OQq" customClass="HistoryInterfaceController" customModule="HandWash_WatchKit_Extension" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="3Y0-ZW-MxY">
+                            <items>
+                                <tableRow identifier="WashRow" id="UpR-ef-pqk" customClass="WashRowController" customModule="HandWash_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="140" alignment="left" backgroundImage="ring0" contentMode="scaleAspectFit" id="gCX-dK-FVH">
+                                        <items>
+                                            <group width="1" height="25" alignment="center" verticalAlignment="center" id="qyb-Eo-lIl">
+                                                <items>
+                                                    <label height="47" alignment="center" text="10/10/2020" id="3Bc-Qw-2Qx"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateGroup" destination="qyb-Eo-lIl" id="nig-2D-tx1"/>
+                                        <outlet property="dateLabel" destination="3Bc-Qw-2Qx" id="mZt-wC-tkT"/>
+                                        <outlet property="ringGroup" destination="gCX-dK-FVH" id="kYN-Ke-JhX"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="historyTable" destination="3Y0-ZW-MxY" id="K0A-uf-6Xu"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-51" y="3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ring0" width="90" height="90"/>
+    </resources>
+</document>

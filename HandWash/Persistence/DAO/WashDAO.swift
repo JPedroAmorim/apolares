@@ -15,17 +15,32 @@ class WashDAO {
     static func createWashEntry() {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "WashEntity", in: context)
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WashEntity")
         
-        let newWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+        let todaysDate = DateUtil.shared.formatter.string(from: Date())
         
-        let todaysDate = createFormattedDateAsString(currentDate: Date())
-        
-        newWashEntry.setValue(todaysDate, forKey: "date")
-        
+        fetchRequest.predicate = NSPredicate(format: "date == %@", todaysDate)
+    
         do {
+            let result = try context.fetch(fetchRequest)
+            
+            if result.count == 0 {
+                let entity = NSEntityDescription.entity(forEntityName: "WashEntity", in: context)
+                
+                let newWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+                
+                newWashEntry.setValue(todaysDate, forKey: "date")
+                newWashEntry.setValue(1, forKey: "washes")
+            } else {
+                let washEntryUpdate = result[0] as! NSManagedObject
+                
+                let previousWashes = washEntryUpdate.value(forKey: "washes") as! Int16
+                let updateWashes = previousWashes + 1
+                
+                washEntryUpdate.setValue(updateWashes, forKey: "washes")
+            }
+            
             try context.save()
-            print("Entity saved!")
         } catch {
             print("Failed saving")
         }
@@ -50,7 +65,7 @@ class WashDAO {
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WashEntity")
         
-        let todaysDate = createFormattedDateAsString(currentDate: Date())
+        let todaysDate = DateUtil.shared.formatter.string(from: Date())
         
         fetchRequest.predicate = NSPredicate(format: "date < %@", todaysDate)
         
@@ -66,12 +81,12 @@ class WashDAO {
     }
     
     static func numberOfWashesToday() -> Int {
-        var numberOfWashes = 0
+        var numberOfWashes = Int16(0)
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "WashEntity")
         
-        let todaysDate = createFormattedDateAsString(currentDate: Date())
+        let todaysDate = DateUtil.shared.formatter.string(from: Date())
         
         request.predicate = NSPredicate(format: "date == %@", todaysDate)
         
@@ -79,9 +94,11 @@ class WashDAO {
         
         do {
             let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                numberOfWashes += 1
-                print(data.value(forKey: "date") as! String)
+            
+            if result.count > 0 {
+                let washEntry = result[0] as! NSManagedObject
+                
+                numberOfWashes = washEntry.value(forKey: "washes") as! Int16
             }
             
         } catch {
@@ -89,13 +106,32 @@ class WashDAO {
             print("Failed")
         }
         
-        return numberOfWashes
+        return Int(numberOfWashes)
     }
     
-    static func createFormattedDateAsString(currentDate: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .short
-        return formatter.string(from: currentDate)
+    
+    static func allWashesEntries() -> [String : Int] {
+        var resultDict: [String : Int] = [:]
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "WashEntity")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request)
+            
+            for washEntry in result as! [NSManagedObject] {
+                let numberOfWashesFromEntry = washEntry.value(forKey: "washes") as! Int16
+                let dateFromEntry = washEntry.value(forKey: "date") as! String
+                
+                resultDict.updateValue(Int(numberOfWashesFromEntry), forKey: dateFromEntry)
+            }
+            
+        } catch {
+            print("Error")
+        }
+    
+        return resultDict
     }
 }
+

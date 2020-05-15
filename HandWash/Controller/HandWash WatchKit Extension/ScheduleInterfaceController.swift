@@ -87,7 +87,7 @@ class ScheduleInterfaceController: WKInterfaceController {
         crownSequencer.delegate = self
         crownSequencer.focus()
         // Timer setup
-        if let defaultInterval = SemNome.getDefaultTimer() {
+        if let defaultInterval = AlarmDAO.getDefaultTimer() {
             numberOfTimeIntervals = Double(defaultInterval)
         }
         else {
@@ -151,8 +151,8 @@ class ScheduleInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
-                SemNome.saveAlarm(alarmRequest: request)
-                SemNome.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
+                //SemNome.saveAlarm(alarmRequest: request)
+                AlarmDAO.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
                 self.pop()

@@ -11,7 +11,7 @@ import UserNotifications
 import CoreData
 
 // TODO: Descobrir um nome bom pra essa classe
-class SemNome {
+class AlarmDAO {
     
     static func setDefaultNumberOfIntervals(value: Int16) {
         

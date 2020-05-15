@@ -115,7 +115,8 @@ class AfterWashInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
-                SemNome.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
+                //SemNome.saveAlarm(alarmRequest: request)
+                AlarmDAO.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
                 
@@ -227,7 +228,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         crownSequencer.focus()
         // Timer setup
         // Timer setup
-        if let defaultInterval = SemNome.getDefaultTimer() {
+        if let defaultInterval = AlarmDAO.getDefaultTimer() {
             numberOfTimeIntervals = Double(defaultInterval)
         }
         else {

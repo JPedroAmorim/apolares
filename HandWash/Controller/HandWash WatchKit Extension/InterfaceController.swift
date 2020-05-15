@@ -17,20 +17,14 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Outlets
     @IBOutlet weak var groupRingProgress: WKInterfaceGroup!
     @IBOutlet weak var groupButton: WKInterfaceGroup!
-    
-    @IBOutlet weak var labelFraction: WKInterfaceLabel!
-
     @IBOutlet weak var labelRingInstruction: WKInterfaceLabel!
-    
     @IBOutlet weak var labelStartInstruction: WKInterfaceLabel!
     @IBOutlet weak var labelScheduleInstruction: WKInterfaceLabel!
     @IBOutlet weak var labelBottomButtonInstruction: WKInterfaceLabel!
-    
     @IBOutlet weak var buttonStart: WKInterfaceButton!
     @IBOutlet weak var buttonSchedule: WKInterfaceButton!
     @IBOutlet weak var buttonSettings: WKInterfaceButton!
     @IBOutlet weak var button: WKInterfaceButton!
-    
     @IBOutlet weak var groupHandWashAnimation: WKInterfaceGroup!
     
     // MARK: - Variables

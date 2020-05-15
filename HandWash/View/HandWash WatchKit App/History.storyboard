@@ -9,7 +9,7 @@
         <!--History-->
         <scene sceneID="X3U-X2-207">
             <objects>
-                <controller identifier="History" id="dpA-Pj-OQq" customClass="HistoryInterfaceController" customModule="HandWash_WatchKit_Extension" customModuleProvider="target">
+                <controller identifier="History" id="dpA-Pj-OQq" customClass="HistoryInterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="3Y0-ZW-MxY">
                             <items>
@@ -22,6 +22,7 @@
                                                 </items>
                                             </group>
                                         </items>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </group>
                                     <connections>
                                         <outlet property="dateGroup" destination="qyb-Eo-lIl" id="nig-2D-tx1"/>

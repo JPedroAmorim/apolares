@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -48,7 +48,8 @@
                                         <segue destination="nep-NL-tcV" kind="push" id="eOC-I4-9gH"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Button" id="k21-wR-Jau">
+                                <button width="1" alignment="left" title="History" id="k21-wR-Jau">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="TZw-Jy-9x8" kind="push" id="NNV-pP-6Gt"/>
                                     </connections>
@@ -61,8 +62,8 @@
                         <outlet property="buttonSchedule" destination="aCJ-qd-gHZ" id="EPt-xz-F6y"/>
                         <outlet property="buttonSettings" destination="UzE-gV-JkG" id="uNG-zd-NHW"/>
                         <outlet property="buttonStart" destination="pma-74-0EM" id="eov-Is-LEu"/>
-                        <outlet property="groupHandWashAnimation" destination="nPG-sx-Z1o" id="bND-aN-Vs1"/>
                         <outlet property="groupButton" destination="nns-Dj-hgc" id="iVO-1I-xth"/>
+                        <outlet property="groupHandWashAnimation" destination="nPG-sx-Z1o" id="bND-aN-Vs1"/>
                         <outlet property="groupRingProgress" destination="M4d-VU-YWg" id="mKW-Gu-ZtP"/>
                         <outlet property="labelBottomButtonInstruction" destination="qPH-WP-2Q9" id="LR0-Y4-0fe"/>
                         <outlet property="labelRingInstruction" destination="0wE-kS-mbg" id="wjO-JF-UZI"/>

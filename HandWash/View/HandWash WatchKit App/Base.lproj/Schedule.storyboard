@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Schedule-->
@@ -63,7 +63,7 @@
                                 <label alignment="left" numberOfLines="0" id="2tj-4O-enq" userLabel="Label Instruction Schedule">
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
-                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" enabled="NO" id="EoP-jm-TLX">
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Off Alarm" enabled="NO" id="EoP-jm-TLX">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="16"/>
                                     <connections>

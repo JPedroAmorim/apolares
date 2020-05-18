@@ -23,6 +23,7 @@ class HistoryInterfaceController: WKInterfaceController {
         
         let sortedDatesStrings = orderWashEntriesDates(washEntries: washEntries)
         
+        
         for index in 0..<historyTable.numberOfRows {
             guard let controller = historyTable.rowController(at: index) as? WashRowController else { continue }
             
@@ -32,12 +33,12 @@ class HistoryInterfaceController: WKInterfaceController {
             controller.rowEntry = (rowEntryDate, rowEntryNumberOfWashes ?? 0)
         }
     }
-
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
-
+    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
@@ -55,4 +56,5 @@ class HistoryInterfaceController: WKInterfaceController {
         
         return sortedDateStrings
     }
+    
 }

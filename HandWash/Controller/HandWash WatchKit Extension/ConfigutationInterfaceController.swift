@@ -20,7 +20,6 @@ class ConfigutationInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var animationSwitch: WKInterfaceSwitch!
     
-    @IBOutlet weak var notificationSwitch: WKInterfaceSwitch!
     
     let defaults = UserDefaults.standard
     
@@ -53,15 +52,11 @@ class ConfigutationInterfaceController: WKInterfaceController {
         defaults.set(value, forKey: "AnimationActive")
     }
     
-    @IBAction func notificationChanged(_ value: Bool) {
-        defaults.bool(forKey: "NotificationActive")
-    }
-    
+ 
     private func setAllSwitches() {
         soundSwitch.setOn(defaults.bool(forKey: "SoundActive"))
         vibrationSwitch.setOn(defaults.bool(forKey: "VibrationActive"))
         animationSwitch.setOn(defaults.bool(forKey: "AnimationActive"))
-        notificationSwitch.setOn(defaults.bool(forKey: "NotificationActive"))
     }
 
 }

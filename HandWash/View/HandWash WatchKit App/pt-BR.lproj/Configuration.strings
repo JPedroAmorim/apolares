@@ -1,12 +1,12 @@
 
 /* Class = "WKInterfaceSwitch"; title = "Sounds"; ObjectID = "4h4-SM-NOe"; */
-"4h4-SM-NOe.title" = "Sounds";
+"4h4-SM-NOe.title" = "Sons";
 
 /* Class = "WKInterfaceSwitch"; title = "Vibrations"; ObjectID = "AxT-UV-atO"; */
-"AxT-UV-atO.title" = "Vibrations";
+"AxT-UV-atO.title" = "Vibrações";
 
 /* Class = "WKInterfaceSwitch"; title = "Animations"; ObjectID = "Mlz-sh-7WA"; */
-"Mlz-sh-7WA.title" = "Animations";
+"Mlz-sh-7WA.title" = "Notificações";
 
 /* Class = "WKInterfaceSwitch"; title = "Notifications"; ObjectID = "px6-GD-KUZ"; */
 "px6-GD-KUZ.title" = "Notifications";

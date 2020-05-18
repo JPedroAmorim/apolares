@@ -6,13 +6,13 @@
 "2tj-4O-enq.text" = "Label";
 
 /* Class = "WKInterfaceLabel"; text = "Remind me again after"; ObjectID = "4h0-KB-2ws"; */
-"4h0-KB-2ws.text" = "Remind me again after";
+"4h0-KB-2ws.text" = "Lembre-me depois";
 
 /* Class = "WKInterfaceButton"; title = "Turn Of Alarm"; ObjectID = "EoP-jm-TLX"; */
-"EoP-jm-TLX.title" = "Turn Of Alarm";
+"EoP-jm-TLX.title" = "Desligue o alarme";
 
 /* Class = "WKInterfaceLabel"; text = "h"; ObjectID = "t3Y-Kq-Sqb"; */
 "t3Y-Kq-Sqb.text" = "h";
 
 /* Class = "WKInterfaceButton"; title = "Schedule"; ObjectID = "yla-V2-sLM"; */
-"yla-V2-sLM.title" = "Schedule";
+"yla-V2-sLM.title" = "Agendar";

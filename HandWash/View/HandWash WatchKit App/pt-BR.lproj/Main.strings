@@ -2,14 +2,14 @@
 /* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "0wE-kS-mbg"; */
 "0wE-kS-mbg.text" = "Label";
 
-/* Class = "WKInterfaceLabel"; text = "3/5"; ObjectID = "IC2-Bk-Mee"; */
-"IC2-Bk-Mee.text" = "3/5";
-
 /* Class = "WKInterfaceButton"; title = "Settings"; ObjectID = "UzE-gV-JkG"; */
-"UzE-gV-JkG.title" = "Settings";
+"UzE-gV-JkG.title" = "Configurações";
 
 /* Class = "WKInterfaceButton"; title = "Schedule"; ObjectID = "aCJ-qd-gHZ"; */
-"aCJ-qd-gHZ.title" = "Schedule";
+"aCJ-qd-gHZ.title" = "Agendar";
+
+/* Class = "WKInterfaceButton"; title = "History"; ObjectID = "k21-wR-Jau"; */
+"k21-wR-Jau.title" = "Histórico";
 
 /* Class = "WKInterfaceButton"; title = "Start"; ObjectID = "pma-74-0EM"; */
-"pma-74-0EM.title" = "Start";
+"pma-74-0EM.title" = "Começar";

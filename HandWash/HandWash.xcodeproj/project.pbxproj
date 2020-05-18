@@ -27,6 +27,7 @@
 		D507AD5824645EF30083CBD2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5724645EF30083CBD2 /* CoreDataManager.swift */; };
 		D507AD59246462DA0083CBD2 /* WashModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5124643FDE0083CBD2 /* WashModel.xcdatamodeld */; };
 		D507AD5D246589650083CBD2 /* WashDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507AD5C246589650083CBD2 /* WashDAO.swift */; };
+		D51AF1502472DA5F00EDDC16 /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E3246C39C900458CE8 /* Wash.storyboard */; };
 		D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5784CC2246D8DA100B232AA /* WashRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5784CC1246D8DA100B232AA /* WashRowController.swift */; };
 		D57B6C0D246EC4E200A92019 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B6C0C246EC4E200A92019 /* DateUtil.swift */; };
@@ -35,13 +36,17 @@
 		D588B1DA246C399B00458CE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D588B1D8246C399400458CE8 /* Localizable.strings */; };
 		D588B1DB246C399C00458CE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D588B1D8246C399400458CE8 /* Localizable.strings */; };
 		D588B1DC246C39B500458CE8 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1DE246C39B500458CE8 /* Schedule.storyboard */; };
-		D588B1E1246C39C900458CE8 /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E3246C39C900458CE8 /* Wash.storyboard */; };
 		D588B1E4246C39D100458CE8 /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E6246C39D100458CE8 /* AfterWash.storyboard */; };
 		D588B1EB246C39E400458CE8 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1ED246C39E400458CE8 /* Configuration.storyboard */; };
 		D5A3699124508F6200D89F20 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5A5458F246D7229004A0273 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5458E246D7229004A0273 /* Extensions.swift */; };
 		D5B4ED87246ED7EC004C843D /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5784CBF246D847400B232AA /* History.storyboard */; };
 		D5F4D4C3246AD39200B7416A /* ConfigutationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4D4C2246AD39200B7416A /* ConfigutationInterfaceController.swift */; };
+		D5F678852472E1EA00962A59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F56F430243E060100D4D5FB /* Main.storyboard */; };
+		D5F678862472E1ED00962A59 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1DE246C39B500458CE8 /* Schedule.storyboard */; };
+		D5F678872472E1F100962A59 /* Wash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E3246C39C900458CE8 /* Wash.storyboard */; };
+		D5F678882472E1F500962A59 /* AfterWash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1E6246C39D100458CE8 /* AfterWash.storyboard */; };
+		D5F678892472E1F800962A59 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B1ED246C39E400458CE8 /* Configuration.storyboard */; };
 		D5F6EC9724507C6300CF0825 /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */; };
 		D5F6EC9A24507C8F00CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
 		D5F6EC9B24507CD500CF0825 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = D5F6EC9524507A5F00CF0825 /* videos */; };
@@ -115,13 +120,13 @@
 		D507AD5224643FDE0083CBD2 /* WashModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WashModel.xcdatamodel; sourceTree = "<group>"; };
 		D507AD5724645EF30083CBD2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D507AD5C246589650083CBD2 /* WashDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashDAO.swift; sourceTree = "<group>"; };
+		D51AF1452472B9D500EDDC16 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		D574F27B244F40F4005244DA /* HandHygieneProtocol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandHygieneProtocol.txt; sourceTree = "<group>"; };
 		D5784CBE246D778D00B232AA /* pt-BR */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D5784CBF246D847400B232AA /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		D5784CC1246D8DA100B232AA /* WashRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashRowController.swift; sourceTree = "<group>"; };
 		D57B6C0C246EC4E200A92019 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		D57B6C0E246EC6C800A92019 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
-		D588B1D3246C397300458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		D588B1D7246C399400458CE8 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D588B1DD246C39B500458CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
 		D588B1E0246C39C000458CE8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Schedule.strings"; sourceTree = "<group>"; };
@@ -394,10 +399,10 @@
 			files = (
 				D588B1E4246C39D100458CE8 /* AfterWash.storyboard in Resources */,
 				4F56F434243E060400D4D5FB /* Assets.xcassets in Resources */,
-				D588B1E1246C39C900458CE8 /* Wash.storyboard in Resources */,
 				D5B4ED87246ED7EC004C843D /* History.storyboard in Resources */,
 				D588B1EB246C39E400458CE8 /* Configuration.storyboard in Resources */,
 				D588B1DB246C399C00458CE8 /* Localizable.strings in Resources */,
+				D51AF1502472DA5F00EDDC16 /* Wash.storyboard in Resources */,
 				4F56F432243E060100D4D5FB /* Main.storyboard in Resources */,
 				D5A3699124508F6200D89F20 /* videos in Resources */,
 				D588B1DC246C39B500458CE8 /* Schedule.storyboard in Resources */,
@@ -409,10 +414,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F678892472E1F800962A59 /* Configuration.storyboard in Resources */,
+				D5F678882472E1F500962A59 /* AfterWash.storyboard in Resources */,
 				D5F6EC9B24507CD500CF0825 /* videos in Resources */,
+				D5F678852472E1EA00962A59 /* Main.storyboard in Resources */,
 				D588B1DA246C399B00458CE8 /* Localizable.strings in Resources */,
 				4F56F446243E060400D4D5FB /* Assets.xcassets in Resources */,
+				D5F678872472E1F100962A59 /* Wash.storyboard in Resources */,
 				D574F27C244F40F4005244DA /* HandHygieneProtocol.txt in Resources */,
+				D5F678862472E1ED00962A59 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F56F431243E060100D4D5FB /* Base */,
-				D588B1D3246C397300458CE8 /* pt-BR */,
+				D51AF1452472B9D500EDDC16 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

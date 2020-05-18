@@ -179,7 +179,7 @@ class InterfaceController: WKInterfaceController {
         self.labelScheduleInstruction.setHidden(true)
         self.labelBottomButtonInstruction.setHidden(false)
         
-        self.labelBottomButtonInstruction.setText("Settings button allows you to change the configuration of the app.")
+        self.labelBottomButtonInstruction.setText(String("The Settings button allows you to change the app's configuration.").localized)
         
         self.animate(withDuration: 1, animations: {
             
@@ -193,7 +193,7 @@ class InterfaceController: WKInterfaceController {
         
         self.animate(withDuration: 1, animations: {
             
-            self.labelBottomButtonInstruction.setText("Button não sei o que faz.")
+            self.labelBottomButtonInstruction.setText(String("Through the history button you'll see your consistency in reaching your daily hand washing goal.").localized)
             
             self.setAlphaButtons(start: 0.2, schedule: 0.2, setting: 0.2, button: 1.0)
         })

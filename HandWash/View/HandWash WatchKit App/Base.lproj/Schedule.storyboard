@@ -20,7 +20,7 @@
                                         </label>
                                         <group width="1" alignment="left" id="e6D-us-bVY">
                                             <items>
-                                                <timer width="68" alignment="center" textAlignment="left" id="MwS-LF-hdU">
+                                                <timer width="101" alignment="center" textAlignment="center" id="MwS-LF-hdU">
                                                     <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                                                     <calendarUnit key="units" hour="YES" minute="YES"/>
                                                 </timer>

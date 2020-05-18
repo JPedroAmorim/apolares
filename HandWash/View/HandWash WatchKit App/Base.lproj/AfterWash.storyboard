@@ -20,9 +20,14 @@
                                         </label>
                                         <group width="1" alignment="left" id="bqm-8H-087">
                                             <items>
-                                                <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
-                                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                                </label>
+                                                <group width="31" alignment="right" verticalAlignment="bottom" layout="vertical" id="iMt-BM-h4o">
+                                                    <items>
+                                                        <label height="16" alignment="right" verticalAlignment="bottom" text="h" id="Fty-dG-Y6C">
+                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                        </label>
+                                                        <group width="1" height="3" alignment="left" verticalAlignment="bottom" id="BjO-2v-oh1"/>
+                                                    </items>
+                                                </group>
                                                 <timer alignment="center" previewedSeconds="120" id="GaW-wf-bna">
                                                     <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                                                     <calendarUnit key="units" hour="YES" minute="YES"/>

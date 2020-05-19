@@ -91,7 +91,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 0.5
+            let stageDuration = 5.0
             let totalNumberOfStages = stages.count - 2
             
             playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
@@ -152,7 +152,7 @@ class WashInterfaceController: WKInterfaceController {
         if shouldPlaySound {
             let speechUtterance = AVSpeechUtterance(string: stageText)
             speechUtterance.rate = 0.5
-           // self.synth.speak(speechUtterance)
+            self.synth.speak(speechUtterance)
         }
        
         if shouldAnimate {

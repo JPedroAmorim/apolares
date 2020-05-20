@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QuF-Jm-gJ5">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,54 +7,104 @@
     </dependencies>
     <scenes>
         <!--Interface Controller-->
-        <scene sceneID="5dc-LW-0xn">
+        <scene sceneID="Mfr-HZ-8h2">
             <objects>
-                <controller id="QuF-Jm-gJ5" customClass="InterfaceController" customModule="HandWashApp_WatchKit_App" customModuleProvider="target">
+                <controller id="hvP-G0-80n" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="mty-6a-i9U">
+                        <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="LJh-TK-tB5">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <group width="100" height="100" alignment="center" backgroundImage="ring51" layout="vertical" id="p3H-6C-trF">
                             <items>
-                                <label alignment="left" text="Wash your hands after touching the door handle from outside" numberOfLines="0" id="p4P-FG-MzG">
-                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                </label>
+                                <group width="60" height="60" alignment="center" verticalAlignment="center" backgroundImage="HandWash0" id="duv-Q1-Vg3" userLabel=" Group HandWash Animation"/>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Play" id="3Qs-m6-zyM">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="hvk-0b-Beh" kind="push" id="QVb-3t-gLM"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Schedule" id="BhR-Dn-aqu">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="XuG-x5-ppf" kind="push" id="Cvs-8u-nlV"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="center" layout="vertical" id="8Ii-8U-JtO" userLabel="GroupButton">
+                            <items>
+                                <label alignment="left" hidden="YES" numberOfLines="0" id="p13-aE-xZQ" userLabel="Label Button Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Start" enabled="NO" id="0Ms-Te-yXF">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="cRr-ca-hUe" kind="push" id="yLT-ZT-W0Z"/>
+                                    </connections>
+                                </button>
+                                <label alignment="right" hidden="YES" numberOfLines="0" id="Mw8-Ib-G3q" userLabel="Label Button Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Schedule" enabled="NO" id="QzB-Dg-l5b">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="F5G-S7-X0d" kind="push" id="sIt-Db-S6v"/>
+                                    </connections>
+                                </button>
+                                <label alignment="left" hidden="YES" numberOfLines="0" id="Tue-Wr-3tk" userLabel="Label Settings Instruction">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" title="Settings" enabled="NO" id="iH0-Yn-blz">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="eHB-YP-vuX" kind="push" id="7LV-tI-bMg"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="History" id="Syh-bU-5nz">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="f7b-TR-L9D" kind="push" id="Rxk-wJ-8bE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="button" destination="Syh-bU-5nz" id="1jx-Mg-fMb"/>
+                        <outlet property="buttonSchedule" destination="QzB-Dg-l5b" id="IRc-4D-mEF"/>
+                        <outlet property="buttonSettings" destination="iH0-Yn-blz" id="kzs-MX-dc9"/>
+                        <outlet property="buttonStart" destination="0Ms-Te-yXF" id="prw-P6-Vx6"/>
+                        <outlet property="groupButton" destination="8Ii-8U-JtO" id="tIj-qs-jOI"/>
+                        <outlet property="groupHandWashAnimation" destination="duv-Q1-Vg3" id="mXG-gu-5y8"/>
+                        <outlet property="groupRingProgress" destination="p3H-6C-trF" id="OHp-e9-V6w"/>
+                        <outlet property="labelBottomButtonInstruction" destination="Tue-Wr-3tk" id="ZaK-lf-gx3"/>
+                        <outlet property="labelRingInstruction" destination="LJh-TK-tB5" id="H1x-dS-5qm"/>
+                        <outlet property="labelScheduleInstruction" destination="Mw8-Ib-G3q" id="v0m-XD-9Yo"/>
+                        <outlet property="labelStartInstruction" destination="p13-aE-xZQ" id="DXe-3z-DB9"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Wash-->
-        <scene sceneID="5LF-Ja-NQf">
+        <!--History-->
+        <scene sceneID="HRF-5y-bdF">
             <objects>
-                <controllerPlaceholder referencedIdentifier="Wash" id="hvk-0b-Beh"/>
+                <controllerPlaceholder referencedIdentifier="History" id="f7b-TR-L9D"/>
             </objects>
-            <point key="canvasLocation" x="493" y="321"/>
+            <point key="canvasLocation" x="82" y="599"/>
         </scene>
         <!--Schedule-->
-        <scene sceneID="ePM-TY-AcZ">
+        <scene sceneID="yBJ-Hb-baa">
             <objects>
-                <controllerPlaceholder referencedIdentifier="Schedule" id="XuG-x5-ppf"/>
+                <controllerPlaceholder referencedIdentifier="Schedule" id="F5G-S7-X0d"/>
             </objects>
-            <point key="canvasLocation" x="505" y="370"/>
+            <point key="canvasLocation" x="467" y="370"/>
+        </scene>
+        <!--Wash-->
+        <scene sceneID="hSa-dI-NuW">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Wash" id="cRr-ca-hUe"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="319"/>
         </scene>
         <!--Configuration-->
-        <scene sceneID="unY-rn-HhV">
+        <scene sceneID="TQJ-uF-llv">
             <objects>
-                <controllerPlaceholder referencedIdentifier="Configuration" id="rAS-o9-miT"/>
+                <controllerPlaceholder referencedIdentifier="Configuration" id="eHB-YP-vuX"/>
             </objects>
-            <point key="canvasLocation" x="518" y="438"/>
+            <point key="canvasLocation" x="454" y="538"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HandWash0" width="128" height="128"/>
+        <image name="ring51" width="128" height="128"/>
+    </resources>
 </document>

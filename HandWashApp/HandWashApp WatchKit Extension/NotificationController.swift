@@ -1,10 +1,10 @@
 //
 //  NotificationController.swift
-//  HandWashApp WatchKit Extension
+//  HandWash WatchKit Extension
 //
-//  Created by André Papoti de Oliveira on 07/05/20.
+//  Created by André Papoti de Oliveira on 08/04/20.
 //  Copyright © 2020 AndrePapoti. All rights reserved.
-// teste
+//
 
 import WatchKit
 import Foundation

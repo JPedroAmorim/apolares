@@ -1,8 +1,8 @@
 //
 //  ExtensionDelegate.swift
-//  HandWashApp WatchKit Extension
+//  HandWash WatchKit Extension
 //
-//  Created by André Papoti de Oliveira on 07/05/20.
+//  Created by André Papoti de Oliveira on 08/04/20.
 //  Copyright © 2020 AndrePapoti. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        UserDefaults.standard.register(defaults: ["SoundActive" : true, "VibrationActive" : true, "AnimationActive" : true, "NotificationActive" : true])
     }
 
     func applicationDidBecomeActive() {

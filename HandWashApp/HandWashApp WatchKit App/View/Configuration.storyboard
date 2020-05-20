@@ -7,9 +7,50 @@
     </dependencies>
     <scenes>
         <!--Configuration-->
-        <scene sceneID="P85-R4-Rex">
+        <scene sceneID="epG-Le-GsT">
             <objects>
-                <controller identifier="Configuration" id="Qyz-XY-aAU"/>
+                <controller identifier="Configuration" id="QOI-27-bUe" customClass="ConfigutationInterfaceController" customModule="HandWash_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="46" alignment="left" id="1SO-C2-pWl">
+                            <items>
+                                <switch width="1" height="40" alignment="left" verticalAlignment="center" value="YES" title="Sounds" id="61H-F0-37L">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="soundChanged:" destination="QOI-27-bUe" id="4Gu-FJ-oc4"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
+                        <group width="1" height="40" alignment="left" id="EQT-lM-WuP">
+                            <items>
+                                <switch width="1" height="40" alignment="left" verticalAlignment="center" value="YES" title="Vibrations" id="een-3e-4Ej">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="vibrationChanged:" destination="QOI-27-bUe" id="KnP-TN-Nfw"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
+                        <group width="1" height="47" alignment="left" id="0Fx-32-5CC">
+                            <items>
+                                <switch width="1" height="40" alignment="left" verticalAlignment="center" value="YES" title="Video" id="1wQ-oQ-leA">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="animationChanged:" destination="QOI-27-bUe" id="EOT-mJ-Ppk"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="animationSwitch" destination="1wQ-oQ-leA" id="Xhi-li-7L4"/>
+                        <outlet property="soundSwitch" destination="61H-F0-37L" id="6nY-P6-obI"/>
+                        <outlet property="vibrationSwitch" destination="een-3e-4Ej" id="DvI-ye-kQ9"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="102" y="22"/>
         </scene>

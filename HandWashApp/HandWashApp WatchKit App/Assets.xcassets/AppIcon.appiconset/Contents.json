@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1033.jpg",
+      "filename" : "icon-7.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -9,7 +9,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1034.jpg",
+      "filename" : "icon-8.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -17,21 +17,21 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1031.jpg",
+      "filename" : "icon-9.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1032.jpg",
+      "filename" : "icon-10.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1028.jpg",
+      "filename" : "icon-4.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -39,7 +39,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1029.jpg",
+      "filename" : "icon-5.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -47,7 +47,7 @@
       "subtype" : "40mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1030.jpg",
+      "filename" : "icon-6.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -55,7 +55,7 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1025.jpg",
+      "filename" : "icon-1.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -63,7 +63,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1026.jpg",
+      "filename" : "icon-2.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -71,7 +71,7 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1027.jpg",
+      "filename" : "icon-3.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -79,7 +79,7 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "20191029_1343251-28496e6c7c4b0c9b0d15723798986809-1024-1024.jpg",
+      "filename" : "icon.png",
       "idiom" : "watch-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

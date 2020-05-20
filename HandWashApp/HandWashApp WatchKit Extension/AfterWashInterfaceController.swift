@@ -17,13 +17,32 @@ class AfterWashInterfaceController: WKInterfaceController {
     @IBOutlet weak var buttonSetAlarm: WKInterfaceButton!
     @IBOutlet weak var buttonDontRemindMe: WKInterfaceButton!
     
+    // Outlets to tutorial
+    @IBOutlet weak var groupSetAlarm: WKInterfaceGroup!
+    @IBOutlet weak var labelInstructionDontRemindMe: WKInterfaceLabel!
+    @IBOutlet weak var labelInstruction: WKInterfaceLabel!
+    @IBOutlet weak var labelInstructionCrown: WKInterfaceLabel!
+    
+    @IBOutlet weak var groupSetAlarmTimer: WKInterfaceGroup!
+    
+    @IBOutlet weak var groupDontRemindMe: WKInterfaceGroup!
+    @IBOutlet weak var labelInstructionSetAlarm: WKInterfaceLabel!
+    @IBOutlet weak var labelHeader: WKInterfaceLabel!
+    
     // MARK: - Variables
     var crownAcumulator: Double = 0
-    var numberOfTimeIntervals: Int = 0 // Each interval is ajsdgiuasd equivalent too 15 minutes
+    var numberOfTimeIntervals: Double = 0 // Each interval is equivalent to 15 minutes
     
+    // Variables to tutorial
+    var animationTimer: Timer?
+    var firstLaunch: FirstLaunch? // Detect first launch
+    var stageAnimation = 1 // Manages the sequence of tutorial animations
+    
+    // MARK: - IBAction
     @IBAction func setAlarm() {
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings(completionHandler: { settings in
+            //print(settings)
             if settings.authorizationStatus == .notDetermined {
                 // Ask for user permissions
                 // ### nao tenho certeza sobre as autorizacoes necessarias ainda
@@ -64,11 +83,12 @@ class AfterWashInterfaceController: WKInterfaceController {
         self.popToRootController()
     }
     
+    // MARK: - Methods
     func createNotification(NCenter: UNUserNotificationCenter) {
         var components = DateComponents()
         let date = Date()
-        let timerHours: Int = self.numberOfTimeIntervals / 4
-        let timerMinutes: Int = (self.numberOfTimeIntervals % 4) * 15
+        let timerHours: Int = Int(self.numberOfTimeIntervals) / 4
+        let timerMinutes: Int = (Int(self.numberOfTimeIntervals) % 4) * 15
         let calendar = Calendar.current
         components.calendar = calendar
         components.hour = timerHours + calendar.component(.hour, from: date)
@@ -84,7 +104,7 @@ class AfterWashInterfaceController: WKInterfaceController {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
                                                     repeats: false)
-        // let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
         let content = UNMutableNotificationContent()
         content.categoryIdentifier = "myNotification"
         content.title = "HandWash"
@@ -99,6 +119,8 @@ class AfterWashInterfaceController: WKInterfaceController {
             }
             else {
                 print("notification scheduled")
+                //SemNome.saveAlarm(alarmRequest: request)
+                AlarmDAO.setDefaultNumberOfIntervals(value: Int16(self.numberOfTimeIntervals))
                 Schedule.shared.setNotification(notification: request,
                                                 NCenter: NCenter)
                 
@@ -107,6 +129,100 @@ class AfterWashInterfaceController: WKInterfaceController {
 
         })
     }
+    
+    private func animateSequence() {
+        self.setAlarmInstructionAnimate()
+        
+        self.animationTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { (Timer) in
+            
+            switch self.stageAnimation {
+            case 1:
+                self.setAlarmInstructionAnimateCrown()
+            case 2:
+                self.setAlarmInstructionAnimateButton()
+            case 3:
+                self.dontRemindMeInstructionAnimate()
+            case 4:
+                
+                self.buttonSetAlarm.setEnabled(true)
+                self.buttonDontRemindMe.setEnabled(true)
+                
+                Timer.invalidate()
+                
+                DispatchQueue.main.async {
+                    self.popToRootController()
+                    self.pushController(withName: "InterfaceController.", context: self)
+                }
+            default:
+                Timer.invalidate()
+                print("Invalid animate!")
+            }
+            
+            self.stageAnimation += 1
+        }
+    }
+    
+    private func setAlarmInstructionAnimate() {
+        self.labelInstruction.setHidden(false)
+        
+        self.animate(withDuration: 1, animations: {
+            self.labelInstruction.setText(String("You can be notified to be remembered to wash your hands.").localized)
+            
+            self.groupSetAlarm.setAlpha(1)
+            self.buttonDontRemindMe.setAlpha(0.2)
+            self.buttonSetAlarm.setAlpha(0.2)
+        })
+    }
+    
+    private func setAlarmInstructionAnimateCrown() {
+        self.labelInstruction.setHidden(true)
+        self.labelInstructionCrown.setHidden(false)
+        
+        self.animate(withDuration: 1, animations: {
+            self.labelInstructionCrown.setText(String("You are able to set the timer through the crown...").localized)
+            
+            self.groupSetAlarm.setAlpha(1)
+            self.buttonDontRemindMe.setAlpha(0.2)
+            self.buttonSetAlarm.setAlpha(0.2)
+            
+            self.groupSetAlarmTimer.setBackgroundColor(UIColor.white)
+        })
+        
+        self.animate(withDuration: 2, animations: {
+            self.groupSetAlarmTimer.setBackgroundColor(UIColor.black)
+        })
+    }
+    
+    private func setAlarmInstructionAnimateButton() {
+        self.labelInstructionCrown.setHidden(true)
+        self.labelInstructionSetAlarm.setHidden(false)
+
+        self.animate(withDuration: 1, animations: {
+            self.labelInstructionSetAlarm.setText(String("...and then, set the alarm to be reminded.").localized)
+            
+            self.groupSetAlarm.setAlpha(1)
+            self.buttonDontRemindMe.setAlpha(0.2)
+            self.buttonSetAlarm.setAlpha(1)
+            self.groupSetAlarmTimer.setAlpha(0.2)
+            self.labelHeader.setAlpha(0.2)
+        })
+    }
+    
+    private func dontRemindMeInstructionAnimate() {
+        
+        self.labelInstructionSetAlarm.setHidden(true)
+        self.labelInstructionDontRemindMe.setHidden(false)
+        
+        self.animate(withDuration: 1, animations: {
+            self.labelInstructionDontRemindMe.setText(String("Or you can choose to not be notified.").localized)
+            
+            self.buttonSetAlarm.setAlpha(0.2)
+            self.buttonDontRemindMe.setAlpha(1)
+            self.groupDontRemindMe.setAlpha(1)
+        })
+    }
+    
+    
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -121,9 +237,26 @@ class AfterWashInterfaceController: WKInterfaceController {
         crownSequencer.delegate = self
         crownSequencer.focus()
         // Timer setup
-        let date = Date(timeIntervalSinceNow: 2 * 60 * 60 + 1) // 2 hours and 1 sec
-        numberOfTimeIntervals = 8 // Sync this variable with the time suggested
+        // Timer setup
+        if let defaultInterval = AlarmDAO.getDefaultTimer() {
+            numberOfTimeIntervals = Double(defaultInterval)
+        }
+        else {
+            numberOfTimeIntervals = 8
+            print("Failed to retrive default interval at Schedule view controller")
+        }
+        
+        let date = Date(timeIntervalSinceNow: numberOfTimeIntervals * 15 * 60 + 1) // 2 hours and 1 sec
         timer.setDate(date) // Timer suggestion
+        
+        self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "AfterWash")
+        
+        if self.firstLaunch!.isFirstLaunch {
+            self.animateSequence()
+        } else {
+            self.buttonSetAlarm.setEnabled(true)
+            self.buttonDontRemindMe.setEnabled(true)
+        }
     }
 
     override func didDeactivate() {
@@ -142,7 +275,7 @@ extension AfterWashInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator -= 1
+            crownAcumulator = 0
         }
         else if crownAcumulator < -1 {
             if numberOfTimeIntervals > 0 {
@@ -151,7 +284,7 @@ extension AfterWashInterfaceController: WKCrownDelegate {
                 let date: Date = Date(timeIntervalSinceNow: TimeInterval(seconds))
                 timer.setDate(date)
             }
-            crownAcumulator += 1
+            crownAcumulator = 0
         }
     }
 }

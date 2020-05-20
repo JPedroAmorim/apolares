@@ -184,6 +184,8 @@
 		D5F6D45024756F140089E4D3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D44F24756F140089E4D3 /* CloudKit.framework */; };
 		D5F6D45224756F380089E4D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D45124756F380089E4D3 /* CoreData.framework */; };
 		D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F6D459247570B50089E4D3 /* Localizable.strings */; };
+		D5F6D45D247571920089E4D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6D45C247571920089E4D3 /* Extensions.swift */; };
+		D5F6D45F247571B50089E4D3 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6D45E247571B50089E4D3 /* DateUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,6 +385,8 @@
 		D5F6D45424756F6D0089E4D3 /* WashModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WashModel.xcdatamodel; sourceTree = "<group>"; };
 		D5F6D458247570B50089E4D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D5F6D45A247570B70089E4D3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D5F6D45C247571920089E4D3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D5F6D45E247571B50089E4D3 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				D5F6D45324756F6D0089E4D3 /* WashModel.xcdatamodeld */,
+				D5F6D45B247571570089E4D3 /* Other */,
 				4F6FF75A246486B60026FED3 /* Resources */,
 				4F6FF71F24644A690026FED3 /* HandWashApp WatchKit App */,
 				4F6FF72E24644A6E0026FED3 /* HandWashApp WatchKit Extension */,
@@ -635,6 +640,15 @@
 				D5F6D44F24756F140089E4D3 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5F6D45B247571570089E4D3 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D5F6D45C247571920089E4D3 /* Extensions.swift */,
+				D5F6D45E247571B50089E4D3 /* DateUtil.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -926,11 +940,13 @@
 				4F6FF73224644A6E0026FED3 /* ExtensionDelegate.swift in Sources */,
 				4F6FF74B2464586B0026FED3 /* WashInterfaceController.swift in Sources */,
 				4F647AFC24756D340076311A /* FirstLaunch.swift in Sources */,
+				D5F6D45F247571B50089E4D3 /* DateUtil.swift in Sources */,
 				4F6FF7492464583C0026FED3 /* ScheduleInterfaceController.swift in Sources */,
 				4F6FF73024644A6E0026FED3 /* InterfaceController.swift in Sources */,
 				4F6FF74E246458F40026FED3 /* Schedule.swift in Sources */,
 				4F6FF747246458190026FED3 /* AfterWashInterfaceController.swift in Sources */,
 				4F647AF4247568940076311A /* AlarmDAO.swift in Sources */,
+				D5F6D45D247571920089E4D3 /* Extensions.swift in Sources */,
 				4F647AFA24756D090076311A /* ConfigurationInterfaceController.swift in Sources */,
 				4F647AF6247568C50076311A /* CoreDataManager.swift in Sources */,
 				4F647B0024756D740076311A /* HistoryInterfaceController.swift in Sources */,
@@ -1109,7 +1125,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -1133,7 +1149,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -1153,7 +1169,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -1173,7 +1189,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};

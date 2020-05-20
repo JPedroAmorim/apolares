@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hvP-G0-80n">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="Mfr-HZ-8h2">
             <objects>
-                <controller id="hvP-G0-80n" customClass="InterfaceController" customModule="HandWash_WatchKit_App" customModuleProvider="target">
+                <controller id="hvP-G0-80n" customClass="InterfaceController" customModule="HandWashApp_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="LJh-TK-tB5">
                             <fontDescription key="font" type="system" pointSize="15"/>
@@ -104,7 +104,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HandWash0" width="128" height="128"/>
-        <image name="ring51" width="128" height="128"/>
+        <image name="HandWash0" width="61" height="52"/>
+        <image name="ring51" width="90" height="90"/>
     </resources>
 </document>

@@ -186,6 +186,7 @@
 		D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F6D459247570B50089E4D3 /* Localizable.strings */; };
 		D5F6D45D247571920089E4D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6D45C247571920089E4D3 /* Extensions.swift */; };
 		D5F6D45F247571B50089E4D3 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6D45E247571B50089E4D3 /* DateUtil.swift */; };
+		D5F6D462247581D20089E4D3 /* WashModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5F6D45324756F6D0089E4D3 /* WashModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -944,6 +945,7 @@
 				4F6FF7492464583C0026FED3 /* ScheduleInterfaceController.swift in Sources */,
 				4F6FF73024644A6E0026FED3 /* InterfaceController.swift in Sources */,
 				4F6FF74E246458F40026FED3 /* Schedule.swift in Sources */,
+				D5F6D462247581D20089E4D3 /* WashModel.xcdatamodeld in Sources */,
 				4F6FF747246458190026FED3 /* AfterWashInterfaceController.swift in Sources */,
 				4F647AF4247568940076311A /* AlarmDAO.swift in Sources */,
 				D5F6D45D247571920089E4D3 /* Extensions.swift in Sources */,

@@ -13,7 +13,7 @@
                     <items>
                         <table alignment="left" id="ucu-T6-gvN">
                             <items>
-                                <tableRow identifier="WashRow" id="I0q-TO-lJU" customClass="WashRowController" customModule="HandWash_WatchKit_Extension">
+                                <tableRow identifier="WashRow" id="I0q-TO-lJU" customClass="WashRowController" customModule="HandWashApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="140" alignment="left" backgroundImage="ring0" contentMode="scaleAspectFit" id="GBF-xf-Xgh">
                                         <items>
                                             <group width="1" height="25" alignment="center" verticalAlignment="center" id="NnO-hJ-w29">

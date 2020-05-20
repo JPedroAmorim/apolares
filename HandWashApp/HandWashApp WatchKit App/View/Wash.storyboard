@@ -7,30 +7,42 @@
     </dependencies>
     <scenes>
         <!--Wash-->
-        <scene sceneID="7Dd-cL-IVK">
+        <scene sceneID="qBu-da-Yxj">
             <objects>
-                <controller identifier="Wash" id="yO6-Fa-K0i" customClass="WashInterfaceController" customModule="HandWashApp_WatchKit_Extension">
+                <controller identifier="Wash" id="dtA-N9-gm2" customClass="WashInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="center" id="TDX-Im-7S5">
+                        <label alignment="left" numberOfLines="0" id="oSm-pu-6fJ">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <group width="1" alignment="center" layout="overlap" id="fcZ-7G-wSW">
                             <items>
-                                <inlineMovie width="1" height="100" alignment="center" loops="YES" videoGravity="resizeAspectFill" id="ZuL-Ri-2ep"/>
+                                <inlineMovie width="1" height="100" alignment="center" loops="YES" videoGravity="resizeAspectFill" id="AH4-iA-SPp"/>
+                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="dm5-eG-Xb7">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <label alignment="left" hidden="YES" text="Label" numberOfLines="0" id="Z4Y-vS-rVG" userLabel="Instruction Label Progress">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
                             </items>
                         </group>
-                        <group width="168" height="16" alignment="left" verticalAlignment="bottom" id="4Qf-z6-kSI"/>
+                        <group width="168" height="16" alignment="center" verticalAlignment="bottom" layout="vertical" id="7Sj-D3-avV"/>
                     </items>
                     <connections>
-                        <outlet property="groupProgress" destination="4Qf-z6-kSI" id="Nrh-lr-BLY"/>
-                        <outlet property="inlineMovie" destination="ZuL-Ri-2ep" id="q98-kP-n8Q"/>
-                        <segue destination="pIj-o6-Crn" kind="relationship" relationship="nextPage" id="QI2-qx-aIH"/>
+                        <outlet property="groupProgress" destination="7Sj-D3-avV" id="GNV-Mp-eru"/>
+                        <outlet property="inlineMovie" destination="AH4-iA-SPp" id="k5K-Nz-iG0"/>
+                        <outlet property="instructionLabelInLineMovie" destination="oSm-pu-6fJ" id="cbS-Y1-BLb"/>
+                        <outlet property="instructionLabelProgress" destination="Z4Y-vS-rVG" id="KSu-Ao-wCV"/>
+                        <outlet property="instructionLabelRapticFeedback" destination="dm5-eG-Xb7" id="o6E-So-I5F"/>
+                        <segue destination="4T0-mK-d9m" kind="relationship" relationship="nextPage" id="vNz-I2-Vpf"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="102" y="22"/>
         </scene>
         <!--AfterWash-->
-        <scene sceneID="ghF-sB-WUe">
+        <scene sceneID="zZ9-6f-ZrE">
             <objects>
-                <controllerPlaceholder referencedIdentifier="AfterWash" id="pIj-o6-Crn"/>
+                <controllerPlaceholder referencedIdentifier="AfterWash" id="4T0-mK-d9m"/>
             </objects>
             <point key="canvasLocation" x="326" y="9"/>
         </scene>

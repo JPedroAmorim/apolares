@@ -19,7 +19,7 @@ class CoreDataManager {
         let container = NSPersistentCloudKitContainer(name: "WashModel")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
+             if let error = error as NSError? {
                 fatalError("Error: \(error), \(error.userInfo)")
             }
         })

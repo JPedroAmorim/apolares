@@ -7,43 +7,84 @@
     </dependencies>
     <scenes>
         <!--Schedule-->
-        <scene sceneID="dKG-FI-Xxy">
+        <scene sceneID="QEQ-rE-guc">
             <objects>
-                <controller identifier="Schedule" id="d7I-UN-317" customClass="ScheduleInterfaceController" customModule="HandWashApp_WatchKit_Extension">
+                <controller identifier="Schedule" id="YJT-z0-ugb" customClass="ScheduleInterfaceController" customModule="HandWash_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Remind me again in" id="2uF-uc-5lf">
-                            <fontDescription key="font" type="system" pointSize="14"/>
-                        </label>
-                        <group width="1" alignment="left" id="TLQ-rB-jk7">
+                        <group width="1" alignment="left" layout="overlap" id="aRR-nu-1j5">
                             <items>
-                                <timer alignment="center" textAlignment="left" id="dqY-I2-RJZ">
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
-                                    <calendarUnit key="units" hour="YES" minute="YES"/>
-                                </timer>
-                                <label alignment="right" verticalAlignment="bottom" text="h" id="eY5-zR-MWI">
-                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                </label>
+                                <group width="1" alignment="left" layout="vertical" id="uWV-Iz-ZZs">
+                                    <items>
+                                        <label alignment="left" text="Remind me again after" id="HTS-jg-S67">
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <group width="1" alignment="left" id="Dhc-zs-mWS">
+                                            <items>
+                                                <timer width="101" alignment="center" textAlignment="center" id="oiq-Wh-fxN">
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                                </timer>
+                                                <group width="31" alignment="right" verticalAlignment="bottom" layout="vertical" id="L1b-Jq-FGB">
+                                                    <items>
+                                                        <label height="12" alignment="right" verticalAlignment="bottom" text="h" id="W6o-Ti-PyM">
+                                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                                        </label>
+                                                        <group width="31" height="3" alignment="right" verticalAlignment="bottom" id="wPV-56-0gu"/>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <label alignment="left" hidden="YES" numberOfLines="0" id="n3g-Gg-0Ph" userLabel="Label Instruction ">
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </label>
+                                        <label alignment="left" hidden="YES" numberOfLines="0" id="Uc9-yD-CbA" userLabel="Label Instruction Crown">
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </label>
+                                        <group width="1" alignment="left" layout="overlap" id="qDO-Jv-VTF" userLabel="Group Upper Button">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="bottom" numberOfLines="0" id="0k1-XG-veh" userLabel="Label Instruction Turn Of Alarm">
+                                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                                </label>
+                                                <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" enabled="NO" id="fRk-Dq-JKB">
+                                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                    <connections>
+                                                        <action selector="scheduleAction" destination="YJT-z0-ugb" id="9o5-n3-0V2"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
                         </group>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Schedule" id="69a-1y-BMe">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="16"/>
-                            <connections>
-                                <action selector="scheduleAction" destination="d7I-UN-317" id="spg-8S-hKI"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Of Alarm" id="bTv-Qd-c8r">
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="16"/>
-                            <connections>
-                                <action selector="bottomButtonAction" destination="d7I-UN-317" id="zjf-Gi-4Wj"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" layout="overlap" id="gJy-CK-aQh">
+                            <items>
+                                <label alignment="left" numberOfLines="0" id="c4U-qH-pme" userLabel="Label Instruction Schedule">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Turn Off Alarm" enabled="NO" id="yKP-Ai-rAL">
+                                    <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="bottomButtonAction" destination="YJT-z0-ugb" id="n6Q-tW-3n7"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="BottomButton" destination="bTv-Qd-c8r" id="RfR-pD-ERZ"/>
-                        <outlet property="UpperButton" destination="69a-1y-BMe" id="QUk-fh-FJg"/>
-                        <outlet property="timer" destination="dqY-I2-RJZ" id="E1U-Zb-jog"/>
+                        <outlet property="bottomButton" destination="yKP-Ai-rAL" id="Vvi-ec-kTf"/>
+                        <outlet property="groupSchedule" destination="aRR-nu-1j5" id="cL5-Rj-Asw"/>
+                        <outlet property="groupScheduleTimer" destination="Dhc-zs-mWS" id="Jau-vC-3Qp"/>
+                        <outlet property="groupTurnOffAlarm" destination="gJy-CK-aQh" id="LDG-zi-7zp"/>
+                        <outlet property="labelHeader" destination="HTS-jg-S67" id="OBj-Zt-NDJ"/>
+                        <outlet property="labelInstruction" destination="n3g-Gg-0Ph" id="CeN-bT-HGn"/>
+                        <outlet property="labelInstructionCrown" destination="Uc9-yD-CbA" id="i8h-7y-HXW"/>
+                        <outlet property="labelInstructionSchedule" destination="c4U-qH-pme" id="aRb-We-9lD"/>
+                        <outlet property="labelInstructionTurnOffAlarm" destination="0k1-XG-veh" id="raJ-DG-hAR"/>
+                        <outlet property="timer" destination="oiq-Wh-fxN" id="YiJ-pJ-0Fy"/>
+                        <outlet property="upperButton" destination="fRk-Dq-JKB" id="OQt-Qn-o9G"/>
                     </connections>
                 </controller>
             </objects>

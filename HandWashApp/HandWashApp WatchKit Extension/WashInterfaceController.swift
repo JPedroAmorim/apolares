@@ -157,7 +157,7 @@ class WashInterfaceController: WKInterfaceController {
        
         if shouldAnimate {
             let videoFileName = "stage" + String(videoIndex)
-            if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4", subdirectory: "/videos"){
+            if let videoUrl = Bundle.main.url(forResource: videoFileName, withExtension: "mp4"){
                 self.inlineMovie.setMovieURL(videoUrl)
                 self.inlineMovie.play()
             } else {

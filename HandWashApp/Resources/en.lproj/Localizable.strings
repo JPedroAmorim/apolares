@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  HandWashApp
+
+  Created by João Pedro de Amorim on 20/05/20.
+  Copyright © 2020 AndrePapoti. All rights reserved.
+*/
+
+"This ring indicates the progress of your daily hand washing goal." = "This ring indicates the progress of your daily hand washing goal.";
+
+"Through the schedule button you'll be able to alter the existing notification alarm or disable it, as well as add an alarm if there isn't a current one." = "Through the schedule button you'll be able to alter the existing notification alarm or disable it, as well as add an alarm if there isn't a current one.";
+    
+"The Settings button allows you to change the app's configuration." = "The Settings button allows you to change the app's configuration.";
+
+"Through the history button you'll see your consistency in reaching your daily hand washing goal." = "Through the history button you'll see your consistency in reaching your daily hand washing goal.";
+
+"This button will start the hand washing protocol." = "This button will start the hand washing protocol.";
+
+"Through this video you'll learn the WHO hand washing protocol." = "Through this video you'll learn the WHO hand washing protocol.";
+
+"This bar indicates the progress you've made in this stage." = "This bar indicates the progress you've made in this stage.";
+
+"This sound indicates that the stage has ended." = "This sound indicates that the stage has ended.";
+
+"You can be notified to be remembered to wash your hands." = "You can be notified to be remembered to wash your hands.";
+
+"You are able to set the timer through the crown..." = "You are able to set the timer through the crown...";
+
+
+"...and then, set the alarm to be reminded." = "...and then, set the alarm to be reminded.";
+
+"Or you can choose to not be notified." = "Or you can choose to not be notified.";

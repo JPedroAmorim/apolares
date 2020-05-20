@@ -181,6 +181,9 @@
 		4F6FF837246486B70026FED3 /* Progress55.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C0246486B70026FED3 /* Progress55.png */; };
 		4F6FF838246486B70026FED3 /* Progress82.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C1246486B70026FED3 /* Progress82.png */; };
 		4F6FF839246486B70026FED3 /* Progress96.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C2246486B70026FED3 /* Progress96.png */; };
+		D5F6D45024756F140089E4D3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D44F24756F140089E4D3 /* CloudKit.framework */; };
+		D5F6D45224756F380089E4D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D45124756F380089E4D3 /* CoreData.framework */; };
+		D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F6D459247570B50089E4D3 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,6 +376,13 @@
 		4F6FF7C0246486B70026FED3 /* Progress55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress55.png; sourceTree = "<group>"; };
 		4F6FF7C1246486B70026FED3 /* Progress82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress82.png; sourceTree = "<group>"; };
 		4F6FF7C2246486B70026FED3 /* Progress96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress96.png; sourceTree = "<group>"; };
+		D5F6D44C24756E710089E4D3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		D5F6D44D24756F0D0089E4D3 /* HandWashApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HandWashApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		D5F6D44F24756F140089E4D3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		D5F6D45124756F380089E4D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		D5F6D45424756F6D0089E4D3 /* WashModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WashModel.xcdatamodel; sourceTree = "<group>"; };
+		D5F6D458247570B50089E4D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D5F6D45A247570B70089E4D3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +390,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F6D45024756F140089E4D3 /* CloudKit.framework in Frameworks */,
+				D5F6D45224756F380089E4D3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +411,12 @@
 		4F6FF71024644A690026FED3 = {
 			isa = PBXGroup;
 			children = (
+				D5F6D45324756F6D0089E4D3 /* WashModel.xcdatamodeld */,
 				4F6FF75A246486B60026FED3 /* Resources */,
 				4F6FF71F24644A690026FED3 /* HandWashApp WatchKit App */,
 				4F6FF72E24644A6E0026FED3 /* HandWashApp WatchKit Extension */,
 				4F6FF71824644A690026FED3 /* Products */,
+				D5F6D44E24756F140089E4D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,6 +443,7 @@
 		4F6FF72E24644A6E0026FED3 /* HandWashApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D5F6D44D24756F0D0089E4D3 /* HandWashApp WatchKit Extension.entitlements */,
 				4F647AF0247565620076311A /* Persistance */,
 				4F6FF74C246458C40026FED3 /* Model */,
 				4F6FF72F24644A6E0026FED3 /* InterfaceController.swift */,
@@ -476,6 +491,7 @@
 				4F6FF75B246486B60026FED3 /* HandHygieneProtocol.txt */,
 				4F6FF75C246486B60026FED3 /* Progress */,
 				4F6FF7C3246486B70026FED3 /* videos */,
+				D5F6D459247570B50089E4D3 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -612,6 +628,15 @@
 			path = /Users/andrepapoti/Desktop/covid19/apolares/HandWashApp/Resources/videos;
 			sourceTree = "<absolute>";
 		};
+		D5F6D44E24756F140089E4D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5F6D45124756F380089E4D3 /* CoreData.framework */,
+				D5F6D44F24756F140089E4D3 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -694,6 +719,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 4F6FF71024644A690026FED3;
 			productRefGroup = 4F6FF71824644A690026FED3 /* Products */;
@@ -725,6 +751,7 @@
 				4F11DE20246AEF6500073551 /* stage0.mp4 in Resources */,
 				4F11DE1A246AEF6500073551 /* stage11.mp4 in Resources */,
 				4F11DDF9246AEF6500073551 /* stage9.mp4 in Resources */,
+				D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */,
 				4F11DE11246AEF6500073551 /* stage5.mp4 in Resources */,
 				4F11DDFC246AEF6500073551 /* stage3.mp4 in Resources */,
 			);
@@ -931,8 +958,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F6FF72124644A690026FED3 /* Base */,
+				D5F6D44C24756E710089E4D3 /* pt-BR */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5F6D459247570B50089E4D3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5F6D458247570B50089E4D3 /* en */,
+				D5F6D45A247570B70089E4D3 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -942,6 +979,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1001,6 +1039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1054,9 +1093,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HandWashApp WatchKit Extension/HandWashApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				INFOPLIST_FILE = "HandWashApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1077,9 +1117,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HandWashApp WatchKit Extension/HandWashApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = QTB2MSNYGB;
 				INFOPLIST_FILE = "HandWashApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1202,6 +1243,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D5F6D45324756F6D0089E4D3 /* WashModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D5F6D45424756F6D0089E4D3 /* WashModel.xcdatamodel */,
+			);
+			currentVersion = D5F6D45424756F6D0089E4D3 /* WashModel.xcdatamodel */;
+			path = WashModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F6FF71124644A690026FED3 /* Project object */;
 }

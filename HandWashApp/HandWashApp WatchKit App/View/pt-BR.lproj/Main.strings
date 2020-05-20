@@ -1,0 +1,15 @@
+
+/* Class = "WKInterfaceButton"; title = "Start"; ObjectID = "0Ms-Te-yXF"; */
+"0Ms-Te-yXF.title" = "Start";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "LJh-TK-tB5"; */
+"LJh-TK-tB5.text" = "Label";
+
+/* Class = "WKInterfaceButton"; title = "Schedule"; ObjectID = "QzB-Dg-l5b"; */
+"QzB-Dg-l5b.title" = "Schedule";
+
+/* Class = "WKInterfaceButton"; title = "History"; ObjectID = "Syh-bU-5nz"; */
+"Syh-bU-5nz.title" = "History";
+
+/* Class = "WKInterfaceButton"; title = "Settings"; ObjectID = "iH0-Yn-blz"; */
+"iH0-Yn-blz.title" = "Settings";

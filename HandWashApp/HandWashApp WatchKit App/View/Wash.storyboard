@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Wash-->
         <scene sceneID="qBu-da-Yxj">
             <objects>
-                <controller identifier="Wash" id="dtA-N9-gm2" customClass="WashInterfaceController" customModule="HandWash_WatchKit_Extension">
+                <controller identifier="Wash" id="dtA-N9-gm2" customClass="WashInterfaceController" customModule="HandWashApp_WatchKit_Extension">
                     <items>
                         <label alignment="left" numberOfLines="0" id="oSm-pu-6fJ">
                             <fontDescription key="font" type="system" pointSize="15"/>

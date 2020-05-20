@@ -6,6 +6,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
+        <!--Wash-->
+        <scene sceneID="jsX-E8-xIU">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Wash" id="zfw-vr-dOx"/>
+            </objects>
+            <point key="canvasLocation" x="515" y="112"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="Mfr-HZ-8h2">
             <objects>
@@ -27,7 +34,7 @@
                                 <button width="1" alignment="left" title="Start" enabled="NO" id="0Ms-Te-yXF">
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <segue destination="cRr-ca-hUe" kind="push" id="yLT-ZT-W0Z"/>
+                                        <segue destination="zfw-vr-dOx" kind="push" id="TA2-pB-i78"/>
                                     </connections>
                                 </button>
                                 <label alignment="right" hidden="YES" numberOfLines="0" id="Mw8-Ib-G3q" userLabel="Label Button Instruction">
@@ -87,13 +94,6 @@
                 <controllerPlaceholder referencedIdentifier="Schedule" id="F5G-S7-X0d"/>
             </objects>
             <point key="canvasLocation" x="467" y="370"/>
-        </scene>
-        <!--Wash-->
-        <scene sceneID="hSa-dI-NuW">
-            <objects>
-                <controllerPlaceholder referencedIdentifier="Wash" id="cRr-ca-hUe"/>
-            </objects>
-            <point key="canvasLocation" x="455" y="319"/>
         </scene>
         <!--Configuration-->
         <scene sceneID="TQJ-uF-llv">

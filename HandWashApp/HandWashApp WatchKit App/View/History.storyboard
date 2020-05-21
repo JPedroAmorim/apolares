@@ -14,19 +14,41 @@
                         <table alignment="left" id="ucu-T6-gvN">
                             <items>
                                 <tableRow identifier="WashRow" id="I0q-TO-lJU" customClass="WashRowController" customModule="HandWashApp_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="140" alignment="left" backgroundImage="ring0" contentMode="scaleAspectFit" id="GBF-xf-Xgh">
+                                    <group key="rootItem" width="1" height="18" alignment="left" contentMode="scaleAspectFit" id="GBF-xf-Xgh">
                                         <items>
-                                            <group width="1" height="25" alignment="center" verticalAlignment="center" id="NnO-hJ-w29">
+                                            <group width="136" height="30" alignment="center" verticalAlignment="center" id="uSW-sY-y6g">
                                                 <items>
-                                                    <label height="47" alignment="center" text="10/10/2020" id="PeY-2t-T1U"/>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring18" contentMode="scaleAspectFit" id="pdt-eO-867">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" text="1" id="HEv-m0-A5j">
+                                                                <fontDescription key="font" type="system" pointSize="8"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring12" contentMode="scaleAspectFit" id="Bn8-PQ-ppD">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" text="2" id="sCy-k3-YuJ">
+                                                                <fontDescription key="font" type="system" pointSize="8"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring84" contentMode="scaleAspectFit" id="j45-Pb-Ysc">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" text="12" id="ZJH-Kx-uHZ">
+                                                                <fontDescription key="font" type="system" pointSize="8"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="oEJ-rK-Jpa"/>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="ebG-gD-3Hd"/>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="a0J-dm-VhW"/>
+                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="NPp-bQ-5JB"/>
                                                 </items>
                                             </group>
                                         </items>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </group>
                                     <connections>
-                                        <outlet property="dateGroup" destination="NnO-hJ-w29" id="Zwo-0q-pmn"/>
-                                        <outlet property="dateLabel" destination="PeY-2t-T1U" id="Y6j-AU-ehx"/>
                                         <outlet property="ringGroup" destination="GBF-xf-Xgh" id="kqV-j3-6FW"/>
                                     </connections>
                                 </tableRow>
@@ -42,6 +64,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ring0" width="90" height="90"/>
+        <image name="ring12" width="90" height="90"/>
+        <image name="ring18" width="90" height="90"/>
+        <image name="ring24" width="90" height="90"/>
+        <image name="ring84" width="90" height="90"/>
     </resources>
 </document>

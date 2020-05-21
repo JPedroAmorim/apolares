@@ -19,19 +19,19 @@ class HistoryInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        historyTable.setNumberOfRows(washEntries.count, withRowType: "WashRow")
+        historyTable.setNumberOfRows(12, withRowType: "WashRow")
         
-        let sortedDatesStrings = orderWashEntriesDates(washEntries: washEntries)
-        
-        
-        for index in 0..<historyTable.numberOfRows {
-            guard let controller = historyTable.rowController(at: index) as? WashRowController else { continue }
-            
-            let rowEntryDate = sortedDatesStrings[index]
-            let rowEntryNumberOfWashes = washEntries[rowEntryDate]
-            
-            controller.rowEntry = (rowEntryDate, rowEntryNumberOfWashes ?? 0)
-        }
+//        let sortedDatesStrings = orderWashEntriesDates(washEntries: washEntries)
+//
+//
+//        for index in 0..<historyTable.numberOfRows {
+//            guard let controller = historyTable.rowController(at: index) as? WashRowController else { continue }
+//
+//            let rowEntryDate = sortedDatesStrings[index]
+//            let rowEntryNumberOfWashes = washEntries[rowEntryDate]
+//
+//            controller.rowEntry = (rowEntryDate, rowEntryNumberOfWashes ?? 0)
+//        }
     }
     
     override func willActivate() {

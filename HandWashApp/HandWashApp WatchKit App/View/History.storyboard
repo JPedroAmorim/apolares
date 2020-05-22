@@ -11,62 +11,130 @@
             <objects>
                 <controller identifier="History" id="BaQ-y1-Afo" customClass="HistoryInterfaceController" customModule="HandWashApp_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="ucu-T6-gvN">
+                        <label alignment="left" text="Week 1 - May" textAlignment="left" id="pib-qY-PDx">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                        </label>
+                        <group width="1" height="20" alignment="center" contentMode="scaleAspectFit" id="go1-69-IWy">
                             <items>
-                                <tableRow identifier="WashRow" id="I0q-TO-lJU" customClass="WashRowController" customModule="HandWashApp_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="18" alignment="left" contentMode="scaleAspectFit" id="GBF-xf-Xgh">
-                                        <items>
-                                            <group width="136" height="30" alignment="center" verticalAlignment="center" id="uSW-sY-y6g">
-                                                <items>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring18" contentMode="scaleAspectFit" id="pdt-eO-867">
-                                                        <items>
-                                                            <label alignment="center" verticalAlignment="center" text="1" id="HEv-m0-A5j">
-                                                                <fontDescription key="font" type="system" pointSize="8"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring12" contentMode="scaleAspectFit" id="Bn8-PQ-ppD">
-                                                        <items>
-                                                            <label alignment="center" verticalAlignment="center" text="2" id="sCy-k3-YuJ">
-                                                                <fontDescription key="font" type="system" pointSize="8"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring84" contentMode="scaleAspectFit" id="j45-Pb-Ysc">
-                                                        <items>
-                                                            <label alignment="center" verticalAlignment="center" text="12" id="ZJH-Kx-uHZ">
-                                                                <fontDescription key="font" type="system" pointSize="8"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="oEJ-rK-Jpa"/>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="ebG-gD-3Hd"/>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="a0J-dm-VhW"/>
-                                                    <group width="15" height="15" alignment="center" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="NPp-bQ-5JB"/>
-                                                </items>
-                                            </group>
-                                        </items>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </group>
-                                    <connections>
-                                        <outlet property="ringGroup" destination="GBF-xf-Xgh" id="kqV-j3-6FW"/>
-                                    </connections>
-                                </tableRow>
+                                <group width="160" height="13" alignment="center" verticalAlignment="bottom" id="W9a-fY-iSt">
+                                    <items>
+                                        <group width="32" height="20" alignment="left" verticalAlignment="bottom" backgroundImage="s.circle.fill" catalog="system" contentMode="scaleAspectFit" id="rcB-Ze-inb"/>
+                                        <group width="32" height="20" alignment="left" verticalAlignment="bottom" backgroundImage="m.circle.fill" catalog="system" contentMode="scaleAspectFit" id="JFg-GB-luq"/>
+                                        <group width="32" height="20" alignment="left" verticalAlignment="bottom" backgroundImage="t.circle.fill" catalog="system" contentMode="scaleAspectFit" id="Lep-gf-Zv7">
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </group>
+                                        <group width="32" height="20" alignment="left" verticalAlignment="bottom" backgroundImage="w.circle.fill" catalog="system" contentMode="scaleAspectFit" id="L2l-FH-V85"/>
+                                    </items>
+                                </group>
                             </items>
-                        </table>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </group>
+                        <group width="1" height="30" alignment="center" contentMode="scaleAspectFit" id="Q7L-NO-Qk9">
+                            <items>
+                                <group width="160" height="52" alignment="center" id="pNb-pH-ohJ">
+                                    <items>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring18" contentMode="scaleAspectFit" id="RBH-EP-XEa">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="2" id="jQu-z8-pQy">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring12" contentMode="scaleAspectFit" id="iNG-Uw-cGu">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="3" id="9Th-Vm-n0K">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring84" contentMode="scaleAspectFit" id="lxH-Sn-sxI">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="4" id="1DD-oL-G4b">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring24" contentMode="scaleAspectFit" id="uSt-F7-8aJ">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="5" id="4ls-iZ-hbU">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </group>
+                        <group width="1" height="15" alignment="center" contentMode="scaleAspectFit" id="6Dk-EB-zbb">
+                            <items>
+                                <group width="160" height="13" alignment="center" id="x5v-Id-IQg">
+                                    <items>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="t.circle.fill" catalog="system" contentMode="scaleAspectFit" id="OLc-o3-8la"/>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="f.circle.fill" catalog="system" contentMode="scaleAspectFit" id="0GK-An-WCq"/>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="s.circle.fill" catalog="system" contentMode="scaleAspectFit" id="LMu-Yw-gCF"/>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </group>
+                        <group width="1" height="31" alignment="center" contentMode="scaleAspectFit" id="zkt-dW-W5c">
+                            <items>
+                                <group width="160" height="31" alignment="center" id="2iu-tM-NUF">
+                                    <items>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring18" contentMode="scaleAspectFit" id="Iys-nw-hIo">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="2" id="5S1-c2-tIF">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring12" contentMode="scaleAspectFit" id="4Nm-oA-RZN">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="3" id="rjr-MK-YIO">
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring84" contentMode="scaleAspectFit" id="Ipc-pm-BrW">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="4" id="IiK-uF-ycs">
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </group>
+                        <group width="136" height="46" alignment="center" verticalAlignment="center" id="eHg-BG-WZ7">
+                            <items>
+                                <button width="64" height="35" alignment="left" verticalAlignment="bottom" title="Previous" id="SoV-L0-XFw">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </button>
+                                <button width="64" height="35" alignment="right" verticalAlignment="bottom" title="Next" id="SlJ-DZ-VCm">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </button>
+                            </items>
+                        </group>
                     </items>
-                    <connections>
-                        <outlet property="historyTable" destination="ucu-T6-gvN" id="Z74-hF-4AG"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-51" y="3"/>
+            <point key="canvasLocation" x="-51" y="7.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="f.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="m.circle.fill" catalog="system" width="64" height="60"/>
         <image name="ring12" width="90" height="90"/>
         <image name="ring18" width="90" height="90"/>
         <image name="ring24" width="90" height="90"/>
         <image name="ring84" width="90" height="90"/>
+        <image name="s.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="t.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="w.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

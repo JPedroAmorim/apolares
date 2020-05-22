@@ -181,6 +181,7 @@
 		4F6FF837246486B70026FED3 /* Progress55.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C0246486B70026FED3 /* Progress55.png */; };
 		4F6FF838246486B70026FED3 /* Progress82.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C1246486B70026FED3 /* Progress82.png */; };
 		4F6FF839246486B70026FED3 /* Progress96.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C2246486B70026FED3 /* Progress96.png */; };
+		D5F0E0272478034E00032DB3 /* HeaderRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F0E0262478034E00032DB3 /* HeaderRowController.swift */; };
 		D5F6D45024756F140089E4D3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D44F24756F140089E4D3 /* CloudKit.framework */; };
 		D5F6D45224756F380089E4D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D45124756F380089E4D3 /* CoreData.framework */; };
 		D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F6D459247570B50089E4D3 /* Localizable.strings */; };
@@ -379,6 +380,7 @@
 		4F6FF7C0246486B70026FED3 /* Progress55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress55.png; sourceTree = "<group>"; };
 		4F6FF7C1246486B70026FED3 /* Progress82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress82.png; sourceTree = "<group>"; };
 		4F6FF7C2246486B70026FED3 /* Progress96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress96.png; sourceTree = "<group>"; };
+		D5F0E0262478034E00032DB3 /* HeaderRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRowController.swift; sourceTree = "<group>"; };
 		D5F6D44C24756E710089E4D3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		D5F6D44D24756F0D0089E4D3 /* HandWashApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HandWashApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		D5F6D44F24756F140089E4D3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -453,6 +455,7 @@
 				4F647AF0247565620076311A /* Persistance */,
 				4F6FF74C246458C40026FED3 /* Model */,
 				4F6FF72F24644A6E0026FED3 /* InterfaceController.swift */,
+				D5F0E0262478034E00032DB3 /* HeaderRowController.swift */,
 				4F6FF746246458190026FED3 /* AfterWashInterfaceController.swift */,
 				4F6FF7482464583C0026FED3 /* ScheduleInterfaceController.swift */,
 				4F6FF74A2464586B0026FED3 /* WashInterfaceController.swift */,
@@ -953,6 +956,7 @@
 				4F647AF6247568C50076311A /* CoreDataManager.swift in Sources */,
 				4F647B0024756D740076311A /* HistoryInterfaceController.swift in Sources */,
 				4F647AF2247567C70076311A /* WashDAO.swift in Sources */,
+				D5F0E0272478034E00032DB3 /* HeaderRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

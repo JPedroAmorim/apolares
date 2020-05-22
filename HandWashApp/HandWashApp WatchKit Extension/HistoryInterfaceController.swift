@@ -12,18 +12,17 @@ import Foundation
 
 class HistoryInterfaceController: WKInterfaceController {
     
-    @IBOutlet weak var historyTable: WKInterfaceTable!
+
     
     let washEntries = WashDAO.allWashesEntries()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        historyTable.setNumberOfRows(12, withRowType: "WashRow")
         
-//        let sortedDatesStrings = orderWashEntriesDates(washEntries: washEntries)
-//
-//
+        let sortedDatesStrings = orderWashEntriesDates(washEntries: washEntries)
+
+
 //        for index in 0..<historyTable.numberOfRows {
 //            guard let controller = historyTable.rowController(at: index) as? WashRowController else { continue }
 //

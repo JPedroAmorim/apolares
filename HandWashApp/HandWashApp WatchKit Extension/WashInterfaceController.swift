@@ -38,6 +38,9 @@ class WashInterfaceController: WKInterfaceController {
     var animationTimer: Timer?
     var firstLaunch: FirstLaunch?
     var stageAnimation = 1
+    var videoIndex = 0
+    var totalNumberOfStages = 0
+
     
     // MARK: - Control variables
     var completion = false
@@ -49,6 +52,8 @@ class WashInterfaceController: WKInterfaceController {
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        self.synth.delegate = self
         
         self.firstLaunch = FirstLaunch(userDefaults: .standard, key: "Wash")
         self.completion = false
@@ -66,7 +71,7 @@ class WashInterfaceController: WKInterfaceController {
         
         // This should enable the app to have sound running on background.
         do {
-             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: AVAudioSession.CategoryOptions.mixWithOthers)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: AVAudioSession.CategoryOptions.duckOthers)
              try AVAudioSession.sharedInstance().setActive(true)
           } catch {
               print(error)
@@ -98,9 +103,8 @@ class WashInterfaceController: WKInterfaceController {
     private func handwashProtocol() {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
-            var videoIndex = 0
-            let stageDuration = 0.5
-            let totalNumberOfStages = stages.count - 2
+            totalNumberOfStages = stages.count - 2
+            let stageDuration = 5.0
             
             playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
             videoIndex += 1
@@ -111,7 +115,7 @@ class WashInterfaceController: WKInterfaceController {
                     WKInterfaceDevice.current().play(.success) // Raptic feedback
                 }
                 
-                if (videoIndex > totalNumberOfStages)  {
+                if (self.videoIndex > self.totalNumberOfStages)  {
                                 
                     self.inlineMovie.pause()
                     self.groupProgress.setBackgroundImageNamed("Progress101")
@@ -134,8 +138,8 @@ class WashInterfaceController: WKInterfaceController {
                     
                 }
                 else {
-                    self.playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)
-                    videoIndex += 1
+                    self.playEachStage(stageText: stages[self.videoIndex], videoIndex: self.videoIndex, stageDuration: stageDuration)
+                    self.videoIndex += 1
                 }
             }
             
@@ -160,6 +164,8 @@ class WashInterfaceController: WKInterfaceController {
         if shouldPlaySound {
             let speechUtterance = AVSpeechUtterance(string: stageText)
             speechUtterance.rate = 0.5
+            let audioSession = AVAudioSession.sharedInstance()
+            try? audioSession.setActive(false)
             self.synth.speak(speechUtterance)
         }
        
@@ -241,5 +247,18 @@ class WashInterfaceController: WKInterfaceController {
             self.stageAnimation += 1
         }
     }
+}
+
+extension WashInterfaceController: AVSpeechSynthesizerDelegate {
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        guard !synthesizer.isSpeaking else { return }
+        
+        if self.videoIndex  > totalNumberOfStages {
+            let audioSession = AVAudioSession.sharedInstance()
+            try? audioSession.setActive(false)
+        }
+    }
+    
 }
 

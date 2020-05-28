@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 class WashDAO {
     
     static func createWashEntry() {

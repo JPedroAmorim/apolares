@@ -63,6 +63,14 @@ class WashInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        
+        // This should enable the app to have sound running on background.
+        do {
+             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: AVAudioSession.CategoryOptions.mixWithOthers)
+             try AVAudioSession.sharedInstance().setActive(true)
+          } catch {
+              print(error)
+          }
     }
     
     override func didDeactivate() {

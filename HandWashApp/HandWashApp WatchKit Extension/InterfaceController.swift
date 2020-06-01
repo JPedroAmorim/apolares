@@ -44,8 +44,6 @@ class InterfaceController: WKInterfaceController {
         
         let numberOfWashesToday = WashDAO.numberOfWashesToday()
         
-//        self.labelFraction.setText("\(numberOfWashesToday)/5")
-        
         self.startAnimationRing(numberOfWashesToday: numberOfWashesToday)
         self.startAnimationHandWash(numberOfWashesToday: numberOfWashesToday)
         
@@ -70,7 +68,28 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
+
     // MARK: - Methods
+    
+    override func contextForSegue(withIdentifier HistorySegue: String) -> Any? {
+        let sortedWashEntriesAsDates = mapWashEntries(washEntries: WashDAO.allWashesEntries())
+            .sorted(by: {$0 > $1})
+        
+        let startingDay: Date? = sortedWashEntriesAsDates.first
+        let startingDates: [Date]? = sortedWashEntriesAsDates
+        
+        let contextTuple: (Date?, [Date]?) = (startingDay, startingDates)
+        
+        return contextTuple
+    }
+    
+    private func mapWashEntries(washEntries: [String : Int]) -> [Date] {
+        let dictKeys = Array(washEntries.keys)
+        
+        let dates = dictKeys.compactMap { DateUtil.shared.formatter.date(from: $0) }
+        
+        return dates
+    }
     
     private func startAnimationRing(numberOfWashesToday: Int){
         var completionLength = numberOfWashesToday > 5 ? 100 : numberOfWashesToday * 20

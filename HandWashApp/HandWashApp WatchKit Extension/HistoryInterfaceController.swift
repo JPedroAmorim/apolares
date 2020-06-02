@@ -79,8 +79,16 @@ class HistoryInterfaceController: WKInterfaceController {
             setVariablesForNextController(nextControllerDates: entryDatesForThisController, startingDay: startingDay)
             
             setupButtonsEnableProperty(startingDay: startingDay)
-            
+        }
+    }
+    
+    override func willActivate() {
+        super.willActivate()
+
+        if let startingDay = self.startingDay, let entryDatesForThisController = self.entryDatesForThisController {
+
             setupDisplay(dates: entryDatesForThisController, startingDay: startingDay)
+
         }
     }
     
@@ -236,18 +244,18 @@ class HistoryInterfaceController: WKInterfaceController {
     }
     
     func getWeekdays(date: Date) -> [Date] {
-       var calendar = Calendar.autoupdatingCurrent
-       calendar.firstWeekday = 1 // Start on Monday (or 1 for Sunday)
-       let today = calendar.startOfDay(for: date)
-       var week = [Date]()
-       if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
-           for i in 0...6 {
-               if let day = calendar.date(byAdding: .day, value: i, to: weekInterval.start) {
-                   week += [day]
-               }
-           }
-       }
-       return week
+        var calendar = Calendar.autoupdatingCurrent
+        calendar.firstWeekday = 1 // Start on Monday (or 1 for Sunday)
+        let today = calendar.startOfDay(for: date)
+        var week = [Date]()
+        if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
+            for i in 0...6 {
+                if let day = calendar.date(byAdding: .day, value: i, to: weekInterval.start) {
+                    week += [day]
+                }
+            }
+        }
+        return week
     }
     
     // MARK: setupButtonsEnableProperty Helper method

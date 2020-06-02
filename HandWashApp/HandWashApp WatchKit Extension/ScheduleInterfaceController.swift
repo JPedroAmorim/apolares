@@ -146,8 +146,8 @@ class ScheduleInterfaceController: WKInterfaceController {
         // let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let content = UNMutableNotificationContent()
         content.categoryIdentifier = "myNotification"
-        content.title = "HandWash"
-        content.body = "Wash hands plz"
+        content.title = "HandWash - time to wash"
+        content.body = "It's time to wash your hands!"
         content.sound = UNNotificationSound.default
         let request = UNNotificationRequest(identifier: "Test notification",
                                             content: content,

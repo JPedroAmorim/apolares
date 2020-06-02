@@ -59,6 +59,10 @@ class HistoryInterfaceController: WKInterfaceController {
     // This is to be set during the prepareForSegue method.
     var entryDatesForThisController: [Date]? = nil
     
+    var entryDatesForPreviousController: [Date]? = nil
+    
+    var previousControllerStartingDay: Date? = nil
+    
     // This will be set during the prepareForSegue method.
     var startingDay: Date?
     
@@ -74,21 +78,18 @@ class HistoryInterfaceController: WKInterfaceController {
             print("ERROR IN GETTING TUPLE")
         }
         
+        renderController()
+    }
+    
+    
+    private func renderController() {
         if let startingDay = self.startingDay, let entryDatesForThisController = self.entryDatesForThisController {
             
             setVariablesForNextController(nextControllerDates: entryDatesForThisController, startingDay: startingDay)
             
             setupButtonsEnableProperty(startingDay: startingDay)
-        }
-    }
-    
-    override func willActivate() {
-        super.willActivate()
-
-        if let startingDay = self.startingDay, let entryDatesForThisController = self.entryDatesForThisController {
-
+            
             setupDisplay(dates: entryDatesForThisController, startingDay: startingDay)
-
         }
     }
     
@@ -112,6 +113,10 @@ class HistoryInterfaceController: WKInterfaceController {
             self.entryDatesForNextController = entryDatesForNextController
             self.nextControllerStartingDay = entryDatesForNextController.first
             
+        } else {
+            
+            self.entryDatesForNextController = entryDatesForNextController
+            self.nextControllerStartingDay = nil
         }
     }
     
@@ -205,7 +210,14 @@ class HistoryInterfaceController: WKInterfaceController {
     private func setOutletTextAndAnimation(date: String, label: WKInterfaceLabel, group: WKInterfaceGroup) {
         
         if let dayFromDate = getDayOfDate(date: date) {
+            label.setTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
             label.setText(dayFromDate)
+            if let dateAsDate = DateUtil.shared.formatter.date(from: date) {
+                if checkIfStartingDayIsToday(startingDay: dateAsDate) {
+                    label.setTextColor(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1))
+                }
+            }
+            
         } else {
             label.setText("?")
         }
@@ -245,7 +257,7 @@ class HistoryInterfaceController: WKInterfaceController {
     
     func getWeekdays(date: Date) -> [Date] {
         var calendar = Calendar.autoupdatingCurrent
-        calendar.firstWeekday = 1 // Start on Monday (or 1 for Sunday)
+        calendar.firstWeekday = 1 // Week start on Sunday
         let today = calendar.startOfDay(for: date)
         var week = [Date]()
         if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
@@ -272,15 +284,30 @@ class HistoryInterfaceController: WKInterfaceController {
     // MARK: - IBActions
     
     @IBAction func nextPressed() {
-        self.pop()
+        
+        if let previousControllerStartingDay = self.previousControllerStartingDay, let entryDatesForPreviousController =
+            self.entryDatesForPreviousController {
+            
+            self.startingDay = previousControllerStartingDay
+            self.entryDatesForThisController = entryDatesForPreviousController
+            
+            renderController()
+        }
     }
     
     @IBAction func previousPressed() {
         
         if let nextControllerStartingDay = self.nextControllerStartingDay, let entryDatesForNextController =
-            self.entryDatesForNextController {
-            let contextTuple: (Date, [Date]) = (nextControllerStartingDay, entryDatesForNextController)
-            self.pushController(withName: "History", context: contextTuple)
+            self.entryDatesForNextController, let startingDay = self.startingDay,
+            let entryDateForThisController = self.entryDatesForThisController {
+            
+            self.previousControllerStartingDay = startingDay
+            self.entryDatesForPreviousController = entryDateForThisController
+            
+            self.startingDay = nextControllerStartingDay
+            self.entryDatesForThisController = entryDatesForNextController
+            
+            renderController()
         }
     }
 }

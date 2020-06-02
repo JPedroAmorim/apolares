@@ -92,14 +92,14 @@
                                         <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring12" contentMode="scaleAspectFit" id="4Nm-oA-RZN">
                                             <items>
                                                 <label alignment="center" verticalAlignment="center" text="3" id="rjr-MK-YIO">
-                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
                                                 </label>
                                             </items>
                                         </group>
                                         <group width="32" height="32" alignment="left" verticalAlignment="center" backgroundImage="ring84" contentMode="scaleAspectFit" id="Ipc-pm-BrW">
                                             <items>
                                                 <label alignment="center" verticalAlignment="center" text="4" id="IiK-uF-ycs">
-                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
                                                 </label>
                                             </items>
                                         </group>

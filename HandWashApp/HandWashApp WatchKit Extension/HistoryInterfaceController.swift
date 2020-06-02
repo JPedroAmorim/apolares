@@ -67,9 +67,11 @@ class HistoryInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         // See the previousPast method (at the bottom of this file) for further clarifying
-        if let context = context as? (Date?, [Date]?) {
+        if let context = context as? (Date, [Date]) {
             self.startingDay = context.0
             self.entryDatesForThisController = context.1
+        } else {
+            print("ERROR IN GETTING TUPLE")
         }
         
         if let startingDay = self.startingDay, let entryDatesForThisController = self.entryDatesForThisController {
@@ -135,7 +137,7 @@ class HistoryInterfaceController: WKInterfaceController {
     
     private func setupDisplay(dates: [Date], startingDay: Date) {
         
-        let daysThatWillBeDisplayed = dates.filter({startingDay.isInSameWeek(as: $0)})
+        let daysThatWillBeDisplayed = getWeekdays(date: startingDay)
         
         for date in daysThatWillBeDisplayed {
             mapDatesIntoOutlets(date: date)
@@ -146,7 +148,7 @@ class HistoryInterfaceController: WKInterfaceController {
         if monthsToBeDisplayed.count == 1 {
             weekAndMonthHeader.setText(monthsToBeDisplayed[0])
         } else { // The case where a week is split between two months
-            weekAndMonthHeader.setText(monthsToBeDisplayed[0] + "/" + monthsToBeDisplayed[1])
+            weekAndMonthHeader.setText(monthsToBeDisplayed[1] + "/" + monthsToBeDisplayed[0])
         }
         
     }
@@ -180,7 +182,7 @@ class HistoryInterfaceController: WKInterfaceController {
             setOutletTextAndAnimation(date: dateAsString, label: saturdayRingDayLabel, group: saturdayRing)
             
         default:
-            print("error")
+            print("ERROR DEFINING DAY OF THE WEEK")
         }
     }
     
@@ -233,6 +235,21 @@ class HistoryInterfaceController: WKInterfaceController {
                                                    repeatCount: 1)
     }
     
+    func getWeekdays(date: Date) -> [Date] {
+       var calendar = Calendar.autoupdatingCurrent
+       calendar.firstWeekday = 1 // Start on Monday (or 1 for Sunday)
+       let today = calendar.startOfDay(for: date)
+       var week = [Date]()
+       if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
+           for i in 0...6 {
+               if let day = calendar.date(byAdding: .day, value: i, to: weekInterval.start) {
+                   week += [day]
+               }
+           }
+       }
+       return week
+    }
+    
     // MARK: setupButtonsEnableProperty Helper method
     
     private func checkIfStartingDayIsToday(startingDay: Date) -> Bool {
@@ -252,8 +269,10 @@ class HistoryInterfaceController: WKInterfaceController {
     
     @IBAction func previousPressed() {
         
-        let contextTuple: (Date?, [Date]?) = (self.nextControllerStartingDay, self.entryDatesForNextController)
-        
-        self.pushController(withName: "HistoryInterfaceController", context: contextTuple)
+        if let nextControllerStartingDay = self.nextControllerStartingDay, let entryDatesForNextController =
+            self.entryDatesForNextController {
+            let contextTuple: (Date, [Date]) = (nextControllerStartingDay, entryDatesForNextController)
+            self.pushController(withName: "History", context: contextTuple)
+        }
     }
 }

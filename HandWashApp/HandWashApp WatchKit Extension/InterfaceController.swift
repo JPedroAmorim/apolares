@@ -72,13 +72,26 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Methods
     
     override func contextForSegue(withIdentifier HistorySegue: String) -> Any? {
+        var contextTuple: (Date, [Date]) = (Date(), [])
+        
         let sortedWashEntriesAsDates = mapWashEntries(washEntries: WashDAO.allWashesEntries())
             .sorted(by: {$0 > $1})
         
-        let startingDay: Date? = sortedWashEntriesAsDates.first
-        let startingDates: [Date]? = sortedWashEntriesAsDates
+        let todaysDateAsString = DateUtil.shared.formatter.string(from: Date())
         
-        let contextTuple: (Date?, [Date]?) = (startingDay, startingDates)
+        if let todaysDate = DateUtil.shared.formatter.date(from: todaysDateAsString) {
+            if !sortedWashEntriesAsDates.contains(todaysDate) {
+                contextTuple.0 = todaysDate
+                contextTuple.1 = sortedWashEntriesAsDates
+                return contextTuple
+            }
+        }
+        
+        
+        if let firstEntry = sortedWashEntriesAsDates.first {
+            contextTuple.0 = firstEntry
+            contextTuple.1 = sortedWashEntriesAsDates
+        }
         
         return contextTuple
     }

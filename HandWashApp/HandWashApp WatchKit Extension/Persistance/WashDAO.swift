@@ -101,7 +101,6 @@ class WashDAO {
             }
             
         } catch {
-            
             print("Failed")
         }
         

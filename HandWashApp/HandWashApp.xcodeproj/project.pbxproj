@@ -58,7 +58,6 @@
 		4F647AF824756B1C0076311A /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F647AF724756B1C0076311A /* History.storyboard */; };
 		4F647AFA24756D090076311A /* ConfigurationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F647AF924756D090076311A /* ConfigurationInterfaceController.swift */; };
 		4F647AFC24756D340076311A /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F647AFB24756D340076311A /* FirstLaunch.swift */; };
-		4F647AFE24756D570076311A /* WashRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F647AFD24756D570076311A /* WashRowController.swift */; };
 		4F647B0024756D740076311A /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F647AFF24756D740076311A /* HistoryInterfaceController.swift */; };
 		4F69DE5B2465B5200063CA4B /* HandHygieneProtocol.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF75B246486B60026FED3 /* HandHygieneProtocol.txt */; };
 		4F6FF71C24644A690026FED3 /* HandWashApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F6FF71B24644A690026FED3 /* HandWashApp WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -253,7 +252,6 @@
 		4F647AF724756B1C0076311A /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		4F647AF924756D090076311A /* ConfigurationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationInterfaceController.swift; sourceTree = "<group>"; };
 		4F647AFB24756D340076311A /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
-		4F647AFD24756D570076311A /* WashRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashRowController.swift; sourceTree = "<group>"; };
 		4F647AFF24756D740076311A /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		4F6FF71724644A690026FED3 /* HandWashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6FF71B24644A690026FED3 /* HandWashApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HandWashApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -460,7 +458,6 @@
 				4F6FF73324644A6E0026FED3 /* NotificationController.swift */,
 				4F647AF924756D090076311A /* ConfigurationInterfaceController.swift */,
 				4F647AFB24756D340076311A /* FirstLaunch.swift */,
-				4F647AFD24756D570076311A /* WashRowController.swift */,
 				4F647AFF24756D740076311A /* HistoryInterfaceController.swift */,
 				4F6FF73524644A6E0026FED3 /* Assets.xcassets */,
 				4F6FF73724644A6E0026FED3 /* Info.plist */,
@@ -936,7 +933,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F647AFE24756D570076311A /* WashRowController.swift in Sources */,
 				4F6FF73424644A6E0026FED3 /* NotificationController.swift in Sources */,
 				4F6FF73224644A6E0026FED3 /* ExtensionDelegate.swift in Sources */,
 				4F6FF74B2464586B0026FED3 /* WashInterfaceController.swift in Sources */,

@@ -267,7 +267,7 @@ class AfterWashInterfaceController: WKInterfaceController {
 
 extension AfterWashInterfaceController: WKCrownDelegate {
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
-        crownAcumulator += rotationalDelta
+        crownAcumulator += rotationalDelta * 8
         if crownAcumulator > 1 {
             if numberOfTimeIntervals < 96  {
                 numberOfTimeIntervals += 1

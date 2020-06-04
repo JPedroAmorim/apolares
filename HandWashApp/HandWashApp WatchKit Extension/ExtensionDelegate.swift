@@ -11,7 +11,7 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        UserDefaults.standard.register(defaults: ["SoundActive" : true, "VibrationActive" : true, "AnimationActive" : true, "NotificationActive" : true])
+        UserDefaults.standard.register(defaults: ["SoundActive" : true, "VibrationActive" : true, "AnimationActive" : true, "NotificationActive" : true, "DailyGoal": 5])
     }
 
     func applicationDidBecomeActive() {

@@ -20,17 +20,13 @@ class ConfigutationInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var animationSwitch: WKInterfaceSwitch!
     
+    @IBOutlet weak var picker: WKInterfacePicker!
     
     let defaults = UserDefaults.standard
     
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        setAllSwitches()
-    }
-    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        setAllSwitches()
         super.willActivate()
     }
     
@@ -52,7 +48,6 @@ class ConfigutationInterfaceController: WKInterfaceController {
         defaults.set(value, forKey: "AnimationActive")
     }
     
- 
     private func setAllSwitches() {
         soundSwitch.setOn(defaults.bool(forKey: "SoundActive"))
         vibrationSwitch.setOn(defaults.bool(forKey: "VibrationActive"))

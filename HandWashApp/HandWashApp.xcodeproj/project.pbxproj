@@ -180,6 +180,8 @@
 		4F6FF837246486B70026FED3 /* Progress55.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C0246486B70026FED3 /* Progress55.png */; };
 		4F6FF838246486B70026FED3 /* Progress82.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C1246486B70026FED3 /* Progress82.png */; };
 		4F6FF839246486B70026FED3 /* Progress96.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FF7C2246486B70026FED3 /* Progress96.png */; };
+		4FBBF04C24892733003FB918 /* DailyGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBBF04B24892733003FB918 /* DailyGoal.storyboard */; };
+		4FBBF04E24892802003FB918 /* DailyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBBF04D24892802003FB918 /* DailyInterface.swift */; };
 		D5F6D45024756F140089E4D3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D44F24756F140089E4D3 /* CloudKit.framework */; };
 		D5F6D45224756F380089E4D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F6D45124756F380089E4D3 /* CoreData.framework */; };
 		D5F6D457247570B50089E4D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F6D459247570B50089E4D3 /* Localizable.strings */; };
@@ -377,6 +379,8 @@
 		4F6FF7C0246486B70026FED3 /* Progress55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress55.png; sourceTree = "<group>"; };
 		4F6FF7C1246486B70026FED3 /* Progress82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress82.png; sourceTree = "<group>"; };
 		4F6FF7C2246486B70026FED3 /* Progress96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress96.png; sourceTree = "<group>"; };
+		4FBBF04B24892733003FB918 /* DailyGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyGoal.storyboard; sourceTree = "<group>"; };
+		4FBBF04D24892802003FB918 /* DailyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInterface.swift; sourceTree = "<group>"; };
 		D5F6D44C24756E710089E4D3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		D5F6D44D24756F0D0089E4D3 /* HandWashApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HandWashApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		D5F6D44F24756F140089E4D3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -451,6 +455,7 @@
 				4F647AF0247565620076311A /* Persistance */,
 				4F6FF74C246458C40026FED3 /* Model */,
 				4F6FF72F24644A6E0026FED3 /* InterfaceController.swift */,
+				4FBBF04D24892802003FB918 /* DailyInterface.swift */,
 				4F6FF746246458190026FED3 /* AfterWashInterfaceController.swift */,
 				4F6FF7482464583C0026FED3 /* ScheduleInterfaceController.swift */,
 				4F6FF74A2464586B0026FED3 /* WashInterfaceController.swift */,
@@ -484,6 +489,7 @@
 				4F6FF75624645BE60026FED3 /* Notification.storyboard */,
 				4F6FF75824645C9F0026FED3 /* AfterWash.storyboard */,
 				4F647AF724756B1C0076311A /* History.storyboard */,
+				4FBBF04B24892733003FB918 /* DailyGoal.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				4F6FF81E246486B70026FED3 /* Progress85.png in Resources */,
 				4F6FF7F1246486B70026FED3 /* Progress39.png in Resources */,
 				4F6FF82C246486B70026FED3 /* Progress95.png in Resources */,
+				4FBBF04C24892733003FB918 /* DailyGoal.storyboard in Resources */,
 				4F11DDF7246AEF6500073551 /* stage13.mp4 in Resources */,
 				4F11DE12246AEF6500073551 /* stage5.mp4 in Resources */,
 				4F6FF7E8246486B70026FED3 /* Progress49.png in Resources */,
@@ -946,6 +953,7 @@
 				4F647AF4247568940076311A /* AlarmDAO.swift in Sources */,
 				D5F6D45D247571920089E4D3 /* Extensions.swift in Sources */,
 				4F647AFA24756D090076311A /* ConfigurationInterfaceController.swift in Sources */,
+				4FBBF04E24892802003FB918 /* DailyInterface.swift in Sources */,
 				4F647AF6247568C50076311A /* CoreDataManager.swift in Sources */,
 				4F647B0024756D740076311A /* HistoryInterfaceController.swift in Sources */,
 				4F647AF2247567C70076311A /* WashDAO.swift in Sources */,

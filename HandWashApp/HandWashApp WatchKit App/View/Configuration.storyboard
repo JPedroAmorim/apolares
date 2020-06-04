@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Configuration-->
@@ -44,6 +44,18 @@
                                 </switch>
                             </items>
                         </group>
+                        <group width="1" height="47" alignment="left" id="5gQ-Gh-1tH">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="  Daily Goal" textAlignment="left" id="FEs-PK-j2x"/>
+                                <button width="17" height="25" alignment="right" verticalAlignment="center" backgroundImage="chevron.right" catalog="system" id="n8B-8h-MTL">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <segue destination="ndq-Sw-Gr3" kind="push" id="Nvm-I1-jIA"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" red="0.13335791229999999" green="0.13327237959999999" blue="0.13725554940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="animationSwitch" destination="1wQ-oQ-leA" id="Xhi-li-7L4"/>
@@ -52,7 +64,17 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="102" y="22"/>
+            <point key="canvasLocation" x="102" y="21.5"/>
+        </scene>
+        <!--DailyGoal-->
+        <scene sceneID="jSZ-Gb-KKx">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="DailyGoal" id="ndq-Sw-Gr3"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="21"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+    </resources>
 </document>

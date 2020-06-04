@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--DailyGoal-->
+        <scene sceneID="HBI-QR-ysC">
+            <objects>
+                <controller identifier="DailyGoal" id="5qM-Ic-v5C" customClass="DailyInterfaceController" customModule="HandWashApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Daily Goal" id="svI-je-1hb">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="pipipipopopo" id="cDd-ld-sSa"/>
+                        <picker height="100" alignment="center" verticalAlignment="bottom" id="1Mo-6U-Z3f">
+                            <connections>
+                                <action selector="pickerAction:" destination="5qM-Ic-v5C" id="f6n-OS-INn"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="1Mo-6U-Z3f" id="kdc-ac-x9q"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-63" y="38"/>
+        </scene>
+    </scenes>
+</document>

@@ -34,6 +34,8 @@ class InterfaceController: WKInterfaceController {
     var stageAnimation = 1 // Manages the sequence of tutorial animations
     var firstLaunch: FirstLaunch? // Detect first launch
     
+    let defaults = UserDefaults.standard
+    
     // MARK: - Lifecycle methods
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -105,7 +107,9 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func startAnimationRing(numberOfWashesToday: Int){
-        var completionLength = numberOfWashesToday > 5 ? 100 : numberOfWashesToday * 20
+        let dailyGoal = defaults.integer(forKey: "DailyGoal")
+           
+        var completionLength = numberOfWashesToday > dailyGoal ? 100 : numberOfWashesToday * (100/dailyGoal)
         
         if numberOfWashesToday == 0 {
             completionLength = 1

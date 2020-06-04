@@ -40,6 +40,9 @@ class HistoryInterfaceController: WKInterfaceController {
     @IBOutlet weak var previousButton: WKInterfaceButton!
     @IBOutlet weak var nextButton: WKInterfaceButton!
     
+    
+    let defaults = UserDefaults.standard
+    
     // MARK: - Variables to be set when a controller is pushed into the stack
     
     /*
@@ -241,7 +244,9 @@ class HistoryInterfaceController: WKInterfaceController {
     
     private func startAnimationRing(numberOfWashes: Int, groupToBeAnimated: WKInterfaceGroup) {
         
-        var completionLength = numberOfWashes > 5 ? 100 : numberOfWashes * 20
+        let dailyGoal = defaults.integer(forKey: "DailyGoal")
+        
+        var completionLength = numberOfWashes > dailyGoal ? 100 : numberOfWashes * (100/dailyGoal)
         
         if numberOfWashes == 0 {
             completionLength = 1

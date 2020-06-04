@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--DailyGoal-->
@@ -14,7 +14,9 @@
                         <label alignment="left" text="Daily Goal" id="svI-je-1hb">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <label alignment="left" text="pipipipopopo" id="cDd-ld-sSa"/>
+                        <label width="136" height="13" alignment="left" text="Select the value " textAlignment="left" id="cDd-ld-sSa">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
                         <picker height="100" alignment="center" verticalAlignment="bottom" id="1Mo-6U-Z3f">
                             <connections>
                                 <action selector="pickerAction:" destination="5qM-Ic-v5C" id="f6n-OS-INn"/>

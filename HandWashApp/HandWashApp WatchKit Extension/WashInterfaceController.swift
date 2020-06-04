@@ -99,7 +99,7 @@ class WashInterfaceController: WKInterfaceController {
         do {
             let stages = try splitTextInStages(fileName: "HandHygieneProtocol")
             var videoIndex = 0
-            let stageDuration = 0.1
+            let stageDuration = 5.0
             let totalNumberOfStages = stages.count - 2
             
             playEachStage(stageText: stages[videoIndex], videoIndex: videoIndex, stageDuration: stageDuration)

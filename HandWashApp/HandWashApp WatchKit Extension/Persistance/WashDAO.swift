@@ -11,6 +11,35 @@ import CoreData
 
 class WashDAO {
     
+    static func mockWashEntry() {
+
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "WashEntity", in: context)
+
+        let firstWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+        
+        let secondWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+        
+        let thirdWashEntry = NSManagedObject(entity: entity!, insertInto: context)
+        
+        firstWashEntry.setValue("5/28/20", forKey: "date")
+        firstWashEntry.setValue(2, forKey: "washes")
+        
+        secondWashEntry.setValue("5/29/20", forKey: "date")
+        secondWashEntry.setValue(4, forKey: "washes")
+        
+        thirdWashEntry.setValue("6/4/20", forKey: "date")
+        thirdWashEntry.setValue(3, forKey: "washes")
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving mocks")
+        }
+
+    }
+    
     static func createWashEntry() {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
